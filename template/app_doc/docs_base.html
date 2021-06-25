@@ -83,12 +83,12 @@
             </a>
             {% if request.user.is_authenticated %}
                 {% if is_collect_pro %}
-                    <i class="layui-icon layui-icon-star-fill collected" style="cursor: pointer;" title="已收藏文集，点击取消" id="collect_pro"></i>
+                    <i class="layui-icon layui-icon-star-fill collected" style="cursor: pointer;" title=%{trans "已收藏文集，点击取消" %} id="collect_pro"></i>
                 {% else %}
-                    <i class="layui-icon layui-icon-star" style="cursor: pointer;" title="收藏文集" id="collect_pro"></i>
+                    <i class="layui-icon layui-icon-star" style="cursor: pointer;" title=%{ trans "收藏文集" %} id="collect_pro"></i>
                 {% endif %}
             {% else %}
-                <i class="layui-icon layui-icon-star" style="cursor: pointer;" title="请登录后收藏"></i>
+                <i class="layui-icon layui-icon-star" style="cursor: pointer;" title=%{trans "请登录后收藏" %}></i>
             {% endif %}
             <p>
                 {% if colla_user > 0 %}
@@ -289,18 +289,18 @@
 <div id="dashang_img" style="display: none;">
     <div>
         <div class="layui-tab-content" style="height: 100px;">
-        <div style="text-align: center;font-size: 16px;font-weight: 500;padding-top: 10px;">关于 MrDoc</div><hr>
-        <div style="padding: 10px;"><a href="https://zmister.com/mrdoc/" target="_blank">觅道文档MrDoc</a>是<a href="https://zmister.com/" target="_blank"><strong>州的先生</strong></a>开发并开源的在线文档系统，其适合作为个人和小型团队的云笔记、文档和知识库管理工具。</div>
-        <div style="padding: 10px;">如果觅道文档给你或你的团队带来了帮助，欢迎对作者进行一些打赏捐助，这将有力支持作者持续投入精力更新和维护觅道文档，感谢你的捐助！<a href="http://mrdoc.zmister.com/project-7/doc-1366/" target="_blank">>>>捐助鸣谢列表</a></div>
+        <div style="text-align: center;font-size: 16px;font-weight: 500;padding-top: 10px;">{%trans "关于" %} MrDoc</div><hr>
+        <div style="padding: 10px;"><a href="https://zmister.com/mrdoc/" target="_blank"> {%trans "觅道文档MrDoc" %}</a>是<a href="https://zmister.com/" target="_blank"><strong>%{trans "州的先生" %}</strong></a>{% trans "开发并开源的在线文档系统，其适合作为个人和小型团队的云笔记、文档和知识库管理工具。"%}</div>
+        <div style="padding: 10px;">{% trans "如果觅道文档给你或你的团队带来了帮助，欢迎对作者进行一些打赏捐助，这将有力支持作者持续投入精力更新和维护觅道文档，感谢你的捐助！" %}<a href="http://mrdoc.zmister.com/project-7/doc-1366/" target="_blank">>>>%{ trans "捐助鸣谢列表" %}</a></div>
         <div class="" style="display:flex;justify-content:space-around;flex-wrap:wrap;">
             
             <div class="" align='center' style="">
-                <p>微信</p>
+                <p>%{trans "微信"}</p>
                 <img src="{% static 'dashang/dashang_wx.webp' %}" style="width: 180px;height: auto;" />
             </div>
 
             <div class="" align='center'>
-                <p>支付宝</p>
+                <p>%{trans "支付宝" %}</p>
                 <img src="{% static 'dashang/dashang_alipay.webp' %}" style="width: 180px;height: auto;" />
             </div>
             

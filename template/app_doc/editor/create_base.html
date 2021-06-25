@@ -11,7 +11,7 @@
         <meta http-equiv="Cache-Control" content="max-age=7200" />
         <!-- <meta name="referrer" content="no-referrer"> -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>{% block title %}{% endblock %} - {% if site_name != None and site_name != '' %}{{site_name}} {% else %}站点标题{% endif %}</title>
+        <title>{% block title %}{% endblock %} - {% if site_name != None and site_name != '' %}{{site_name}} {% else %} {% trans "站点标题" %}{% endif %}</title>
         <link href="{% static 'layui/css/layui.css' %}?version={{mrdoc_version}}" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'editor.md/css/font-awesome.min.css' %}?version={{mrdoc_version}}" />
         {% if editor_mode == 1 %}
@@ -45,7 +45,7 @@
             <!-- 左侧工具栏 -->
             <div class="doc-summary">
                 <div class="project-title"><i class="fa fa-edit"></i> {% trans "MrDoc文档编辑器" %}<br>
-                    <span style="font-size: 14px;">你正在：{{editor_type }}</span>
+                    <span style="font-size: 14px;">{% trans "你正在" %}：{{editor_type }}</span>
                 </div>
                 <hr>
                 {% block left_opera %}
@@ -87,8 +87,8 @@
         <div id="upload-img" style="display:none;margin:20px;">
             <div class="layui-tab" lay-filter="img-tab">
             <ul class="layui-tab-title">
-                <li class="layui-this">上传图片</li>
-                <li>选择图片</li>
+                <li class="layui-this">{% trans 上传图片%}</li>
+                <li>{% trans 选择图片%}</li>
             </ul>
             <div class="layui-tab-content">
                 <div class="layui-tab-item layui-show">

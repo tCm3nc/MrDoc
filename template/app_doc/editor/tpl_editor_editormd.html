@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <script>
     // 视频iframe域名白名单
@@ -22,7 +23,7 @@
                 "h2","h3","h4","h5", "bold", "del", "italic", "quote","kaiSpan","mark",  
                 "list-ul", "list-ol", "hr", "link", "reference-link", 
                 "mindmap","echart","imgUpload", "attachment" ,"multimedia","code", "code-block", "htmltable", 
-                "emoji", "html-entities", "pagebreak", 
+                "emoji", "html-entities", "pagebreak",
                 "watch", "preview", 
                 "help"
             ]
@@ -30,13 +31,13 @@
     var editor = editormd("editor-md", {
         width       :   "100%",
         height      :   editormd_height,
-        placeholder :   "道友，开始吧……",
+        placeholder :   {%trans '道友，开始吧……' %},
         toolbarIcons : function() {
             return editormd_toobar
         },
         //自定义工具栏添加楷体按钮
         toolbarIconTexts : {
-            kaiSpan : "楷",
+            kaiSpan : {% trans "楷" %},
         },
         //自定义工具栏添加图片按钮
         toolbarIconsClass : {
@@ -60,7 +61,7 @@
                 //var cursor    = cm.getCursor();     //获取当前光标对象，同cursor参数
                 //var selection = cm.getSelection();  //获取当前选中的文本，同selection参数
                 // 替换选中文本，如果没有选中文本，则直接插入
-                cm.replaceSelection('<span style="font-family:楷体">' + selection + "</span>");
+                cm.replaceSelection('<span style="font-family:{%trans "楷体" %}>' + selection + "</span>");
                 // 如果当前没有选中的文本，将光标移到要输入的位置
                 if(selection === "") {
                     cm.setCursor(cursor.line, cursor.ch + 29);
@@ -75,7 +76,7 @@
                 });
                 layer.open({
                     type:'1',
-                    title:'添加图片',
+                    title:{%trans "添加图片" %},
                     area:['800px','600px'],
                     id:'uploadImg',//配置ID,
                     content:$('#upload-img'),
@@ -88,7 +89,7 @@
                 });
                 layer.open({
                     type:'1',
-                    title:'添加附件',
+                    title:{%trans "添加附件" %},
                     area:['800px','600px'],
                     id:'uploadAttach',//配置ID,
                     content:$('#upload-attach'),
@@ -107,7 +108,7 @@
                                         $("#attach_table tbody").empty();
                                         var thisData = r.data.concat().splice(obj.curr*obj.limit - obj.limit, obj.limit);
                                         layui.each(thisData, function(k, v){
-                                            var row = "<tr><td>" + v.filename + "</td><td>"+ v.filesize +"</td><td>"+ v.filetime +"</td><td><button class='layui-btn layui-btn-normal layui-btn-sm' data-name='"+ v.filename +"'  data-path='"+ v.filepath +"' onclick='insertAttach(this)'>选择</button></td></tr>"
+                                            var row = "<tr><td>" + v.filename + "</td><td>"+ v.filesize +"</td><td>"+ v.filetime +"</td><td><button class='layui-btn layui-btn-normal layui-btn-sm' data-name='"+ v.filename +"'  data-path='"+ v.filepath +"' onclick='insertAttach(this)'>{%trans "选择" %}</button></td></tr>"
                                             // arr.push(row);
                                             $("#attach_table tbody").append(row)
                                         });
@@ -131,10 +132,10 @@
                 layer.open({
                     type:1,
                     id:'addTable',
-                    title:'添加表格',
+                    title:{%trans "添加表格" %},
                     area:['600px','400px'],
                     content:$("#layer-table"),
-                    btn:['确定','取消'], //添加按钮
+                    btn:[{%trans "确定" %}, {%trans "取消" %} ], //添加按钮
                     yes:function(index,layero){
                         var current_tab_id = $("#insert-table-div .layui-tab-title .layui-this").attr("lay-id");
                         console.log(current_tab_id)
@@ -184,7 +185,7 @@
             multimedia:function(cm,icon,cursor,selection){
                 layer.open({
                     type:'1',
-                    title:'添加音视频外链',
+                    title:{%trans "添加音视频外链" %},
                     area:['800px','600px'],
                     id:'insertMultiMedia',//配置ID,
                     content:$('#insertMultimedia'),
@@ -194,13 +195,13 @@
         //设置语言
         lang : {
             toolbar : {
-                kaiSpan : "添加楷体span标签",
-                imgUpload:"添加图片到文档",
-                attachment:"添加附件",
-                htmltable:"添加表格",
-                mindmap:"添加思维导图",
-                echart:"添加Echarts图表",
-                multimedia:"添加音频、视频",
+                kaiSpan : {%trans "添加楷体span标签" %},
+                imgUpload:{%trans "添加图片到文档" %},
+                attachment:{%trans "添加附件" %},
+                htmltable:{%trans "添加表格" %},
+                mindmap:{%trans "添加思维导图" %},
+                echart:{%trans "添加Echarts图表" %},
+                multimedia:{%trans "添加音频、视频" %},
             }
         },
         //配置项
