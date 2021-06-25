@@ -353,7 +353,7 @@
     form.on('switch(share-switch)', function(data){
         console.log(data.elem.checked); //开关是否开启，true或者false
         if(data.elem.checked){ // 开启
-            console.log("开启分享")
+            console.log("{%trans '开启分享' %}")
             $("#share-type").css('display',"block");
             $("#share-expire").css('display',"block");
             $("#share-link").css("display","block");

@@ -17,11 +17,11 @@
 
 {% block doc_bottom_block %}
 <div class="layui-row layui-col-space20" style="padding-left: 20px;">
-    <span tooltip="标签创建人">
+    <span tooltip="{%trans '标签创建人' %}">
         <i class="fa fa-user"></i> {{ tag.create_user }}
     </span>
 
-    <button id="share" class="doc-bottom-btn" tooltip="分享本文档">
+    <button id="share" class="doc-bottom-btn" tooltip="{%trans '分享本文档' %}">
         <i class="fa fa-share-alt" ></i> {% trans "分享" %}
     </button>
 </div>

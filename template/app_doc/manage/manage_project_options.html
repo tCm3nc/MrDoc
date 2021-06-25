@@ -275,7 +275,7 @@
             if(r.status){
                 //修改成功
                 //window.location.reload();
-                layer.msg("修改成功")
+                layer.msg("{%trans '修改成功' %}")
             }else{
                 //修改失败，提示
                 // console.log(r)
@@ -299,7 +299,7 @@
             if(r.status){
                 //修改成功
                 //window.location.reload();
-                layer.msg("修改成功")
+                layer.msg("{%trans '修改成功' %}")
             }else{
                 //修改失败，提示
                 // console.log(r)
@@ -321,7 +321,7 @@
             layer.closeAll('loading'); //关闭loading
             if(r.status){
                 //修改成功
-                layer.msg("修改成功")
+                layer.msg("{%trans '修改成功' %}")
             }else{
                 //修改失败，提示
                 // console.log(r)
@@ -343,15 +343,15 @@
             success:function(r){
                 layer.closeAll('loading');
                 if(r.status){
-                    layer.msg("生成完成")
+                    layer.msg("{%trans '生成完成' %}")
                     window.location.reload();
                 }else{
-                    layer.msg("生成出错，请稍后重试")
+                    layer.msg("{%trans '生成出错，请稍后重试' %}")
                 }
             },
             error:function(){
                 layer.closeAll('loading');
-                layer.msg("服务器异常")
+                layer.msg("{%trans '服务器异常' %}")
             }
         })
     };

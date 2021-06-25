@@ -121,7 +121,7 @@
                     // console.log(sort_data)
                     $.post('{% url "project_doc_sort" %}',sort_data,function(r){
                         if(r.status){
-                            layer.msg("完成文集导入",function(){
+                            layer.msg("{%trans '完成文集导入' %}",function(){
                                 layer.close(index)
                                 // window.location.href = "{% url 'manage_project' %}"
                             })

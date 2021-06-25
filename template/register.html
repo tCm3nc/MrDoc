@@ -96,13 +96,13 @@
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-inline">
-                        <button class="layui-btn layui-btn-fluid layui-btn-radius  layui-btn-normal" lay-submit lay-filter="formDemo" type="submit">'{%trans "注册并登录" %}'</button>
+                        <button class="layui-btn layui-btn-fluid layui-btn-radius  layui-btn-normal" lay-submit lay-filter="formDemo" type="submit">{%trans "注册并登录" %}</button>
                     </div>
                 </div>
-                 <a href="{% url 'login' %}" class="register-link">'{% trans "返回登录" %}'</a>
-                 <a href="{% url 'pro_list' %}" class="register-link">'{% trans "返回首页" %}'</a>
+                 <a href="{% url 'login' %}" class="register-link">{% trans "返回登录" %}</a>
+                 <a href="{% url 'pro_list' %}" class="register-link">{% trans "返回首页" %}</a>
                  <hr>
-                 <span style="font-size: 12px;color: #666;">'{% trans "觅道文档 - 私有云知识库部署方案" %}'</span>
+                 <span style="font-size: 12px;color: #666;">{% trans "觅道文档 - 私有云知识库部署方案" %}</span>
             </form>
         </div>
     </div>

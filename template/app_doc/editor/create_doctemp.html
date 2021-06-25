@@ -85,14 +85,14 @@
                     //创建成功
                     layer.closeAll("loading");
                     window.localStorage.removeItem('mrdoc_doc_cache') // 清空文档缓存
-                    layer.msg('保存成功',function(){
+                    layer.msg('{%trans "保存成功" %}',function(){
                         md_changed = false;
                         window.location.href = '/modify_doctemp/' + r.data + '/';
                     });
                 }else{
                     //创建失败
                     layer.closeAll("loading");
-                    layer.msg('保存失败');
+                    layer.msg('{%trans "保存失败" %}');
                     $('button.layui-btn').attr("disabled",false);
                     $('button.layui-btn').removeClass('layui-btn-disabled');
                 }
