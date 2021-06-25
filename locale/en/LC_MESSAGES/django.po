@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-22 00:54+0100\n"
+"POT-Creation-Date: 2021-06-25 10:23+0100\n"
 "PO-Revision-Date: 2021-03-21 13:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -162,6 +162,9 @@ msgstr "Please check the parameters"
 #: app_doc/views.py:830 app_doc/views.py:1171 app_doc/views.py:1834
 #: app_doc/views.py:2434 app_doc/views.py:2820
 #: template/app_admin/admin_project.html:165
+#: template/app_doc/manage/manage_project_options.html:278
+#: template/app_doc/manage/manage_project_options.html:302
+#: template/app_doc/manage/manage_project_options.html:324
 #: template/app_doc/manage/manage_self.html:83
 #: template/app_doc/manage/manage_self.html:105
 msgid "修改成功"
@@ -196,8 +199,10 @@ msgstr "Request Error"
 #: template/app_admin/admin_doc.html:249
 #: template/app_admin/admin_project.html:268
 #: template/app_admin/admin_project.html:322
+#: template/app_doc/manage/manage_doc.html:261
 #: template/app_doc/manage/manage_doc_share.html:161
 #: template/app_doc/manage/manage_doc_share.html:212
+#: template/app_doc/manage/manage_image.html:117
 #: template/app_doc/manage/manage_project.html:230
 #: template/app_doc/manage/manage_project.html:284
 msgid "删除成功"
@@ -1156,6 +1161,10 @@ msgstr "Page not found"
 #: template/app_admin/admin_base.html:21
 msgid "当前站点处于Debug调试模式"
 msgstr "The current site is in debug mode"
+
+#: template/app_admin/admin_base.html:43
+msgid "发现新版本"
+msgstr "New version found"
 
 #: template/app_admin/admin_base.html:45
 msgid "版本更新"
@@ -2579,7 +2588,8 @@ msgid "获取文集目录失败！"
 msgstr "Failed to get the project directory!"
 
 #: template/app_api/single_doc_detail.html:413
-#: template/app_doc/diff_doc.html:71 template/app_doc/docs_base.html:186
+#: template/app_doc/diff_doc.html:71 template/app_doc/diff_doc.html:147
+#: template/app_doc/docs_base.html:186
 #: template/app_doc/editor/create_doc.html:8
 #: template/app_doc/editor/create_doctemp.html:7
 #: template/app_doc/editor/modify_doc.html:22
@@ -2640,6 +2650,11 @@ msgstr "Code cloud"
 #: template/app_doc/tag_doc_base.html:247
 msgid "作者博客"
 msgstr "Authors blog"
+
+#: template/app_api/single_doc_detail.html:547
+#: template/app_doc/manage/manage_project_doc_sort.html:197
+msgid "点击了"
+msgstr "Clicked"
 
 #: template/app_api/single_doc_detail.html:576
 msgid "链接复制成功！"
@@ -2717,7 +2732,7 @@ msgid "更新于:"
 msgstr "Updated on:"
 
 #: template/app_doc/doc.html:89 template/app_doc/project.html:144
-#: template/app_doc/tag_doc_single.html:80
+#: template/app_doc/tag_doc_single.html:80 template/app_doc/tag_docs.html:24
 msgid "分享本文档"
 msgstr "Share this document"
 
@@ -2788,6 +2803,10 @@ msgstr "Link address has been copied"
 #: template/app_doc/doc.html:325 template/app_doc/tag_doc_single.html:302
 msgid "好的"
 msgstr "Okay"
+
+#: template/app_doc/doc.html:356 template/app_doc/tag_doc_single.html:333
+msgid "开启分享"
+msgstr "Open sharing"
 
 #: template/app_doc/doc.html:369 template/app_doc/doc.html:370
 #: template/app_doc/tag_doc_single.html:346
@@ -3119,6 +3138,7 @@ msgid "获取下级文档失败！"
 msgstr "Failed to obtain child documents!"
 
 #: template/app_doc/editor/create_doc.html:322
+#: template/app_doc/editor/create_doctemp.html:88
 #: template/app_doc/editor/modify_doc.html:284
 #: template/app_doc/editor/modify_doc.html:297
 msgid "保存成功"
@@ -3173,6 +3193,12 @@ msgstr "Click to view and modify the content of《{{temp.name}}》"
 msgid "请输入模板标题"
 msgstr "Please enter the template title"
 
+#: template/app_doc/editor/create_doctemp.html:95
+#: template/app_doc/editor/modify_doc.html:306
+#: template/app_doc/editor/modify_doctemp.html:94
+msgid "保存失败"
+msgstr "Save failed"
+
 #: template/app_doc/editor/modify_doc.html:29
 msgid "查看文档"
 msgstr "View document"
@@ -3224,11 +3250,6 @@ msgstr "Cancel return"
 msgid "不可选择自己作为上级"
 msgstr "Cannot choose yourself as parent"
 
-#: template/app_doc/editor/modify_doc.html:306
-#: template/app_doc/editor/modify_doctemp.html:94
-msgid "保存失败"
-msgstr "Save failed"
-
 #: template/app_doc/editor/modify_doc.html:394
 msgid "查看当前文档的历史版本"
 msgstr "View the historical version of the current document"
@@ -3240,6 +3261,10 @@ msgstr "The document has been deleted and will be skipped in the project"
 #: template/app_doc/editor/modify_doc.html:459
 msgid "复制或移动此文档到指定文集"
 msgstr "Copy or move this document to the specified project"
+
+#: template/app_doc/editor/modify_doc.html:488
+msgid "选择了上级文档"
+msgstr "Parent document selected:"
 
 #: template/app_doc/editor/modify_doc.html:520
 msgid "必须选择一个文集"
@@ -3313,12 +3338,18 @@ msgid "楷"
 msgstr "Model"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:79
+#: template/app_doc/editor/tpl_editor_ice.html:51
+#: template/app_doc/editor/tpl_editor_ice.html:58
+#: template/app_doc/editor/tpl_editor_vditor.html:27
 #: template/app_doc/editor/tpl_editor_vditor.html:120
 msgid "添加图片"
 msgstr "Add pictures"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:92
 #: template/app_doc/editor/tpl_editor_editormd.html:200
+#: template/app_doc/editor/tpl_editor_ice.html:6
+#: template/app_doc/editor/tpl_editor_ice.html:13
+#: template/app_doc/editor/tpl_editor_vditor.html:47
 #: template/app_doc/editor/tpl_editor_vditor.html:140
 #: template/app_doc/manage/manage_project_options.html:524
 msgid "添加附件"
@@ -3331,6 +3362,9 @@ msgid "选择"
 msgstr "Select"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:120
+#: template/app_doc/editor/tpl_editor_ice.html:41
+#: template/app_doc/editor/tpl_editor_vditor.html:75
+#: template/app_doc/editor/tpl_editor_vditor.html:168
 msgid "获取附件失败，请稍后重试！"
 msgstr "Failed to get the attachment, please try again later!"
 
@@ -3379,10 +3413,12 @@ msgstr "Add audio, video"
 msgid "粘贴图片失败！"
 msgstr "Failed to paste the image!"
 
+#: template/app_doc/editor/tpl_editor_vditor.html:17
 #: template/app_doc/editor/tpl_editor_vditor.html:110
 msgid "图片"
 msgstr "Image"
 
+#: template/app_doc/editor/tpl_editor_vditor.html:37
 #: template/app_doc/editor/tpl_editor_vditor.html:130
 msgid "附件"
 msgstr "attachment"
@@ -3921,6 +3957,16 @@ msgstr "Collected works:"
 msgid "保存排序"
 msgstr "Save sort"
 
+#: template/app_doc/manage/manage_project_doc_sort.html:213
+msgid "完成文集排序"
+msgstr "Complete the project sorting"
+
+#: template/app_doc/manage/manage_project_doc_sort.html:219
+#: template/app_doc/manage/manage_project_import.html:130
+#: template/app_doc/manage/manage_project_import.html:153
+msgid "修改导入文集出错"
+msgstr "Error modifying imported project"
+
 #: template/app_doc/manage/manage_project_import.html:9
 msgid "导入文集到MrDoc"
 msgstr "Import project to mrdoc"
@@ -3949,11 +3995,7 @@ msgstr "Edit the imported project"
 msgid "发布文档"
 msgstr "Publish documents"
 
-#: template/app_doc/manage/manage_project_import.html:130
-#: template/app_doc/manage/manage_project_import.html:153
-msgid "修改导入文集出错"
-msgstr "Error modifying imported project"
-
+#: template/app_doc/manage/manage_project_import.html:124
 #: template/app_doc/manage/manage_project_import.html:148
 msgid "完成文集导入"
 msgstr "Complete the project import"
@@ -4095,6 +4137,18 @@ msgstr ""
 #: template/app_doc/manage/manage_project_options.html:203
 msgid "删除文集及文集下的所有文档"
 msgstr "Delete the project and all documents in the project"
+
+#: template/app_doc/manage/manage_project_options.html:346
+msgid "生成完成"
+msgstr "Generated"
+
+#: template/app_doc/manage/manage_project_options.html:349
+msgid "生成出错，请稍后重试"
+msgstr "Generated an error, please try again!"
+
+#: template/app_doc/manage/manage_project_options.html:354
+msgid "服务器异常"
+msgstr "Server exception"
 
 #: template/app_doc/manage/manage_project_options.html:365
 msgid "警告：此操作将删除文集及文集下所有文档！"
@@ -4292,27 +4346,27 @@ msgstr "label"
 
 #: template/app_doc/search_result.html:151 template/search/search.html:147
 msgid "时间筛选"
-msgstr "Time screening"
+msgstr "Filter by time"
 
 #: template/app_doc/search_result.html:152 template/search/search.html:148
 msgid "全部时间"
-msgstr "All the time"
+msgstr "All time"
 
 #: template/app_doc/search_result.html:153 template/search/search.html:149
 msgid "近1天"
-msgstr "Nearly one day"
+msgstr "Past one day"
 
 #: template/app_doc/search_result.html:154 template/search/search.html:150
 msgid "近7天"
-msgstr "Last 7 days"
+msgstr "Past 7 days"
 
 #: template/app_doc/search_result.html:155 template/search/search.html:151
 msgid "近30天"
-msgstr "Nearly 30 days"
+msgstr "Past 30 days"
 
 #: template/app_doc/search_result.html:156 template/search/search.html:152
 msgid "近1年"
-msgstr "Nearly one year"
+msgstr "Past year"
 
 #: template/app_doc/search_result.html:168 template/search/search.html:164
 msgid "觅道文档在"
@@ -4345,6 +4399,10 @@ msgstr "Search for"
 #: template/app_doc/search_result.html:180 template/search/search.html:176
 msgid "条结果"
 msgstr "Results"
+
+#: template/app_doc/search_result.html:286 template/search/search.html:253
+msgid "页脚置底"
+msgstr "Footer to the bottom"
 
 #: template/app_doc/share/share_check.html:14
 msgid "请输入分享码"
@@ -4389,9 +4447,9 @@ msgstr "Download markdown document"
 msgid "下载"
 msgstr "Download"
 
-#: template/app_doc/tag_doc_single.html:333
-msgid "开启分享"
-msgstr "Open sharing"
+#: template/app_doc/tag_docs.html:20
+msgid "标签创建人"
+msgstr "Tag creator"
 
 #: template/app_doc/tag_docs.html:40
 msgid "最小化目录"
@@ -4476,7 +4534,7 @@ msgstr "This site is not open for registration"
 
 #: template/login.html:101
 msgid "注册账号"
-msgstr "Registered account number"
+msgstr "Registered an account"
 
 #: template/login.html:108 template/register.html:105
 msgid "觅道文档 - 私有云知识库部署方案"
@@ -4505,7 +4563,3 @@ msgstr "Register and log-in."
 #: template/search/search.html:199
 msgid "没有搜索结果。"
 msgstr "There are no search results."
-
-#: template/search/search.html:253
-msgid "页脚置底"
-msgstr "Footer to the bottom"
