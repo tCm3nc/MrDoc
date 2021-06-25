@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-20 23:38+0100\n"
+"POT-Creation-Date: 2021-06-22 00:54+0100\n"
 "PO-Revision-Date: 2021-03-21 13:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -161,6 +161,7 @@ msgstr "Please check the parameters"
 #: app_api/views_app.py:578 app_api/views_app.py:682 app_doc/views.py:440
 #: app_doc/views.py:830 app_doc/views.py:1171 app_doc/views.py:1834
 #: app_doc/views.py:2434 app_doc/views.py:2820
+#: template/app_admin/admin_project.html:165
 #: template/app_doc/manage/manage_self.html:83
 #: template/app_doc/manage/manage_self.html:105
 msgid "修改成功"
@@ -192,8 +193,11 @@ msgstr "Request Error"
 
 #: app_admin/views.py:441 app_admin/views.py:772 app_doc/views.py:818
 #: app_doc/views.py:1484 app_doc/views.py:2587
+#: template/app_admin/admin_doc.html:249
 #: template/app_admin/admin_project.html:268
 #: template/app_admin/admin_project.html:322
+#: template/app_doc/manage/manage_doc_share.html:161
+#: template/app_doc/manage/manage_doc_share.html:212
 #: template/app_doc/manage/manage_project.html:230
 #: template/app_doc/manage/manage_project.html:284
 msgid "删除成功"
@@ -843,7 +847,8 @@ msgstr "Restore succeeded"
 msgid "处理文档出错"
 msgstr "Error processing document"
 
-#: app_doc/views.py:1591
+#: app_doc/views.py:1591 template/app_doc/editor/create_doc.html:316
+#: template/app_doc/editor/modify_doc.html:291
 msgid "发布成功"
 msgstr "Successfully published"
 
@@ -1024,7 +1029,7 @@ msgstr "Cancel project successfully"
 
 #: app_doc/views.py:3083
 msgid "收藏成功"
-msgstr "Collection success"
+msgstr "Favorite success"
 
 #: app_doc/views.py:3179
 msgid "收藏不存在"
@@ -1159,6 +1164,10 @@ msgstr "New version update"
 #: template/app_admin/admin_base.html:46
 msgid "觅道文档已发布新版本，请及时更新"
 msgstr "A new version is available. Please update when possible."
+
+#: template/app_admin/admin_base.html:50
+msgid "当前已是最新版本！"
+msgstr "It is currently the latest version!"
 
 #: template/app_admin/admin_center.html:9
 #: template/app_doc/user/user_center.html:40
@@ -1445,6 +1454,7 @@ msgstr "Warning: This action will delete this document!"
 #: template/app_admin/admin_user.html:143
 #: template/app_admin/admin_user.html:219 template/app_api/manage_token.html:54
 #: template/app_doc/editor/create_doc.html:191
+#: template/app_doc/editor/modify_doc.html:431
 #: template/app_doc/editor/tpl_editor_editormd.html:138
 #: template/app_doc/manage/manage_attachment.html:123
 #: template/app_doc/manage/manage_collect.html:112
@@ -1492,6 +1502,7 @@ msgstr "Accept"
 #: template/app_api/manage_token.html:54
 #: template/app_doc/editor/create_doc.html:168
 #: template/app_doc/editor/create_doc.html:191
+#: template/app_doc/editor/modify_doc.html:431
 #: template/app_doc/editor/tpl_editor_editormd.html:138
 #: template/app_doc/manage/manage_attachment.html:123
 #: template/app_doc/manage/manage_collect.html:112
@@ -1527,6 +1538,16 @@ msgstr "Accept"
 #: template/app_doc/pro_list.html:451 template/app_doc/search_result.html:364
 msgid "取消"
 msgstr "cancel"
+
+#: template/app_admin/admin_doc.html:223
+#: template/app_doc/manage/manage_doc.html:235
+msgid "未选中任何文档"
+msgstr "No documents selected"
+
+#: template/app_admin/admin_doc.html:235
+#: template/app_doc/manage/manage_doc.html:247
+msgid "确定要删除这些文档？"
+msgstr "Are you sure you want to delete these documents?"
 
 #: template/app_admin/admin_doc.html:237
 #: template/app_doc/manage/manage_collect.html:160
@@ -1724,11 +1745,13 @@ msgid "捐赠 - 请作者喝杯奶茶吧"
 msgstr "Donation - Buy the author a cup of tea"
 
 #: template/app_admin/admin_overview.html:223
+#: template/app_doc/editor/create_doc.html:297
 #: template/app_doc/manage/manage_overview.html:199
 msgid "请输入文档标题！"
 msgstr "Please enter the document title!"
 
 #: template/app_admin/admin_overview.html:228
+#: template/app_doc/editor/create_doc.html:302
 #: template/app_doc/manage/manage_overview.html:204
 msgid "请选择文集！"
 msgstr "Please select a project!"
@@ -1770,6 +1793,14 @@ msgstr "author"
 #: template/app_admin/admin_project.html:111
 msgid "置顶"
 msgstr "Top"
+
+#: template/app_admin/admin_project.html:144 template/app_doc/pro_list.html:96
+msgid "搜索文集"
+msgstr "Search"
+
+#: template/app_admin/admin_project.html:180
+msgid "置顶失败"
+msgstr "Top failed"
 
 #: template/app_admin/admin_project.html:189
 #: template/app_doc/editor/create_doc.html:83
@@ -1841,6 +1872,7 @@ msgid "并且"
 msgstr "And"
 
 #: template/app_admin/admin_project.html:255
+#: template/app_admin/admin_project.html:307
 #: template/app_doc/manage/manage_image.html:278
 #: template/app_doc/manage/manage_project.html:217
 #: template/app_doc/manage/manage_project.html:269
@@ -1862,6 +1894,14 @@ msgstr "Please enter"
 #: template/app_doc/manage/manage_project.html:269
 msgid "以再次确认删除。"
 msgstr "To confirm the deletion again."
+
+#: template/app_admin/admin_project.html:281
+#: template/app_admin/admin_project.html:337
+#: template/app_doc/manage/manage_image.html:307
+#: template/app_doc/manage/manage_project.html:243
+#: template/app_doc/manage/manage_project.html:299
+msgid "输入错误！"
+msgstr "Input error!"
 
 #: template/app_admin/admin_project.html:290
 #: template/app_doc/manage/manage_project.html:252
@@ -2331,6 +2371,10 @@ msgstr "Please enter your email address"
 msgid "输入密码，长度不少于6位"
 msgstr "Please enter the password, minimum 6 characters"
 
+#: template/app_admin/admin_user.html:129
+msgid "请检查输入信息是否正确"
+msgstr "Please check if the input information is correct"
+
 #: template/app_admin/admin_user.html:139
 msgid "新增管理员"
 msgstr "Add manager"
@@ -2442,6 +2486,14 @@ msgstr "Click to change the password"
 msgid "更新用户资料"
 msgstr "Update user profile"
 
+#: template/app_admin/admin_user_profile.html:105
+msgid "用户资料获取出错"
+msgstr "Error obtaining user information"
+
+#: template/app_admin/admin_user_profile.html:109
+msgid "用户资料获取异常"
+msgstr "Exception while getting user information"
+
 #: template/app_admin/admin_user_profile.html:121
 msgid "修改用户的密码"
 msgstr "Modify the users password"
@@ -2472,6 +2524,10 @@ msgstr "Copy"
 msgid "重新生成Token"
 msgstr "Regenerate token"
 
+#: template/app_api/manage_token.html:44
+msgid "已复制！"
+msgstr "Copied!"
+
 #: template/app_api/manage_token.html:50
 msgid "重置Token"
 msgstr "Reset token"
@@ -2481,6 +2537,10 @@ msgid "警告：此操作将重新为你的账户生成Token，旧Token将失效
 msgstr ""
 "Warning: This operation will regenerate the token for your account and the "
 "old token will be invalidated.!"
+
+#: template/app_api/manage_token.html:65
+msgid "生成成功！"
+msgstr "Generated successfully!"
 
 #: template/app_api/single_doc_detail.html:133
 #: template/app_doc/docs_base.html:189 template/app_doc/share/share_doc.html:69
@@ -2513,13 +2573,29 @@ msgstr "Home page"
 msgid "最后修改于"
 msgstr "Last modified on"
 
-#: template/app_api/single_doc_detail.html:489
-#: template/app_doc/docs_base.html:277
-#: template/app_doc/share/share_doc.html:159
-#: template/app_doc/tag_doc_base.html:202
-msgid "手机扫一扫进行分享"
-msgstr "Scan your mobile phone to share"
+#: template/app_api/single_doc_detail.html:267
+#: template/app_doc/tag_doc_base.html:310
+msgid "获取文集目录失败！"
+msgstr "Failed to get the project directory!"
 
+#: template/app_api/single_doc_detail.html:413
+#: template/app_doc/diff_doc.html:71 template/app_doc/docs_base.html:186
+#: template/app_doc/editor/create_doc.html:8
+#: template/app_doc/editor/create_doctemp.html:7
+#: template/app_doc/editor/modify_doc.html:22
+#: template/app_doc/editor/modify_doctemp.html:7
+#: template/app_doc/tag_doc_base.html:111
+msgid "切换侧边栏"
+msgstr "Toggle sidebar"
+
+#: template/app_api/single_doc_detail.html:484
+#: template/app_doc/docs_base.html:272
+#: template/app_doc/share/share_doc.html:154
+#: template/app_doc/tag_doc_base.html:197
+msgid "微信扫一扫"
+msgstr "Scan wechat"
+
+#: template/app_api/single_doc_detail.html:485
 #: template/app_api/single_doc_detail.html:494
 #: template/app_doc/docs_base.html:273 template/app_doc/docs_base.html:282
 #: template/app_doc/share/share_doc.html:155
@@ -2528,6 +2604,13 @@ msgstr "Scan your mobile phone to share"
 #: template/app_doc/tag_doc_base.html:207
 msgid "复制链接"
 msgstr "Copy link"
+
+#: template/app_api/single_doc_detail.html:489
+#: template/app_doc/docs_base.html:277
+#: template/app_doc/share/share_doc.html:159
+#: template/app_doc/tag_doc_base.html:202
+msgid "手机扫一扫进行分享"
+msgstr "Scan your mobile phone to share"
 
 #: template/app_api/single_doc_detail.html:504
 #: template/app_doc/tag_doc_base.html:217
@@ -2557,6 +2640,10 @@ msgstr "Code cloud"
 #: template/app_doc/tag_doc_base.html:247
 msgid "作者博客"
 msgstr "Authors blog"
+
+#: template/app_api/single_doc_detail.html:576
+msgid "链接复制成功！"
+msgstr "The link has been copied successfully!"
 
 #: template/app_doc/check_viewcode.html:14 template/app_doc/docs_base.html:23
 #: template/app_doc/editor/create_base.html:14
@@ -2604,15 +2691,6 @@ msgstr "View"
 msgid "对比"
 msgstr "Contrast"
 
-#: template/app_doc/diff_doc.html:71 template/app_doc/docs_base.html:186
-#: template/app_doc/editor/create_doc.html:8
-#: template/app_doc/editor/create_doctemp.html:7
-#: template/app_doc/editor/modify_doc.html:22
-#: template/app_doc/editor/modify_doctemp.html:7
-#: template/app_doc/tag_doc_base.html:111
-msgid "切换侧边栏"
-msgstr "Toggle sidebar"
-
 #: template/app_doc/diff_doc.html:91
 msgid "当前版本"
 msgstr "current version"
@@ -2651,7 +2729,7 @@ msgstr "Share documents"
 #: template/app_doc/doc.html:96 template/app_doc/doc.html:98
 #: template/app_doc/doc.html:101
 msgid "收藏文档"
-msgstr "Collection documents"
+msgstr "Favorite document"
 
 #: template/app_doc/doc.html:106 template/app_doc/doc.html:107
 msgid "下载文档"
@@ -2693,7 +2771,9 @@ msgstr "type"
 msgid "更新密码"
 msgstr "Update password"
 
-#: template/app_doc/doc.html:284 template/app_doc/tag_doc_single.html:264
+#: template/app_doc/doc.html:284
+#: template/app_doc/manage/manage_doc_share.html:132
+#: template/app_doc/tag_doc_single.html:264
 msgid "设置成功"
 msgstr "Set successfully"
 
@@ -2701,7 +2781,16 @@ msgstr "Set successfully"
 msgid "设置出错"
 msgstr "Error setting"
 
+#: template/app_doc/doc.html:323 template/app_doc/tag_doc_single.html:300
+msgid "链接地址已复制"
+msgstr "Link address has been copied"
+
+#: template/app_doc/doc.html:325 template/app_doc/tag_doc_single.html:302
+msgid "好的"
+msgstr "Okay"
+
 #: template/app_doc/doc.html:369 template/app_doc/doc.html:370
+#: template/app_doc/tag_doc_single.html:346
 #: template/app_doc/tag_doc_single.html:347
 msgid "关闭分享"
 msgstr "Turn off sharing"
@@ -2738,12 +2827,6 @@ msgstr "The outline of the project is loading"
 msgid "本文档使用 MrDoc 发布"
 msgstr "This document is published using MrDoc"
 
-#: template/app_doc/docs_base.html:272
-#: template/app_doc/share/share_doc.html:154
-#: template/app_doc/tag_doc_base.html:197
-msgid "微信扫一扫"
-msgstr "Scan wechat"
-
 #: template/app_doc/docs_base.html:292
 msgid "关于"
 msgstr "About"
@@ -2752,7 +2835,8 @@ msgstr "About"
 msgid "觅道文档MrDoc"
 msgstr "Midao Document MrDoc"
 
-#: template/app_doc/docs_base.html:293 template/app_doc/search.html:47
+#: template/app_doc/docs_base.html:293 template/app_doc/foot_base.html:5
+#: template/app_doc/search.html:47
 msgid "州的先生"
 msgstr "Mr state"
 
@@ -2788,6 +2872,10 @@ msgstr "Upload pictures"
 #: template/app_doc/editor/create_base.html:99
 msgid "或 插入外链图片链接"
 msgstr "Or insert a link to an external URL"
+
+#: template/app_doc/editor/create_base.html:102
+msgid "输入图片URL"
+msgstr "Enter picture URL"
 
 #: template/app_doc/editor/create_base.html:103
 msgid "插入图片链接"
@@ -2919,7 +3007,7 @@ msgstr "Rich text"
 
 #: template/app_doc/editor/create_doc.html:54
 msgid "在线表格"
-msgstr "Online form"
+msgstr "Online table"
 
 #: template/app_doc/editor/create_doc.html:67
 #: template/app_doc/editor/modify_doc.html:82
@@ -2998,6 +3086,11 @@ msgstr ""
 msgid "确定切换"
 msgstr "OK to switch"
 
+#: template/app_doc/editor/create_doc.html:183
+#: template/app_doc/manage/manage_doc.html:279
+msgid "选择文集："
+msgstr "Select a project:"
+
 #: template/app_doc/editor/create_doc.html:224
 #: template/app_doc/editor/modify_doc.html:478
 msgid "未命名"
@@ -3007,6 +3100,37 @@ msgstr "Unnamed"
 #: template/app_doc/editor/modify_doc.html:479
 msgid "文集暂无文档"
 msgstr "No documents in the project"
+
+#: template/app_doc/editor/create_doc.html:237
+#: template/app_doc/editor/modify_doc.html:209
+msgid "你选择了上级文档："
+msgstr "You have selected a parent document:"
+
+#: template/app_doc/editor/create_doc.html:244
+#: template/app_doc/editor/modify_doc.html:220
+#: template/app_doc/editor/modify_doc.html:495
+msgid "第三级文档不能作为上级文档"
+msgstr "The third level documnet cannot be used as the parent document"
+
+#: template/app_doc/editor/create_doc.html:250
+#: template/app_doc/editor/modify_doc.html:235
+#: template/app_doc/editor/modify_doc.html:501
+msgid "获取下级文档失败！"
+msgstr "Failed to obtain child documents!"
+
+#: template/app_doc/editor/create_doc.html:322
+#: template/app_doc/editor/modify_doc.html:284
+#: template/app_doc/editor/modify_doc.html:297
+msgid "保存成功"
+msgstr "Saved successfully"
+
+#: template/app_doc/editor/create_doc.html:331
+msgid "发布文档失败:"
+msgstr "Failed to publish the document"
+
+#: template/app_doc/editor/create_doc.html:364
+msgid "你取消了当前文档的上级文档"
+msgstr "You canceled the parent document of the current document"
 
 #: template/app_doc/editor/create_doctemp.html:11
 #: template/app_doc/editor/modify_doctemp.html:11
@@ -3096,17 +3220,38 @@ msgstr "The page will be reloaded and any uncomitted changes will be lost!"
 msgid "取消返回"
 msgstr "Cancel return"
 
+#: template/app_doc/editor/modify_doc.html:216
+msgid "不可选择自己作为上级"
+msgstr "Cannot choose yourself as parent"
+
+#: template/app_doc/editor/modify_doc.html:306
+#: template/app_doc/editor/modify_doctemp.html:94
+msgid "保存失败"
+msgstr "Save failed"
+
 #: template/app_doc/editor/modify_doc.html:394
 msgid "查看当前文档的历史版本"
 msgstr "View the historical version of the current document"
+
+#: template/app_doc/editor/modify_doc.html:442
+msgid "文档已删除，即将跳转至文集"
+msgstr "The document has been deleted and will be skipped in the project"
 
 #: template/app_doc/editor/modify_doc.html:459
 msgid "复制或移动此文档到指定文集"
 msgstr "Copy or move this document to the specified project"
 
+#: template/app_doc/editor/modify_doc.html:520
+msgid "必须选择一个文集"
+msgstr "Must select a project (required)"
+
 #: template/app_doc/editor/modify_doctemp.html:57
 msgid "请输入模板名称"
 msgstr "Please enter the template name"
+
+#: template/app_doc/editor/modify_doctemp.html:88
+msgid "修改成功，即将跳转"
+msgstr "Modified successfully, will jump soon"
 
 #: template/app_doc/editor/tpl_editor_div_doc.html:27
 msgid "选择模板"
@@ -3185,11 +3330,19 @@ msgstr "Add attachments"
 msgid "选择"
 msgstr "Select"
 
+#: template/app_doc/editor/tpl_editor_editormd.html:120
+msgid "获取附件失败，请稍后重试！"
+msgstr "Failed to get the attachment, please try again later!"
+
 #: template/app_doc/editor/tpl_editor_editormd.html:135
 #: template/app_doc/editor/tpl_editor_editormd.html:201
 #: template/app_doc/manage/manage_project_options.html:525
 msgid "添加表格"
 msgstr "Add table"
+
+#: template/app_doc/editor/tpl_editor_editormd.html:154
+msgid "请生成表格"
+msgstr "Please generate the table"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:188
 msgid "添加音视频外链"
@@ -3220,6 +3373,12 @@ msgstr "Add a Echarts chart"
 msgid "添加音频、视频"
 msgstr "Add audio, video"
 
+#: template/app_doc/editor/tpl_editor_editormd.html:266
+#: template/app_doc/editor/tpl_editor_vditor.html:253
+#: template/app_doc/manage/manage_project_options.html:587
+msgid "粘贴图片失败！"
+msgstr "Failed to paste the image!"
+
 #: template/app_doc/editor/tpl_editor_vditor.html:110
 msgid "图片"
 msgstr "Image"
@@ -3227,6 +3386,10 @@ msgstr "Image"
 #: template/app_doc/editor/tpl_editor_vditor.html:130
 msgid "附件"
 msgstr "attachment"
+
+#: template/app_doc/foot_base.html:5
+msgid "出品 "
+msgstr "Produced"
 
 #: template/app_doc/foot_base.html:6
 msgid "网站地图"
@@ -3330,6 +3493,19 @@ msgstr "Delete favorites"
 msgid "警告：此操作将删除此收藏！"
 msgstr "Warning: This action will delete this project!"
 
+#: template/app_doc/manage/manage_collect.html:124
+#: template/app_doc/manage/manage_collect.html:172
+msgid "取消成功"
+msgstr "Cancel success"
+
+#: template/app_doc/manage/manage_collect.html:146
+msgid "未选中任何收藏"
+msgstr "No favorites selected"
+
+#: template/app_doc/manage/manage_collect.html:158
+msgid "确定要取消这些收藏？"
+msgstr "Are you sure you want to cancel these projects?"
+
 #: template/app_doc/manage/manage_doc_history.html:4
 msgid "文档历史版本管理"
 msgstr "Document history version management"
@@ -3429,6 +3605,22 @@ msgstr "Sharing code"
 msgid "分享时间"
 msgstr "Sharing time"
 
+#: template/app_doc/manage/manage_doc_share.html:134
+msgid "设置失败"
+msgstr "Setup failed"
+
+#: template/app_doc/manage/manage_doc_share.html:147
+msgid "确定要删除该分享？"
+msgstr "Are you sure you want to delete this share?"
+
+#: template/app_doc/manage/manage_doc_share.html:186
+msgid "未选中数据"
+msgstr "Data not selected"
+
+#: template/app_doc/manage/manage_doc_share.html:198
+msgid "确定要删除这些分享？"
+msgstr "Are you sure you want to delete these shares?"
+
 #: template/app_doc/manage/manage_doc_tag.html:4
 #: template/app_doc/manage/manage_doc_tag.html:10
 msgid "文档标签管理"
@@ -3501,13 +3693,26 @@ msgstr ""
 msgid "移动图片分组"
 msgstr "Move picture grouping"
 
+#: template/app_doc/manage/manage_image.html:157
+msgid "移动成功"
+msgstr "Moved successfully"
+
 #: template/app_doc/manage/manage_image.html:190
 msgid "新建图片分组"
 msgstr "New picture group"
 
+#: template/app_doc/manage/manage_image.html:236
+msgid "系统异常，请稍后再试！"
+msgstr "The system is abnormal, please try again later!"
+
 #: template/app_doc/manage/manage_image.html:247
 msgid "取消全选"
 msgstr "Unselect all"
+
+#: template/app_doc/manage/manage_image.html:262
+#: template/app_doc/manage/manage_image.html:321
+msgid "未选中任何图片"
+msgstr "No pictures selected"
 
 #: template/app_doc/manage/manage_image.html:275
 msgid "批量删除图片"
@@ -3526,9 +3731,17 @@ msgstr ""
 msgid "确定删除"
 msgstr "Confirm delete"
 
+#: template/app_doc/manage/manage_image.html:294
+msgid "批量删除成功"
+msgstr "Batch delete successfully"
+
 #: template/app_doc/manage/manage_image.html:334
 msgid "批量移动图片"
 msgstr "Batch move pictures"
+
+#: template/app_doc/manage/manage_image.html:353
+msgid "批量移动成功"
+msgstr "Batch moved successfully"
 
 #: template/app_doc/manage/manage_image_group.html:4
 #: template/app_doc/manage/manage_image_group.html:11
@@ -3605,6 +3818,7 @@ msgstr "Are you sure you want to package and export the selected project?"
 
 #: template/app_doc/manage/manage_project.html:353
 #: template/app_doc/manage/manage_project_options.html:431
+#: template/app_doc/project.html:116
 msgid "下载导出文档"
 msgstr "Download exported document"
 
@@ -3734,6 +3948,19 @@ msgstr "Edit the imported project"
 #: template/app_doc/manage/manage_project_import.html:109
 msgid "发布文档"
 msgstr "Publish documents"
+
+#: template/app_doc/manage/manage_project_import.html:130
+#: template/app_doc/manage/manage_project_import.html:153
+msgid "修改导入文集出错"
+msgstr "Error modifying imported project"
+
+#: template/app_doc/manage/manage_project_import.html:148
+msgid "完成文集导入"
+msgstr "Complete the project import"
+
+#: template/app_doc/manage/manage_project_import.html:164
+msgid "文件上传出错"
+msgstr "File upload error"
 
 #: template/app_doc/manage/manage_project_import.html:250
 msgid "请输入文集名称"
@@ -3874,6 +4101,10 @@ msgid "警告：此操作将删除文集及文集下所有文档！"
 msgstr ""
 "Warning: This operation will delete the project and all child documents"
 
+#: template/app_doc/manage/manage_project_options.html:377
+msgid "删除成功，即将返回文集列表……"
+msgstr "Deleted successfully, will return to the project list..."
+
 #: template/app_doc/manage/manage_project_options.html:400
 msgid "将此文集下所有文档导出为MD文件并打包？"
 msgstr "Export all documents in this project as MD files and pack them?"
@@ -3936,10 +4167,6 @@ msgstr "Modify user password"
 msgid "又一个MrDoc站点"
 msgstr "Another mrdoc site"
 
-#: template/app_doc/pro_list.html:96
-msgid "搜索文集"
-msgstr "Search"
-
 #: template/app_doc/pro_list.html:100
 msgid "筛选"
 msgstr "Filter"
@@ -3990,6 +4217,10 @@ msgstr ""
 msgid "创建并添加文档"
 msgstr "Create and add documents"
 
+#: template/app_doc/pro_list.html:378 template/app_doc/pro_list.html:406
+msgid "创建异常"
+msgstr "Create exception"
+
 #: template/app_doc/project.html:37
 msgid "目录大纲"
 msgstr "Table of contents"
@@ -4019,6 +4250,10 @@ msgstr ""
 #: template/app_doc/project.html:138
 msgid "文集创建者"
 msgstr "Anthology creator"
+
+#: template/app_doc/project.html:196
+msgid "获取文集文档大纲失败！"
+msgstr "Failed to get the project document published!"
 
 #: template/app_doc/project_doc_search.html:7
 msgid "的结果"
@@ -4154,13 +4389,17 @@ msgstr "Download markdown document"
 msgid "下载"
 msgstr "Download"
 
-#: template/app_doc/tag_doc_single.html:300
-msgid "链接地址已复制"
-msgstr "Link address has been copied"
+#: template/app_doc/tag_doc_single.html:333
+msgid "开启分享"
+msgstr "Open sharing"
 
-#: template/app_doc/tag_doc_single.html:302
-msgid "好的"
-msgstr "Okay"
+#: template/app_doc/tag_docs.html:40
+msgid "最小化目录"
+msgstr "Minimize directory"
+
+#: template/app_doc/tag_docs.html:47
+msgid "隐藏文档目录"
+msgstr "Hide document directory"
 
 #: template/app_doc/user/user_center.html:149
 msgid "QQ群"
@@ -4198,6 +4437,18 @@ msgstr "Please confirm new password"
 #: template/forget_pwd.html:64 template/register.html:102
 msgid "返回登录"
 msgstr "Back to login"
+
+#: template/forget_pwd.html:81
+msgid "请输入电子邮箱"
+msgstr "Please enter your email"
+
+#: template/forget_pwd.html:85
+msgid "电子邮箱有误，请重填"
+msgstr "The email address is wrong, please re-enter."
+
+#: template/forget_pwd.html:90
+msgid "验证码发送成功，请查收！"
+msgstr "The verification code was sent successfully, please check!"
 
 #: template/forget_pwd.html:112
 msgid "获取验证码"
@@ -4254,3 +4505,7 @@ msgstr "Register and log-in."
 #: template/search/search.html:199
 msgid "没有搜索结果。"
 msgstr "There are no search results."
+
+#: template/search/search.html:253
+msgid "页脚置底"
+msgstr "Footer to the bottom"
