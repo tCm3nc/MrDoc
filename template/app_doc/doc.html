@@ -320,9 +320,9 @@
         target.focus();
         target.setSelectionRange(0, target.value.length);
         document.execCommand("copy");
-        layer.msg('链接地址已复制', {
+        layer.msg('{% trans "链接地址已复制" %}', {
             time: 2000, //2s后自动关闭
-            btn: '好的',
+            btn: '{% trans "好的" %}',
             btnAlign: 'c'
         });
     })

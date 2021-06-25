@@ -130,13 +130,13 @@
             <!-- <a class="btn pull-left js-toolbar-action" aria-label="" href="javascript:void(0);" title="切换侧边栏">
                 <i class="fa fa-align-justify"></i>
             </a> -->
-            <a class="btn pull-left font-small"  href="javascript:void(0);" title={%trans "缩小字体" %}>
+            <a class="btn pull-left font-small"  href="javascript:void(0);" title='{%trans "缩小字体" %}'>
                 <i class="fa fa-font">-</i>
             </a>
-            <a class="btn pull-left font-large"  href="javascript:void(0);" title={% trans "放大字体" %}>
+            <a class="btn pull-left font-large"  href="javascript:void(0);" title='{% trans "放大字体" %}'>
                 <i class="fa fa-font">+</i>
             </a>
-            <a class="btn pull-left font-switch" href="javascript:void(0);" title={% trans "切换字体类型" %}>
+            <a class="btn pull-left font-switch" href="javascript:void(0);" title='{% trans "切换字体类型" %}'>
                 <i class="fa fa-text-height"></i>
             </a>
             <!-- 顶部工具栏 -->
@@ -264,7 +264,7 @@
                 $('#project-toc').append(toc_str)
                 tagCurrentDoc();
             }else{
-                layer.msg("获取文集目录失败！")
+                layer.msg("{% trans '获取文集目录失败！' %}")
             }
         });
     };
@@ -410,7 +410,7 @@
     });
     //切换侧边栏显示隐藏
     function toggleSidebar(){
-        console.log("切换侧边栏")
+        console.log("{%trans '切换侧边栏' %}")
         $("body").toggleClass("big-page");
         return false;
     }
@@ -481,8 +481,8 @@
 <div id="share_div" style="display: none;">
     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
         <ul class="layui-tab-title">
-            <li class="layui-this">微信扫一扫</li>
-            <li>复制链接</li>
+            <li class="layui-this">{%trans "微信扫一扫" %}</li>
+            <li>{%trans "复制链接" %}</li>
         </ul>
     <div class="layui-tab-content" style="height: 100px;">
         <div class="layui-tab-item layui-show" align='center'>
@@ -573,7 +573,7 @@
         crt_url_val.select();
         window.clipb
         document.execCommand("Copy");
-        layer.msg("链接复制成功！")
+        layer.msg("{% trans '链接复制成功！' %}")
     }
     // 生成二维码
     var qrcode = new QRCode("url_qrcode", {

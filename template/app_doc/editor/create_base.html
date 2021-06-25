@@ -99,7 +99,7 @@
                         <legend style="font-size: 12px;">{%trans "或 插入外链图片链接" %}</legend>
                     </fieldset>
                     <div class="layui-row" style="margin-top: 10px;">
-                        <input type="text" class="layui-input" placeholder="输入图片URL" id="img_url_input" style="margin-bottom: 5px;"/>
+                        <input type="text" class="layui-input" placeholder="{%trans '输入图片URL' %}" id="img_url_input" style="margin-bottom: 5px;"/>
                         <button type="button" class="layui-btn layui-btn-primary" onclick="insertImgUrl()">{%trans "插入图片链接" %}</button>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                 </div>
 
                 <div class="layui-tab-item" >
-                    <textarea placeholder={%trans "粘贴Excel或在线电子表格的内容" %} class="layui-textarea" style="height: 200px;" id="pasteExcel"></textarea>
+                    <textarea placeholder='{%trans "粘贴Excel或在线电子表格的内容" %}' class="layui-textarea" style="height: 200px;" id="pasteExcel"></textarea>
                 </div>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                 <fieldset class="layui-elem-field">
                     <legend>{%trans "插入音频链接" %}</legend>
                     <div class="layui-field-box">
-                    <input class="layui-input" type="url" id="audio_input" placeholder={%trans "填入音频文件链接，支持文件后缀格式为" %}"mp3、wav、flac、m4a" style="margin-bottom: 5px;">
+                    <input class="layui-input" type="url" id="audio_input" placeholder="{%trans '填入音频文件链接，支持文件后缀格式为' %} mp3、wav、flac、m4a" style="margin-bottom: 5px;">
                     <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="insertMultimedia('audio')"><i class="fa fa-music"></i> {%trans "插入音频" %}</button>
                     </div>
                 </fieldset>
@@ -183,7 +183,7 @@
                 <fieldset class="layui-elem-field">
                     <legend>{%trans "插入视频链接" %}</legend>
                     <div class="layui-field-box">
-                        <input class="layui-input" type="url" id="video_input" placeholder={%trans "填入视频文件链接，支持文件后缀格式为" %}"mp4、m4v、ogg、ogv、webm" style="margin-bottom: 5px;">
+                        <input class="layui-input" type="url" id="video_input" placeholder="{%trans '填入视频文件链接，支持文件后缀格式为' %} mp4、m4v、ogg、ogv、webm" style="margin-bottom: 5px;">
                         <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="insertMultimedia('video')"><i class="fa fa-video-camera"></i> {%trans "插入视频" %}</button>
                     </div>
                 </fieldset>
@@ -192,7 +192,7 @@
                 <fieldset class="layui-elem-field">
                     <legend>{%trans "插入视频网站链接"%}</legend>
                     <div class="layui-field-box">
-                        <input class="layui-input" type="url" id="video_iframe_input" placeholder={%trans "填入视频网站视频播放页链接，支持 YouTube、优酷、QQ视频、Facebook、哔哩哔哩、TED网站" %} style="margin-bottom: 5px;">
+                        <input class="layui-input" type="url" id="video_iframe_input" placeholder="{%trans '填入视频网站视频播放页链接，支持 YouTube、优酷、QQ视频、Facebook、哔哩哔哩、TED网站' %}" style="margin-bottom: 5px;">
                         <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" onclick="insertMultimedia('video_iframe')"><i class="fa fa-youtube-play"></i> {%trans "插入视频网站视频" %}</button>
                     </div>
                 </fieldset>

@@ -83,12 +83,12 @@
             </a>
             {% if request.user.is_authenticated %}
                 {% if is_collect_pro %}
-                    <i class="layui-icon layui-icon-star-fill collected" style="cursor: pointer;" title={%trans "已收藏文集，点击取消" %} id="collect_pro"></i>
+                    <i class="layui-icon layui-icon-star-fill collected" style="cursor: pointer;" title='{%trans "已收藏文集，点击取消" %}' id="collect_pro"></i>
                 {% else %}
-                    <i class="layui-icon layui-icon-star" style="cursor: pointer;" title={% trans "收藏文集" %} id="collect_pro"></i>
+                    <i class="layui-icon layui-icon-star" style="cursor: pointer;" title='{% trans "收藏文集" %}' id="collect_pro"></i>
                 {% endif %}
             {% else %}
-                <i class="layui-icon layui-icon-star" style="cursor: pointer;" title={%trans "请登录后收藏" %}></i>
+                <i class="layui-icon layui-icon-star" style="cursor: pointer;" title='{%trans "请登录后收藏" %}'></i>
             {% endif %}
             <p>
                 {% if colla_user > 0 %}

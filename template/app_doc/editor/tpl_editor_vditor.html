@@ -156,7 +156,7 @@
                                             $("#attach_table tbody").empty();
                                             var thisData = r.data.concat().splice(obj.curr*obj.limit - obj.limit, obj.limit);
                                             layui.each(thisData, function(k, v){
-                                                var row = "<tr><td>" + v.filename + "</td><td>"+ v.filesize +"</td><td>"+ v.filetime +"</td><td><button class='layui-btn layui-btn-normal layui-btn-sm' data-name='"+ v.filename +"'  data-path='"+ v.filepath +"' onclick='insertAttach(this)'>"+ {%trans "选择" %}+"</button></td></tr>"
+                                                var row = "<tr><td>" + v.filename + "</td><td>"+ v.filesize +"</td><td>"+ v.filetime +"</td><td><button class='layui-btn layui-btn-normal layui-btn-sm' data-name='"+ v.filename +"'  data-path='"+ v.filepath +"' onclick='insertAttach(this)'>"+ "{%trans '选择' %}"+"</button></td></tr>"
                                                 // arr.push(row);
                                                 $("#attach_table tbody").append(row)
                                             });
@@ -250,7 +250,7 @@
                             editor.focus()
                         }else{
                             layer.closeAll("loading");
-                            layer.msg("粘贴图片失败！")
+                            layer.msg("{%trans '粘贴图片失败！' %}")
                         }
                     });
                 }; // data url!

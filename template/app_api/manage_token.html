@@ -41,13 +41,13 @@
             var token_val = document.getElementById("token");
             token_val.select();
             document.execCommand("Copy");
-            layer.msg("已复制！")
+            layer.msg("{% trans '已复制！' %}")
         };
         //生成Token
         generaToken = function(){
             layer.open({
                 type:1,
-                title:{%trans '重置Token'%},
+                title:'{%trans "重置Token"%}',
                 area:'300px;',
                 id:'delPro',//配置ID
                 content:'<div style="margin:10px;">{%trans "警告：此操作将重新为你的账户生成Token，旧Token将失效！" %}</div>',
@@ -62,7 +62,7 @@
                             //window.location.reload();
                             $('#token').val(r.data);
                             layer.close(index)
-                            layer.msg("生成成功！",{offset: 't'})
+                            layer.msg("{% trans '生成成功！' %}",{offset: 't'})
                         }else{
                             //生成失败，提示
                             //console.log(r)

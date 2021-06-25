@@ -36,11 +36,11 @@
         {{d.name}}
         {{#if (d.role == 0) { }}
         {{# }else if(d.role == 1){ }}
-        <span  tooltip={% trans "私密" %} placement="right"><i class="layui-icon layui-icon-password"></i></span>
+        <span  tooltip='{% trans "私密" %}' placement="right"><i class="layui-icon layui-icon-password"></i></span>
         {{# }else if(d.role == 2){ }}
-        <span  tooltip={% trans "指定用户" %} placement="right"><i class="layui-icon layui-icon-user"></i></span>
+        <span  tooltip='{% trans "指定用户" %}' placement="right"><i class="layui-icon layui-icon-user"></i></span>
         {{# }else if(d.role == 3){ }}
-        <span  tooltip={% trans "访问码" %} placement="right"><i class="layui-icon layui-icon-key"></i></span>
+        <span  tooltip='{% trans "访问码" %}' placement="right"><i class="layui-icon layui-icon-key"></i></span>
         {{# } }}
     </a>
     {% endverbatim %}
@@ -49,9 +49,9 @@
 <!-- 单个文集操作 -->
 <script type="text/html" id="project-bar">
     {% verbatim %}
-    <a href="/manage_pro_doc_sort/{{d.id}}/" title={% trans "排序文档" %} class="pear-btn pear-btn-sm" lay-event="sort"><i class="layui-icon layui-icon-cols"></i></a>
-    <a href="/modify_pro/?pro_id={{d.id}}" title={% trans "修改文集配置" %} class="pear-btn pear-btn-sm"><i class="layui-icon layui-icon-set"></i></a>
-    <button class="pear-btn pear-btn-danger pear-btn-sm" title={% trans "删除文集" %} lay-event="remove"><i class="layui-icon layui-icon-delete"></i></button>
+    <a href="/manage_pro_doc_sort/{{d.id}}/" title='{% trans "排序文档" %}' class="pear-btn pear-btn-sm" lay-event="sort"><i class="layui-icon layui-icon-cols"></i></a>
+    <a href="/modify_pro/?pro_id={{d.id}}" title='{% trans "修改文集配置" %}' class="pear-btn pear-btn-sm"><i class="layui-icon layui-icon-set"></i></a>
+    <button class="pear-btn pear-btn-danger pear-btn-sm" title='{% trans "删除文集" %}' lay-event="remove"><i class="layui-icon layui-icon-delete"></i></button>
     {% endverbatim %}
 </script>
 
@@ -73,7 +73,7 @@
 <!-- 协作人数 -->
 <script type="text/html" id="colla-cnt">
     {% verbatim %}
-    <span>{{d.colla_total}}</span> <a href="/manage_project_colla/{{d.id}}/"  title={% trans "管理文集协作" %}><i class="layui-icon layui-icon-set"></i></a>
+    <span>{{d.colla_total}}</span> <a href="/manage_project_colla/{{d.id}}/"  title='{% trans "管理文集协作" %}'><i class="layui-icon layui-icon-set"></i></a>
     {% endverbatim %}
 </script>
 
@@ -151,7 +151,7 @@
                 title:'{% trans "新建文集" %}',
                 area:'300px;',
                 id:'createPro',//配置ID
-                content:'<div style="padding: 20px;"><input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder={% trans "输入文集名" %} required  lay-verify="required"><textarea name="desc" id="desc" placeholder={% trans "输入文集简介" %} class="layui-textarea"></textarea></div>',
+                content:'<div style="padding: 20px;"><input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder="{% trans "输入文集名" %}" required  lay-verify="required"><textarea name="desc" id="desc" placeholder="{% trans "输入文集简介" %}" class="layui-textarea"></textarea></div>',
                 btn:['{% trans "确定" %}','{% trans "取消" %}'], //添加按钮
                 btnAlign:'c', //按钮居中
                 yes:function (index,layero) {
@@ -182,7 +182,7 @@
                 title:'{% trans "修改文集" %}',
                 area:'300px;',
                 id:'modifyPro',//配置ID
-                content:'<div style="padding: 20px;"><input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder={% trans "输入文集名" %} required  lay-verify="required" value="'+pro_name+'"><textarea name="desc" id="desc" placeholder={% trans "输入文集简介" %} class="layui-textarea">'+pro_intro+'</textarea></div>',
+                content:'<div style="padding: 20px;"><input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder={% trans "输入文集名" %} required  lay-verify="required" value="'+pro_name+'"><textarea name="desc" id="desc" placeholder="{% trans "输入文集简介" %}" class="layui-textarea">'+pro_intro+'</textarea></div>',
                 btn:['{% trans "确定" %}','{% trans "取消" %}'], //添加按钮
                 btnAlign:'c', //按钮居中
                 yes:function (index,layero) {
@@ -240,7 +240,7 @@
                             }
                         })
                     }else{
-                        layer.msg("输入错误！")
+                        layer.msg("{%trans '输入错误！' %}")
                     }
                 },
             });
@@ -296,7 +296,7 @@
                             }
                         })
                     }else{
-                        layer.msg("输入错误！")
+                        layer.msg("{%trans '输入错误！' %}")
                     }
                 }
             });

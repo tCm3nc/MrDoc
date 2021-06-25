@@ -37,14 +37,14 @@
     var layer = layui.layer;
     // 手机屏幕上默认最小化目录
     if(window.outerWidth < 1300){
-        console.log('最小化目录');
+        console.log("{%trans '最小化目录' %}");
         // setTimeout(function(){
         $(".sidebar").toggleClass("doc-toc-hide");
         // },300)
     }
     // 切换文档目录显示与否
     $(".tocMenu").click(function() {
-        console.log("隐藏文档目录")
+        console.log("{%trans '隐藏文档目录' %}")
         $(".sidebar").toggleClass("doc-toc-hide");
     });
     

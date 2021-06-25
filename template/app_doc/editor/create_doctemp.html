@@ -4,7 +4,7 @@
 {% block title %}{%trans "新建文档模板"%}{% endblock %}
 
 {% block head_toolbar %}
-    <a class="btn pull-left js-toolbar-action" aria-label="" href="javascript:void(0);" title={%trans "切换侧边栏"%}>
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="javascript:void(0);" title='{%trans "切换侧边栏"%}'>
         <i class="fa fa-align-justify"></i>
     </a>
     <a class="btn pull-left" aria-label="" href="{% url 'create_doc' %}?pid={{project.id}}" target="_blank">
@@ -42,7 +42,7 @@
                 <div class="layui-card-header">{%trans "现有模板" %}</div>
                 <div class="layui-card-body">
                     {% for temp in doctemps %}
-                        <li><a href="{% url 'modify_doctemp' temp.id %}" target="_blank" title={%trans "点击查看修改《{{temp.name}}》的内容" %}><i class="fa fa-file"></i> {{temp.name}}</a></li>
+                        <li><a href="{% url 'modify_doctemp' temp.id %}" target="_blank" title='{%trans "点击查看修改《{{temp.name}}》的内容" %}'><i class="fa fa-file"></i> {{temp.name}}</a></li>
                     {% endfor %}
                 </div>
             </div>
@@ -55,7 +55,7 @@
     <div class="create-doc-form">
         <div class="layui-form" style="padding-bottom:10px;">
             <div class="layui-input-block" style="margin-left:0px;">
-              <input type="text" name="doc-name" id="doctemp-name" required lay-verify="required" placeholder={%trans "请输入模板标题" %} autocomplete="off" class="layui-input">
+              <input type="text" name="doc-name" id="doctemp-name" required lay-verify="required" placeholder='{%trans "请输入模板标题" %}' autocomplete="off" class="layui-input">
             </div>
         </div>
     </div>

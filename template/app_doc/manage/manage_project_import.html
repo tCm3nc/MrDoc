@@ -103,7 +103,7 @@
             // 打开排序弹出框
             var editor_import = layer.open({
                 type:1,
-                title:{%trans "编辑导入的文集" %},
+                title:'{%trans "编辑导入的文集" %}',
                 area:['700px','400px'],
                 content:$("#import-project-sort"),
                 btn:['{%trans "保存文档" %}','{%trans "发布文档" %}'],
@@ -127,7 +127,7 @@
                             })
                             
                         }else{
-                            layer.msg("修改导入文集出错")
+                            layer.msg("{%trans '修改导入文集出错' %}")
                         }
                     });
                 },
@@ -145,12 +145,12 @@
                     console.log(sort_data)
                     $.post('{% url "project_doc_sort" %}',sort_data,function(r){
                         if(r.status){
-                            layer.msg("完成文集导入",function(){
+                            layer.msg("{%trans '完成文集导入' %}",function(){
                                 layer.close(index)
                                 // window.location.href = "{% url 'manage_project' %}"
                             })
                         }else{
-                            layer.msg("修改导入文集出错")
+                            layer.msg("{%trans '修改导入文集出错' %}")
                         }
                     });
                 },
@@ -161,7 +161,7 @@
         error: function(){
             //请求异常回调
             layer.closeAll('loading'); //关闭loading
-            layer.msg("文件上传出错")
+            layer.msg("{%trans '文件上传出错' %}")
         }
     });
     // 上传语雀知识库
@@ -247,17 +247,17 @@
 </style>
 <div id="import-project-sort" style="display: none;margin: 10px;" class="layui-form">
     <div class="layui-row" style="padding-left: 14px;padding-bottom: 10px;">
-        <input class="layui-input" placeholder={%trans "请输入文集名称" %} name="project-name">
+        <input class="layui-input" placeholder='{%trans "请输入文集名称" %}' name="project-name">
     </div>
     <div class="layui-row" style="padding-left: 14px;padding-bottom: 10px;">
-        <input class="layui-input" placeholder={%trans "请输入文集简介" %} name="project-desc">
+        <input class="layui-input" placeholder='{%trans "请输入文集简介" %}' name="project-desc">
     </div>
     <div class="layui-row" style="">
         <div class="layui-form-item">
             <label class="layui-form-label" style="width: auto;">{%trans "文集状态" %}</label>
             <div class="layui-input-block">
-                <input type="radio" name="role" value="1" title={%trans "私密" %} checked>
-                <input type="radio" name="role" value="0" title={%trans "公开" %}>
+                <input type="radio" name="role" value="1" title='{%trans "私密" %}' checked>
+                <input type="radio" name="role" value="0" title='{%trans "公开" %}'>
             </div>
           </div>
     </div>

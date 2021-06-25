@@ -57,7 +57,7 @@
                     <div class="layui-form-item">
                         <label class="layui-form-label">{%trans "文集水印"%}</label>
                         <div class="layui-input-block">
-                            <input type="checkbox" name="is_watermark" id="is_watermark" lay-skin="switch" lay-text={%trans "开启|关闭"%} {% if pro.is_watermark %}checked{% endif %}>
+                            <input type="checkbox" name="is_watermark" id="is_watermark" lay-skin="switch" lay-text='{%trans "开启|关闭"%}' {% if pro.is_watermark %}checked{% endif %}>
                         </div>
                     </div>
                     <div class="layui-form-item">
@@ -359,7 +359,7 @@
     delProject = function(pro_id){
         layer.open({
             type:1,
-            title:{%trans "删除文集" %},
+            title:'{%trans "删除文集" %}',
             area:'300px;',
             id:'delPro',//配置ID
             content:'<div style="margin-left:10px;">{%trans "警告：此操作将删除文集及文集下所有文档！" %}</div>',
@@ -374,7 +374,7 @@
                     layer.closeAll('loading'); //关闭loading
                     if(r.status){
                         //删除成功
-                        layer.msg('删除成功，即将返回文集列表……',function(){
+                        layer.msg('{%trans "删除成功，即将返回文集列表……" %}',function(){
                             window.location.href = "{% url 'manage_project' %}"
                         })
                         //layer.close(index)
@@ -394,7 +394,7 @@
     reportMd = function(pro_id){
         layer.open({
             type:1,
-            title:{%trans "导出文集" %},
+            title:'{%trans "导出文集" %}',
             area:"300px",
             id:"reportMd",
             content:'<div style="margin-left:10px;">{%trans "将此文集下所有文档导出为MD文件并打包？" %}</div>',
@@ -428,7 +428,7 @@
     downloadMd = function(download_link){
         layer.open({
             type:1,
-            title:{%trans "下载导出文档" %},
+            title:'{%trans "下载导出文档" %}',
             area:"300px",
             id:"downloadMd",
             content:'<p style="text-align:center;color:red;">{%trans "请尽快下载，避免失效！"%} </p><br><a class="layui-btn layui-btn-fluid download-md-link" href="'+ download_link + '" download="mrdoc_report_md.zip" >{%trans "点击下载文件"%} (zip)</a>',
@@ -463,13 +463,13 @@
     var editor = editormd("editor-md", {
         width       :   "100%",
         height      :   editormd_height,
-        placeholder :   {%trans "道友，开始吧……" %},
+        placeholder :   '{%trans "道友，开始吧……" %}',
         toolbarIcons : function() {
             return editormd_toobar
         },
         //自定义工具栏添加楷体按钮
         toolbarIconTexts : {
-            kaiSpan : {%trans "楷" %},
+            kaiSpan : '{%trans "楷" %}',
         },
         //自定义工具栏添加图片按钮
         toolbarIconsClass : {
@@ -519,13 +519,13 @@
         //设置语言
         lang : {
             toolbar : {
-                kaiSpan : {%trans "添加楷体span标签" %},
-                imgUpload:{%trans "添加图片到文档" %},
-                attachment:{%trans "添加附件" %},
-                htmltable:{%trans "添加表格" %},
-                mindmap:{%trans "添加思维导图" %},
-                echart:{%trans "添加Echarts图表" %},
-                multimedia:{%trans "添加音频、视频" %},
+                kaiSpan : '{%trans "添加楷体span标签" %}',
+                imgUpload:'{%trans "添加图片到文档" %}',
+                attachment:'{%trans "添加附件" %}',
+                htmltable:'{%trans "添加表格" %}',
+                mindmap:'{%trans "添加思维导图" %}',
+                echart:'{%trans "添加Echarts图表" %}',
+                multimedia:'{%trans "添加音频、视频" %}',
             }
         },
         //配置项
@@ -584,7 +584,7 @@
                                 editor.focus()
                             }else{
                                 layer.closeAll("loading");
-                                layer.msg("粘贴图片失败！")
+                                layer.msg("{%trans '粘贴图片失败！' %}")
                             }
                         },
                         error:function(){

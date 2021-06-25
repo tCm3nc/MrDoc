@@ -5,7 +5,7 @@
 
 {% block head_toolbar %}
     <ul class="layui-nav layui-form">
-        <a class="btn pull-left js-toolbar-action" aria-label="" href="javascript:void(0);" title={%trans "切换侧边栏" %}>
+        <a class="btn pull-left js-toolbar-action" aria-label="" href="javascript:void(0);" title='{%trans "切换侧边栏" %}'>
             <i class="fa fa-align-justify"></i>
         </a>
         <li class="layui-nav-item mrdoc-import-doc-item">
@@ -13,8 +13,8 @@
             <dl class="layui-nav-child mrdoc-import-doc-child">
                 <dd><a href="javascript:void(0);" id="doc-tag-set">{%trans "文档标签"%}</a></dd>
                 <hr>
-                <dd><input type="checkbox" name="open-children" title={%trans "展开下级目录" %} lay-skin="primary"></dd>
-                <dd><input type="checkbox" name="show-children" title={%trans "显示下级文档" %} lay-skin="primary"></dd>
+                <dd><input type="checkbox" name="open-children" title='{%trans "展开下级目录" %}' lay-skin="primary"></dd>
+                <dd><input type="checkbox" name="show-children" title='{%trans "显示下级文档" %}' lay-skin="primary"></dd>
             </dl>
         </li>
         
@@ -64,8 +64,8 @@
             </dl>
         </li>
 
-        <button class="layui-btn layui-btn-sm layui-btn-normal layui-btn-radius pull-right" style="margin-top:10px;" title={%trans "保存文档为发布状态" %} id="pub_doc">{%trans "发布" %}</button>
-        <button class="layui-btn layui-btn-sm layui-btn-primary layui-btn-radius pull-right" style="margin-top:10px;" title={%trans "保存文档为草稿状态" %} id="save_doc">{%trans "存为草稿" %}</button>
+        <button class="layui-btn layui-btn-sm layui-btn-normal layui-btn-radius pull-right" style="margin-top:10px;" title='{%trans "保存文档为发布状态" %}' id="pub_doc">{%trans "发布" %}</button>
+        <button class="layui-btn layui-btn-sm layui-btn-primary layui-btn-radius pull-right" style="margin-top:10px;" title='{%trans "保存文档为草稿状态" %}' id="save_doc">{%trans "存为草稿" %}</button>
 
     </ul>
 
@@ -82,7 +82,7 @@
                     <option value="">{%trans "请选择一个文集（必选）"%}</option>
                     <option value="-1">{%trans "新建文集" %}</option>
                     <!-- 自己的文集 -->
-                    <optgroup label={%trans "自有文集" %} id="self-project">
+                    <optgroup label='{%trans "自有文集" %}' id="self-project">
                     {% for p in project_list %}
                         {% if p.role == 1 %}
                         <option value="{{ p.id }}">[{%trans "私密" %}]《{{ p.name }}》</option>
@@ -97,7 +97,7 @@
                     </optgroup>
                     <!-- 协作的文集 -->
                     {% if colla_project_list.count > 0 %}
-                    <optgroup label={%trans "协作文集" %}>
+                    <optgroup label='{%trans "协作文集" %}'>
                     {% for p in colla_project_list %}
                             <option value="{{ p.project.id }}">[{%trans "协作" %}]《{{ p.project.name }}》</option>
                     {% endfor %}
@@ -115,7 +115,7 @@
                     <input type="text" id="parent-doc" hidden> 
                 </div>
                 <div class="layui-col-md12">
-                    <input type="number" class="layui-input" placeholder={%trans "输入文档排序值，默认99" %} id="sort">
+                    <input type="number" class="layui-input" placeholder='{%trans "输入文档排序值，默认99" %}' id="sort">
                 </div>    
             </div>
 
@@ -132,7 +132,7 @@
             <!-- 标题 -->
             <div style="padding-bottom:0px;">
                 <div class="layui-input-block" style="margin-left:0px;">
-                    <input type="text" name="doc-name" id="doc-name" required lay-verify="required" placeholder={% trans "请输入文档标题……" %} autocomplete="off" class="layui-input">
+                    <input type="text" name="doc-name" id="doc-name" required lay-verify="required" placeholder="{% trans '请输入文档标题……' %}" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <br/>
@@ -161,14 +161,14 @@
             //console.log(data.value)
             layer.open({
                     type:0,
-                    title:{%trans "切换编辑器" %},
+                    title:'{%trans "切换编辑器" %}',
                     area:'300px;',
                     id:'change_editor',//配置ID
-                    content: {%trans "为确保格式兼容，切换编辑器将导致未保存内容丢失！" %},
+                    content: '{%trans "为确保格式兼容，切换编辑器将导致未保存内容丢失！" %}',
                     btn:['{%trans "确定切换" %}','{%trans "取消" %}'], //添加按钮
                     btnAlign:'c', //按钮居中
                     yes:function (index,layero) {
-                        eurl = "{% url 'create_doc' %}?pid={{pid}}&eid=" + data.value.toString();                        
+                        eurl = "{% url 'create_doc' %}?pid={{pid}}&eid=" + data.value.toString();
                         $(location).attr('href', eurl);
                     },
                     btn2: function(index, layero){
@@ -180,7 +180,7 @@
         var upload = layui.upload;
         //选择文集
         form.on('select(project)', function(data){
-            console.log('选择文集：',data.value); //得到被选中的值
+            console.log('{% trans "选择文集：" %}',data.value); //得到被选中的值
             if(data.value == -1){ //新建文集
                 layer.open({
                     type:1,
@@ -198,7 +198,7 @@
                         }
                         $.post("{% url 'create_project' %}",data,function(r){
                             if(r.status){
-                                var role_str = r.data.role == 0 ? {%trans "公开"%}: {%trans "私密" %}
+                                var role_str = r.data.role == 0 ? '{%trans "公开"%}': '{%trans "私密" %}'
                                 //创建成功，更新文集select
                                 $("#self-project").append("<option value="+r.data.id+">["+role_str+"]《"+r.data.name+"》</option>");
                                 $("#project").val(r.data.id);
@@ -221,8 +221,8 @@
                             onlyIconControl:true,
                             data:r.data,
                             text: {
-                                defaultNodeName: {%trans "未命名" %} //节点默认名称
-                                ,none: {% trans "文集暂无文档" %} //数据为空时的提示文本
+                                defaultNodeName: '{%trans "未命名" %}' //节点默认名称
+                                ,none: '{% trans "文集暂无文档" %}' //数据为空时的提示文本
                                 },
                             click: function(obj){
                                 //console.log(obj.data); //得到当前点击的节点数据
@@ -234,20 +234,20 @@
                                         var $me = $(this)
                                         if($me.data('id') == obj.data.id){
                                             // console.log('点击了')
-                                            layer.msg("你选择了上级文档："+obj.data.title)
+                                            layer.msg('{% trans "你选择了上级文档："%}'+obj.data.title)
                                             $me.find('span.layui-tree-txt').first().addClass('selected-parent-doc')
                                         }else{
                                             $me.find('span.layui-tree-txt').first().removeClass('selected-parent-doc')
                                         }
                                     });
                                 }else{
-                                    layer.msg("第三级文档不能作为上级文档")
+                                    layer.msg('{% trans "第三级文档不能作为上级文档" %}')
                                 }
                                 
                             }
                         });
                     }else{
-                        layer.msg("获取下级文档失败！")
+                        layer.msg('{% trans "获取下级文档失败！" %}')
                     }
                 });
             }
@@ -294,12 +294,12 @@
             }
             // console.log(data)
             if(data.doc_name == ""){
-                layer.msg('请输入文档标题！');
+                layer.msg('{% trans "请输入文档标题！" %}');
                 $('button.layui-btn').attr("disabled",false);
                 $('button.layui-btn').removeClass('layui-btn-disabled');
             }
             else if(data.project == ""){
-                layer.msg('%{trans "请选择文集！"%}');
+                layer.msg('{%trans "请选择文集！"%}');
                 $('button.layui-btn').attr("disabled",false);
                 $('button.layui-btn').removeClass('layui-btn-disabled');
             }
@@ -313,13 +313,13 @@
                         layer.closeAll("loading"); //关闭加载层
                         window.localStorage.removeItem('mrdoc_doc_cache') // 清空文档缓存
                         if(status === 1){
-                            layer.msg('发布成功',{time:1000},function(){
+                            layer.msg('{% trans "发布成功" %}',{time:1000},function(){
                                 md_changed = false;
                                 //跳转到文档修改
                                 window.location.href = "/modify_doc/"+r.data.doc+"/";
                             });
                         }else{
-                            layer.msg('保存成功',{time:1000},function(){
+                            layer.msg('{% trans "保存成功" %}',{time:1000},function(){
                                 md_changed = false;
                                 //跳转到文档修改
                                 window.location.href = "/modify_doc/"+r.data.doc+"/";
@@ -328,7 +328,7 @@
                     }else{
                         //创建失败
                         layer.closeAll("loading"); //关闭加载层
-                        layer.msg('发布文档失败:'+r.data);
+                        layer.msg('{% trans "发布文档失败:" %}'+r.data);
                         //恢复按钮状态
                         $('button.layui-btn').attr("disabled",false);
                         $('button.layui-btn').removeClass('layui-btn-disabled');
@@ -361,7 +361,7 @@
                 var $me = $(this)
                 $me.removeClass('selected-parent-doc')
             });
-            layer.msg("你取消了当前文档的上级文档")
+            layer.msg('{% trans "你取消了当前文档的上级文档" %}')
         });
         //插入模板
         insertTemp = function(doctemp_id){
@@ -438,7 +438,7 @@
                             data:exportJson.sheets,
                             title:exportJson.info.name,
                             userInfo:exportJson.info.name.creator,
-                            //lang: 'zh',
+                            // lang: 'zh',
                             showGridLines:true,
                             allowEdit:true,
                             showinfobar: false, // 是否显示顶部信息栏

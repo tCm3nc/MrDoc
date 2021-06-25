@@ -65,24 +65,24 @@
 </div>
 
 <div class="layui-row layui-col-space20" style="padding-left: 20px;">
-    <span tooltip={%trans "文档创建人" %}>
+    <span tooltip='{%trans "文档创建人" %}'>
         <i class="fa fa-user"></i> {{ doc.create_user.username }}
     </span>
     
-    <span tooltip={%trans "所属文集" %} >
+    <span tooltip='{%trans "所属文集" %}' >
         <i class="fa fa-book"></i> <a href="{% url 'pro_index' project.id %}">{{project.name}}</a>
     </span>
 
-    <span tooltip={%trans "文档更新时间" %}>
+    <span tooltip='{%trans "文档更新时间" %}'>
         <i class="fa fa-clock-o"></i> {{ doc.modify_time }}
     </span>
 
-    <button id="share" class="doc-bottom-btn" tooltip={%trans "分享本文档" %}>
+    <button id="share" class="doc-bottom-btn" tooltip='{%trans "分享本文档" %}'>
         <i class="fa fa-share-alt" ></i> {% trans "分享" %}
     </button>
 
     {% if request.user == doc.create_user or request.user.is_superuser %}
-    <button class="doc-bottom-btn" tooltip={%trans "下载文档Markdown"%} id="download_doc">
+    <button class="doc-bottom-btn" tooltip='{%trans "下载文档Markdown"%}' id="download_doc">
         <i class="fa fa-download"></i> {% trans "下载" %}
     </button>
     {% endif %}
@@ -297,9 +297,9 @@
         target.focus();
         target.setSelectionRange(0, target.value.length);
         document.execCommand("copy");
-        layer.msg({%trans '链接地址已复制' %}, {
+        layer.msg("{%trans '链接地址已复制' %}", {
             time: 2000, //2s后自动关闭
-            btn: {%trans '好的'%},
+            btn: "{%trans '好的'%}",
             btnAlign: 'c'
         });
     })
@@ -330,7 +330,7 @@
     form.on('switch(share-switch)', function(data){
         console.log(data.elem.checked); //开关是否开启，true或者false
         if(data.elem.checked){ // 开启
-            console.log("开启分享")
+            console.log("{%trans '开启分享' %}")
             $("#share-type").css('display',"block");
             $("#share-expire").css('display',"block");
             $("#share-link").css("display","block");
@@ -343,8 +343,8 @@
             share_data['is_enable'] = true
             updateDocShare(share_data);
         }else{
-            console.log("关闭分享")
-            layer.msg("{% trans '关闭分享' %}",{offset: 't'})
+            console.log("{%trans '关闭分享' %}")
+            layer.msg({% trans '关闭分享' %},{offset: 't'})
             $("#share-type").css('display',"none")
             $("#share-expire").css('display',"none")
             $("#share_value_item").css("display","none");

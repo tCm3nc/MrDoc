@@ -145,7 +145,7 @@
                                 {% if p.is_top %}<i class="iconfont mrdoc-icon-totop" title="置顶文集" style="color: red;font-size: 12px;"></i>{% endif %}
                                 <svg class="icon" aria-hidden="true"><use xlink:href="#{{p.icon}}"></use></svg> {{ p.name }}&nbsp;&nbsp;<span class="layui-badge-rim">{{p.id|get_doc_count}}</span>
                                 {% if p.create_user == request.user %}
-                                <a class="index-add-link" href="{% url 'create_doc' %}?pid={{p.id}}" target="_blank" title={%trans "新建此文档的下级文档" %}>
+                                <a class="index-add-link" href="{% url 'create_doc' %}?pid={{p.id}}" target="_blank" title='{%trans "新建此文档的下级文档" %}'>
                                     <i class="layui-icon layui-icon-add-1"></i>
                                 </a>
                                 {% endif %}
@@ -155,7 +155,7 @@
                                 {% if p.is_top %}<i class="iconfont mrdoc-icon-totop" title="置顶文集" style="color: red;font-size: 12px;"></i>{% endif %}
                                 <svg class="icon" aria-hidden="true"><use xlink:href="#mrdoc-icon-pro-2"></use></svg> {{ p.name }}&nbsp;&nbsp;<span class="layui-badge-rim">{{p.id|get_doc_count}}</span>
                                 {% if p.create_user == request.user %}
-                                <a class="index-add-link" href="{% url 'create_doc' %}?pid={{p.id}}" target="_blank" title={%trans "新建此文档的下级文档" %}>
+                                <a class="index-add-link" href="{% url 'create_doc' %}?pid={{p.id}}" target="_blank" title='{%trans "新建此文档的下级文档" %}'>
                                     <i class="layui-icon layui-icon-add-1"></i>
                                 </a>
                                 {% endif %}
@@ -240,20 +240,20 @@
         <div class="layui-form-item">
             <label class="layui-form-label">{%trans "名称" %}</label>
             <div class="layui-input-block">
-                <input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder={%trans "输入文集名" %} required  lay-verify="required">
+                <input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder='{%trans "输入文集名" %}' required  lay-verify="required">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">{% trans "简介" %}</label>
             <div class="layui-input-block">
-                <textarea name="desc" id="desc" placeholder={%trans "输入文集简介，不超过100个字，超出将被截断" %} maxlength="100" class="layui-textarea"></textarea>
+                <textarea name="desc" id="desc" placeholder='{%trans "输入文集简介，不超过100个字，超出将被截断" %}' maxlength="100" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">{% trans "权限" %}</label>
             <div class="layui-input-block">
-                <input type="radio" name="project-role" value="0" title={%trans "公开" %} checked>
-                <input type="radio" name="project-role" value="1" title={%trans "私密" %}>
+                <input type="radio" name="project-role" value="0" title='{%trans "公开" %}' checked>
+                <input type="radio" name="project-role" value="1" title='{%trans "私密" %}'>
             </div>
         </div>
         <div style="color:red;font-size:12px;">{% trans "*在可个人中心对文集权限进行进一步控制" %}</div>
@@ -375,7 +375,7 @@
                         },
                         error:function(){
                             layer.closeAll('loading')
-                            layer.msg("创建异常")
+                            layer.msg("{% trans '创建异常' %}")
                         }
                     })
                 },
@@ -403,7 +403,7 @@
                         },
                         error:function(){
                             layer.closeAll('loading')
-                            layer.msg("创建异常")
+                            layer.msg("{% trans '创建异常' %}")
                         }
                     })
                 },
@@ -416,7 +416,7 @@
                 title:'{% trans "修改文集" %}',
                 area:'300px;',
                 id:'createPro',//配置ID
-                content:'<div style="padding: 20px;"><input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder={%trans "输入文集名" %} required  lay-verify="required"><textarea name="desc" id="desc" placeholder={%trans "输入文集简介" %} class="layui-textarea"></textarea></div>',
+                content:'<div style="padding: 20px;"><input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder="{%trans "输入文集名" %}" required  lay-verify="required"><textarea name="desc" id="desc" placeholder="{%trans "输入文集简介" %}" class="layui-textarea"></textarea></div>',
                 btn:['{% trans "确定" %}','{% trans "取消" %}'], //添加按钮
                 btnAlign:'c', //按钮居中
                 yes:function (index,layero) {
@@ -447,7 +447,7 @@
                 title:'{% trans "修改密码" %}',
                 area:'300px;',
                 id:'changePwd',
-                content:'<div style="padding:10px 0 0 20px;"> {%trans "修改用户" %}[' + username + '] {%trans "的密码" %}：</div><div style="padding: 20px;"><input class="layui-input" type="password" id="newPwd1" style="margin-bottom:10px;" placeholder={% trans "输入新密码" %} required  lay-verify="required"><input class="layui-input" type="password" id="newPwd2" placeholder={%trans "再次确认新密码" %} required  lay-verify="required"></div>',
+                content:'<div style="padding:10px 0 0 20px;"> {%trans "修改用户" %}[' + username + '] {%trans "的密码" %}：</div><div style="padding: 20px;"><input class="layui-input" type="password" id="newPwd1" style="margin-bottom:10px;" placeholder="{% trans "输入新密码" %}" required  lay-verify="required"><input class="layui-input" type="password" id="newPwd2" placeholder="{%trans "再次确认新密码" %}" required  lay-verify="required"></div>',
                 btn:['{% trans "确认修改" %}','{% trans "取消" %}'],
                 yes:function (index,layero) {
                     layer.load(1);

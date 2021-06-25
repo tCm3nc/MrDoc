@@ -68,18 +68,18 @@
                 <span style='color:red;margin-bottom: 10px;'>{{ errormsg }}</span>
                 <div class="layui-form-item">
                     <div class="layui-input-inline login-input">
-                      <input type="text" name="username" required  lay-verify="required" placeholder={% trans "请输入用户名" %} autocomplete="off" class="layui-input" value="{{username}}">
+                      <input type="text" name="username" required  lay-verify="required" placeholder='{% trans "请输入用户名" %}' autocomplete="off" class="layui-input" value="{{username}}">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-inline login-input">
-                      <input type="password" name="password" required  lay-verify="required" placeholder={% trans "请输入密码" %} autocomplete="off" class="layui-input" value="{{pwd}}">
+                      <input type="password" name="password" required  lay-verify="required" placeholder='{% trans "请输入密码" %}' autocomplete="off" class="layui-input" value="{{pwd}}">
                     </div>
                 </div>
                 {% if enable_login_check_code == 'on' %}
                 <div class="layui-form-item">
                     <div class="layui-input-inline">
-                        <input type="text" class="layui-input" placeholder={% trans "请输入验证码" %} name="check_code" autocomplete="off">
+                        <input type="text" class="layui-input" placeholder='{% trans "请输入验证码" %}' name="check_code" autocomplete="off">
                             <img src="{% url 'check_code' %}" onclick="ChangeCode(this);">
                             <script>
                                 // 点击一次,更改图片内容,

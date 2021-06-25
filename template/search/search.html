@@ -34,7 +34,7 @@
             <form method="get" action="">
             <div class="layui-input-inline">
                 <input class="layui-input mrdoc-search-input" 
-                    placeholder={%trans "搜索文集或文档" %} name="q" style="width: 500px;border-radius:5px" value="{{query}}"/>
+                    placeholder='{%trans "搜索文集或文档" %}' name="q" style="width: 500px;border-radius:5px" value="{{query}}"/>
                 <input name="type" value="{{search_type}}" hidden>
                 <button type="submit" 
                     style="position: absolute;top:12px;right: 8px;border: none;background-color: white;">
@@ -113,7 +113,7 @@
             <div class="layui-inline">
                 <div class="layui-input-inline">
                     <input class="layui-input mrdoc-search-input" 
-                    placeholder={%trans "搜索文集或文档" %} name="q" style="border-radius:5px" value="{{kw}}"/>
+                    placeholder='{%trans "搜索文集或文档" %}' name="q" style="border-radius:5px" value="{{kw}}"/>
                     <input name="type" value="{{search_type}}" hidden>
                 </div>
                 <div class="layui-input-inline">
@@ -250,7 +250,7 @@
             footerTop = ($(window).scrollTop() + $(window).height() - footerHeight - 35)+"px";
             //如果页面内容高度小于屏幕高度，div#footer将绝对定位到屏幕底部，否则div#footer保留它的正常静态定位
             if(($(".layui-header").height() + $(".index-control").height() + $(".project-list-content").height() + $(".project-list-page").height() + 16) < $(window).height()) {
-                console.log("页脚置底")
+                console.log("{%trans '页脚置底' %}")
                 $(".layui-footer").css({ position: "absolute",left:"0" }).stop().css({top:footerTop});
             }else{
                 $(".layui-footer").css({ position: ""})

@@ -31,13 +31,13 @@
     var editor = editormd("editor-md", {
         width       :   "100%",
         height      :   editormd_height,
-        placeholder :   {%trans '道友，开始吧……' %},
+        placeholder :   "{%trans '道友，开始吧……' %}",
         toolbarIcons : function() {
             return editormd_toobar
         },
         //自定义工具栏添加楷体按钮
         toolbarIconTexts : {
-            kaiSpan : {% trans "楷" %},
+            kaiSpan : '{% trans "楷" %}',
         },
         //自定义工具栏添加图片按钮
         toolbarIconsClass : {
@@ -76,7 +76,7 @@
                 });
                 layer.open({
                     type:'1',
-                    title:{%trans "添加图片" %},
+                    title:'{%trans "添加图片" %}',
                     area:['800px','600px'],
                     id:'uploadImg',//配置ID,
                     content:$('#upload-img'),
@@ -89,7 +89,7 @@
                 });
                 layer.open({
                     type:'1',
-                    title:{%trans "添加附件" %},
+                    title:'{%trans "添加附件" %}',
                     area:['800px','600px'],
                     id:'uploadAttach',//配置ID,
                     content:$('#upload-attach'),
@@ -117,7 +117,7 @@
                                 layer.closeAll("loading");//关闭加载提示
                             }else{
                                 layer.closeAll("loading");//关闭加载提示
-                                layer.msg("获取附件失败，请稍后重试！")
+                                layer.msg("{%trans '获取附件失败，请稍后重试！' %}")
                             }
                         })
 
@@ -132,10 +132,10 @@
                 layer.open({
                     type:1,
                     id:'addTable',
-                    title:{%trans "添加表格" %},
+                    title:'{%trans "添加表格" %}',
                     area:['600px','400px'],
                     content:$("#layer-table"),
-                    btn:[{%trans "确定" %}, {%trans "取消" %} ], //添加按钮
+                    btn:['{%trans "确定" %}', '{%trans "取消" %}'], //添加按钮
                     yes:function(index,layero){
                         var current_tab_id = $("#insert-table-div .layui-tab-title .layui-this").attr("lay-id");
                         console.log(current_tab_id)
@@ -151,7 +151,7 @@
                                 editor.insertValue("\n" + table_md);
                                 layer.close(index)
                             } catch (error) {
-                                layer.msg("请生成表格")
+                                layer.msg("{%trans '请生成表格' %}")
                             }
                         }
                         
@@ -185,7 +185,7 @@
             multimedia:function(cm,icon,cursor,selection){
                 layer.open({
                     type:'1',
-                    title:{%trans "添加音视频外链" %},
+                    title:'{%trans "添加音视频外链" %}',
                     area:['800px','600px'],
                     id:'insertMultiMedia',//配置ID,
                     content:$('#insertMultimedia'),
@@ -195,13 +195,13 @@
         //设置语言
         lang : {
             toolbar : {
-                kaiSpan : {%trans "添加楷体span标签" %},
-                imgUpload:{%trans "添加图片到文档" %},
-                attachment:{%trans "添加附件" %},
-                htmltable:{%trans "添加表格" %},
-                mindmap:{%trans "添加思维导图" %},
-                echart:{%trans "添加Echarts图表" %},
-                multimedia:{%trans "添加音频、视频" %},
+                kaiSpan : '{%trans "添加楷体span标签" %}',
+                imgUpload:'{%trans "添加图片到文档" %}',
+                attachment:'{%trans "添加附件" %}',
+                htmltable:'{%trans "添加表格" %}',
+                mindmap:'{%trans "添加思维导图" %}',
+                echart:'{%trans "添加Echarts图表" %}',
+                multimedia:'{%trans "添加音频、视频" %}',
             }
         },
         //配置项
@@ -263,7 +263,7 @@
                                 editor.focus()
                             }else{
                                 layer.closeAll("loading");
-                                layer.msg("粘贴图片失败！")
+                                layer.msg("{%trans '粘贴图片失败！' %}")
                             }
                         },
                         error:function(){

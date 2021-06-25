@@ -62,14 +62,14 @@
         <!-- 文档搜索 -->
         <form action="" method="get">
             <div id="doc-search-input">
-                <input type="text" name="kw" placeholder={%trans "输入并回车搜索" %} value="" class="layui-input doc-search-input">
+                <input type="text" name="kw" placeholder='{%trans "输入并回车搜索" %}' value="" class="layui-input doc-search-input">
             </div>
         </form>
         <!-- 文集名称 -->
         <div class="project-title">
             <i class="fa fa-tag"></i> {% trans "标签：" %}<a href="{% url 'tag_docs' tag.id %}">{{ tag.name }}
                 {% if project.role == 1 %}
-                    <i class="layui-icon layui-icon-password" title={%trans "私密文档" %}></i>
+                    <i class="layui-icon layui-icon-password" title='{%trans "私密文档" %}'></i>
                 {% endif %}
             </a>
         </div>
@@ -108,16 +108,16 @@
     <div class="doc-body">
         <!-- 文档导航 -->
         <div class="doc-header" role="navigation">
-            <a class="btn pull-left js-toolbar-action" aria-label="" href="javascript:void(0);" title={% trans "切换侧边栏" %}>
+            <a class="btn pull-left js-toolbar-action" aria-label="" href="javascript:void(0);" title='{% trans "切换侧边栏" %}'>
                 <i class="fa fa-align-justify"></i>
             </a>
-            <a class="btn pull-left font-small"  href="javascript:void(0);" title={%trans "缩小字体" %}>
+            <a class="btn pull-left font-small"  href="javascript:void(0);" title='{%trans "缩小字体" %}'>
                 <i class="fa fa-font">-</i>
             </a>
-            <a class="btn pull-left font-large"  href="javascript:void(0);" title={%trans "放大字体" %}>
+            <a class="btn pull-left font-large"  href="javascript:void(0);" title='{%trans "放大字体" %}'>
                 <i class="fa fa-font">+</i>
             </a>
-            <a class="btn pull-left font-switch" href="javascript:void(0);" title={%trans "切换字体类型" %}>
+            <a class="btn pull-left font-switch" href="javascript:void(0);" title='{%trans "切换字体类型" %}'>
                 <i class="fa fa-text-height"></i>
             </a>
             <!-- 顶部工具栏 -->
@@ -307,7 +307,7 @@
                 $('#project-toc').append(toc_str)
                 tagCurrentDoc();
             }else{
-                layer.msg("获取文集目录失败！")
+                layer.msg("{% trans '获取文集目录失败！' %}")
             }
         });
     };

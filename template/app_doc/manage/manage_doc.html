@@ -10,7 +10,7 @@
             <div class="layui-form-item">
               <label class="layui-form-label">{% trans "关键词" %}</label>
               <div class="layui-input-inline">
-                <input type="text" name="kw"  placeholder={%trans "请输入标题"%} autocomplete="off" class="layui-input">
+                <input type="text" name="kw"  placeholder='{%trans "请输入标题"%}' autocomplete="off" class="layui-input">
               </div>
               <button class="pear-btn pear-btn-primary pear-btn-sm" id="search">{% trans "搜索" %}</button>
             </div>
@@ -20,7 +20,7 @@
                 <select name="pro_id" lay-verify="required"  lay-filter="project" id="project">
                     <option value="">{% trans "按文集筛选" %}</option>
                     <!-- 自己的文集 -->
-                    <optgroup label={%trans "自有文集"%} id="self-project">
+                    <optgroup label='{%trans "自有文集"%}' id="self-project">
                     {% for p in project_list %}
                         {% if p.role == 1 %}
                         <option value="{{ p.id }}">[{%trans "私密"%}]《{{ p.name }}》</option>
@@ -35,7 +35,7 @@
                     </optgroup>
                     <!-- 协作的文集 -->
                     {% if colla_project_list.count > 0 %}
-                    <optgroup label={%trans "协作文集"%}>
+                    <optgroup label='{%trans "协作文集"%}'>
                     {% for p in colla_project_list %}
                             <option value="{{ p.project.id }}">[{%trans "协作"%}]《{{ p.project.name }}》</option>
                     {% endfor %}
@@ -47,9 +47,9 @@
             <div class="layui-form-item">
               <label class="layui-form-label">{% trans "文档状态" %}</label>
               <div class="layui-input-block">
-                <input type="radio" name="status" title={%trans "全部"%}({{all_cnt}}) value="-1" lay-skin="primary" checked lay-filter="doc_status">
-                <input type="radio" name="status" title={%trans "草稿"%}({{draft_doc_cnt}})  value="0"  lay-skin="primary" lay-filter="doc_status">
-                <input type="radio" name="status" title={%trans "已发布"%}({{published_doc_cnt}}) value="1" lay-skin="primary" lay-filter="doc_status">
+                <input type="radio" name="status" title='{%trans "全部"%}'({{all_cnt}}) value="-1" lay-skin="primary" checked lay-filter="doc_status">
+                <input type="radio" name="status" title='{%trans "草稿"%}'({{draft_doc_cnt}})  value="0"  lay-skin="primary" lay-filter="doc_status">
+                <input type="radio" name="status" title='{%trans "已发布"%}'({{published_doc_cnt}}) value="1" lay-skin="primary" lay-filter="doc_status">
               </div>
             </div>
         </div>
@@ -80,12 +80,12 @@
             <a href="/project-{{d.project_id}}/doc-{{d.id}}" target="_blank">{{d.name}}</a>
         {{# }else if(d.status == 0){ }}
             <span class="layui-badge-dot layui-bg-orange"></span>
-            <a href="/modify_doc/{{d.id}}/" target="_blank" title={%trans "修改文档：{{d.name}}"%}>{{ d.name }} </a>
+            <a href="/modify_doc/{{d.id}}/" target="_blank" title='{%trans "修改文档：{{d.name}}"%}'>{{ d.name }} </a>
         {{# } }}
         {{#if (d.editor_mode in [1,2,3]) { }}
-            <i class="layui-icon layui-icon-form" title={%trans "普通文档"%}</i>
+            <i class="layui-icon layui-icon-form" title='{%trans "普通文档"%}'</i>
         {{# }else if(d.editor_mode == 4){ }}
-            <i class="layui-icon layui-icon-table" title={%trans "表格文档"%}</i>
+            <i class="layui-icon layui-icon-table" title='{%trans "表格文档"%}'</i>
         {{# } }}
     {% endverbatim %}
 </script>
@@ -96,7 +96,7 @@
         {{#if (d.status == 1) { }}
             <span class="layui-badge-rim">{%trans "已发布"%}</span>
         {{# }else if(d.status == 0){ }}
-            <span class="layui-badge-rim" style="cursor: pointer;" onclick="fastPubDoc('{{d.id}}')" title={%trans "点击一键发布"%}>{%trans "草稿"%}</span>
+            <span class="layui-badge-rim" style="cursor: pointer;" onclick="fastPubDoc('{{d.id}}')" title='{%trans "点击一键发布"%}'>{%trans "草稿"%}</span>
         {{# } }}
     {% endverbatim %}
 </script>
@@ -138,7 +138,7 @@
 <script type="text/html" id="doc-bar">
     {% verbatim %}
     <a href="/manage_doc_history/{{d.id}}/" class="pear-btn pear-btn-sm"><i class="layui-icon layui-icon-log"></i></a>
-    <a href="/modify_doc/{{d.id}}/" title={%trans "修改文档" %} class="pear-btn pear-btn-sm" target="_blank"><i class="layui-icon layui-icon-edit"></i></a>
+    <a href="/modify_doc/{{d.id}}/" title='{%trans "修改文档" %}' class="pear-btn pear-btn-sm" target="_blank"><i class="layui-icon layui-icon-edit"></i></a>
     <button class="pear-btn pear-btn-danger pear-btn-sm" lay-event="remove"><i class="layui-icon layui-icon-delete"></i></button>
     {% endverbatim %}
 </script>
@@ -158,14 +158,14 @@
         let cols = [
             [
             {type: 'checkbox',width:20},
-                {title: {%trans '文档名称' %},field: 'name',align: 'left',templet:"#doc-name",minWidth:280},
-                {title: {%trans '状态'%},field: 'status',align: 'left',templet:"#doc-status",width:90},
-                {title: {%trans '上级'%},field: 'parent',align: 'left',},
-                {title: {%trans '文集'%},field: 'project_name',align: 'left',templet:"#project-role"},
-                {title: {%trans '编辑模式'%},field: 'editor_mode',align: 'left',templet:"#editor-mode",width:90},
-                {title: {%trans '展开下级'%},field: 'open_children',align: 'left',width:90, templet:"#open_children"},
-                {title: {%trans '最后编辑'%},field: 'modify_time',align: 'left',templet:"#doc-modify-time"},
-                {title: {%trans '操作'%},toolbar: '#doc-bar',align: 'left',}            ]
+                {title: '{%trans "文档名称" %}',field: 'name',align: 'left',templet:"#doc-name",minWidth:280},
+                {title: '{%trans "状态"%}',field: 'status',align: 'left',templet:"#doc-status",width:90},
+                {title: '{%trans "上级"%}',field: 'parent',align: 'left',},
+                {title: '{%trans "文集"%}',field: 'project_name',align: 'left',templet:"#project-role"},
+                {title: '{%trans "编辑模式"%}',field: 'editor_mode',align: 'left',templet:"#editor-mode",width:90},
+                {title: '{%trans "展开下级"%}',field: 'open_children',align: 'left',width:90, templet:"#open_children"},
+                {title: '{%trans "最后编辑"%}',field: 'modify_time',align: 'left',templet:"#doc-modify-time"},
+                {title: '{%trans "操作"%}',toolbar: '#doc-bar',align: 'left',}            ]
         ]
         // 渲染表格
         table.render({
@@ -185,7 +185,7 @@
         delDoc = function(doc_id){
             layer.open({
                 type:1,
-                title:{%trans '删除文档'%},
+                title:'{%trans "删除文档"%}',
                 area:'300px;',
                 id:'delPro',//配置ID
                 content:'<div style="margin-left:10px;">{%trans "警告：此操作将删除此文档！"%}</div>',
@@ -232,7 +232,7 @@
         batchRemoveDoc = function(obj) {
             let data = table.checkStatus(obj.config.id).data;
             if (data.length === 0) {
-                layer.msg("未选中任何文档", {
+                layer.msg('{%trans "未选中任何文档" %}', {
                     icon: 3,
                     time: 1000
                 });
@@ -244,9 +244,9 @@
             }
             doc_id = doc_id.substr(0, doc_id.length - 1);
             // console.log(pro_id)
-            layer.confirm('确定要删除这些文档？', {
+            layer.confirm('{%trans "确定要删除这些文档？" %}', {
                 icon: 3,
-                title: {%trans '提示'%}
+                title: '{%trans "提示"%}'
             }, function(index) {
                 layer.close(index);
                 let loading = layer.load();
@@ -276,7 +276,7 @@
         }
         // 监听文集筛选
         form.on('select(project)', function(data){
-            console.log('选择文集：',data.value); //得到被选中的值
+            console.log('{%trans "选择文集：" %}',data.value); //得到被选中的值
             table.reload('doc-table',{
                     where:{
                     'type':1,'project':data.value,

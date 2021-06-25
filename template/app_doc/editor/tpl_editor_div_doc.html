@@ -35,8 +35,8 @@
 
 <!-- 新建文集div块 -->
 <div style="padding: 20px;display:none;" id="create-project-div">
-    <input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder={%trans "输入文集名"%} required  lay-verify="required">
-    <textarea name="desc" id="desc" placeholder={%trans "输入文集简介" %}  maxlength="100" class="layui-textarea"></textarea>
+    <input class="layui-input" type="text" id="pname" style="margin-bottom:10px;" placeholder='{%trans "输入文集名"%}' required  lay-verify="required">
+    <textarea name="desc" id="desc" placeholder='{%trans "输入文集简介" %}' maxlength="100" class="layui-textarea"></textarea>
     <div class="layui-form-item" style="margin-top:10px;">
         <label class="layui-form-label" style="text-align:left;padding:9px 0px;">{%trans "文集权限" %}</label>
         <div class="layui-input-block">
@@ -85,9 +85,9 @@
         <div class="layui-form-item">
             <!-- <label class="layui-form-label">操作类型</label> -->
             <div class="layui-input-block" style="margin-left: 0px;">
-              <input type="radio" name="move-type" value="0" title={%trans "复制" %} checked>
-              <input type="radio" name="move-type" value="1" title={%trans "移动" %}>
-              <input type="radio" name="move-type" value="2" title={%trans "移动（含下级文档）" %}>
+              <input type="radio" name="move-type" value="0" title='{%trans "复制" %}' checked>
+              <input type="radio" name="move-type" value="1" title='{%trans "移动" %}'>
+              <input type="radio" name="move-type" value="2" title='{%trans "移动（含下级文档）" %}'>
             </div>
           </div>
           
@@ -96,7 +96,7 @@
           <select name="move_pro_id"  lay-filter="moveProject" id="moveProject">
             <option value="">{%trans "请选择一个文集（必选）"%}</option>
               <!-- 自己的文集 -->
-              <optgroup label={%trans "自有文集" %} id="self-project">
+              <optgroup label='{%trans "自有文集" %}' id="self-project">
               {% for p in project_list %}
                   {% if p.role == 1 %}
                   <option value="{{ p.id }}">[{%trans "私密" %}]《{{ p.name }}》</option>
@@ -111,7 +111,7 @@
               </optgroup>
               <!-- 协作的文集 -->
               {% if colla_project_list.count > 0 %}
-              <optgroup label={%trans "协作文集" %}>
+              <optgroup label='{%trans "协作文集" %}'>
               {% for p in colla_project_list %}
                     <option value="{{ p.project.id }}">[{%trans "协作"%}]《{{ p.project.name }}》</option>
               {% endfor %}
@@ -134,6 +134,6 @@
 <!-- 文档标签DIV -->
 <div id="doc-tag-div" style="display: none;">
   <div class="layui-row layui-col-space5" style="padding: 10px;background-color: #fff;">
-    <input name="tagsinput" id="tagsinputval" class="tagsinput" data-role="tagsinput" value="{{doc_tags}}" placeholder={%trans "输入标签名" %}>
+    <input name="tagsinput" id="tagsinputval" class="tagsinput" data-role="tagsinput" value="{{doc_tags}}" placeholder='{%trans "输入标签名" %}'>
   </div>
 </div>
