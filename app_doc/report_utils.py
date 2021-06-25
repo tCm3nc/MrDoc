@@ -540,7 +540,7 @@ class ReportEPUB():
     def generate_toc_ncx(self):
         ncx = '''
         <?xml version='1.0' encoding='utf-8'?>
-            <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1" xml:lang="zh-CN">
+            <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
               <head>
                 <meta name="dtb:uid" content="urn:uuid:12345"/>
                 <meta name="dtb:depth" content="1"/>
@@ -560,7 +560,7 @@ class ReportEPUB():
     # 生成文档目录toc_summary.html文件
     def generate_toc_html(self):
         summary = '''<?xml version="1.0" encoding="UTF-8"?>
-            <html lang="zh-CN">
+            <html>
             <head>
                 <meta charset="utf-8">
                 <title>目录</title>
