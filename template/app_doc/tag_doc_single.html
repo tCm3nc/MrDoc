@@ -65,24 +65,24 @@
 </div>
 
 <div class="layui-row layui-col-space20" style="padding-left: 20px;">
-    <span tooltip="文档创建人">
+    <span tooltip={%trans "文档创建人" %}>
         <i class="fa fa-user"></i> {{ doc.create_user.username }}
     </span>
     
-    <span tooltip="所属文集" >
+    <span tooltip={%trans "所属文集" %} >
         <i class="fa fa-book"></i> <a href="{% url 'pro_index' project.id %}">{{project.name}}</a>
     </span>
 
-    <span tooltip="文档更新时间">
+    <span tooltip={%trans "文档更新时间" %}>
         <i class="fa fa-clock-o"></i> {{ doc.modify_time }}
     </span>
 
-    <button id="share" class="doc-bottom-btn" tooltip="分享本文档">
+    <button id="share" class="doc-bottom-btn" tooltip={%trans "分享本文档" %}>
         <i class="fa fa-share-alt" ></i> {% trans "分享" %}
     </button>
 
     {% if request.user == doc.create_user or request.user.is_superuser %}
-    <button class="doc-bottom-btn" tooltip="下载文档Markdown" id="download_doc">
+    <button class="doc-bottom-btn" tooltip={%trans "下载文档Markdown"%} id="download_doc">
         <i class="fa fa-download"></i> {% trans "下载" %}
     </button>
     {% endif %}
@@ -297,9 +297,9 @@
         target.focus();
         target.setSelectionRange(0, target.value.length);
         document.execCommand("copy");
-        layer.msg('链接地址已复制', {
+        layer.msg({%trans '链接地址已复制' %}, {
             time: 2000, //2s后自动关闭
-            btn: '好的',
+            btn: {%trans '好的'%},
             btnAlign: 'c'
         });
     })

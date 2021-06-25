@@ -366,7 +366,7 @@
             share_data['is_enable'] = true
             updateDocShare(share_data);
         }else{
-            console.log("关闭分享")
+            console.log("{%trans '关闭分享' %}")
             layer.msg("{% trans '关闭分享' %}",{offset: 't'})
             $("#share-type").css('display',"none")
             $("#share-expire").css('display',"none")

@@ -27,8 +27,8 @@
                     <div style="color: #8c8c8c;font-size:12px;">api</div>
                 </div>
             </div>
-            <div style="width: 142px;cursor: pointer;display: inline-block;" id="import-yuque" tooltip="导入GitBook，功能开发中" placement="bottom">
-                <div style="width: 70px;height: 70px;margin: 0 auto;">
+            <div style="width: 142px;cursor: pointer;display: inline-block;" id="import-yuque" tooltip="{%trans '导入GitBook，功能开发中'%}" placement="bottom">
+                <div style="width: 70px;height: 70px;margin: 0 auto;"
                     <img src="{% static 'icon_img/file-gitbook.svg' %}">
                 </div>
                 <div style="text-align: center;">
@@ -103,10 +103,10 @@
             // 打开排序弹出框
             var editor_import = layer.open({
                 type:1,
-                title:'编辑导入的文集',
+                title:{%trans "编辑导入的文集" %},
                 area:['700px','400px'],
                 content:$("#import-project-sort"),
-                btn:['保存文档','发布文档'],
+                btn:['{%trans "保存文档" %}','{%trans "发布文档" %}'],
                 yes:function(index,layero){
                     // 保存文档
                     // console.log(serialize(root))
@@ -247,21 +247,21 @@
 </style>
 <div id="import-project-sort" style="display: none;margin: 10px;" class="layui-form">
     <div class="layui-row" style="padding-left: 14px;padding-bottom: 10px;">
-        <input class="layui-input" placeholder="请输入文集名称" name="project-name">
+        <input class="layui-input" placeholder={%trans "请输入文集名称" %} name="project-name">
     </div>
     <div class="layui-row" style="padding-left: 14px;padding-bottom: 10px;">
-        <input class="layui-input" placeholder="请输入文集简介" name="project-desc">
+        <input class="layui-input" placeholder={%trans "请输入文集简介" %} name="project-desc">
     </div>
     <div class="layui-row" style="">
         <div class="layui-form-item">
-            <label class="layui-form-label" style="width: auto;">文集状态</label>
+            <label class="layui-form-label" style="width: auto;">{%trans "文集状态" %}</label>
             <div class="layui-input-block">
-                <input type="radio" name="role" value="1" title="私密" checked>
-                <input type="radio" name="role" value="0" title="公开">
+                <input type="radio" name="role" value="1" title={%trans "私密" %} checked>
+                <input type="radio" name="role" value="0" title={%trans "公开" %}>
             </div>
           </div>
     </div>
-    <div class="layui-row" style="padding-left: 14px;padding-bottom: 10px;">文档拖拽排序</div>
+    <div class="layui-row" style="padding-left: 14px;padding-bottom: 10px;">{%trans "文档拖拽排序" %}</div>
     <div id="nested" class="row">
         <ul id="nestedDemo" class="list-group col nested-sortable"></ul>
     </div>

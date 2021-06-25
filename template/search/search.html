@@ -1,7 +1,7 @@
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
@@ -34,7 +34,7 @@
             <form method="get" action="">
             <div class="layui-input-inline">
                 <input class="layui-input mrdoc-search-input" 
-                    placeholder="搜索文集或文档" name="q" style="width: 500px;border-radius:5px" value="{{query}}"/>
+                    placeholder={%trans "搜索文集或文档" %} name="q" style="width: 500px;border-radius:5px" value="{{query}}"/>
                 <input name="type" value="{{search_type}}" hidden>
                 <button type="submit" 
                     style="position: absolute;top:12px;right: 8px;border: none;background-color: white;">
@@ -113,7 +113,7 @@
             <div class="layui-inline">
                 <div class="layui-input-inline">
                     <input class="layui-input mrdoc-search-input" 
-                    placeholder="搜索文集或文档" name="q" style="border-radius:5px" value="{{kw}}"/>
+                    placeholder={%trans "搜索文集或文档" %} name="q" style="border-radius:5px" value="{{kw}}"/>
                     <input name="type" value="{{search_type}}" hidden>
                 </div>
                 <div class="layui-input-inline">

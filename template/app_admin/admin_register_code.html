@@ -1,13 +1,13 @@
 {% extends 'app_admin/admin_base.html' %}
 {% load static %}
 {% load i18n %}
-{% block title %}注册码管理{% endblock %}
+{% block title %}{%trans "注册码管理" %}{% endblock %}
 {% block content %}
 <div class="layui-card">
     <div class="layui-card-body">
         <div class="layui-card-header" style="margin-bottom: 10px;">
         <div class="layui-row">
-            <span style="font-size:18px;">注册邀请码管理
+            <span style="font-size:18px;">{%trans "注册邀请码管理" %}
             </span>
         </div>
         </div>
@@ -18,7 +18,7 @@
                     <!--<input type="text" name="kw" id="kw" placeholder="输入文集内容" autocomplete="off" class="layui-input">-->
                 <!--</div>-->
                 <!--<button class="layui-btn layui-btn-normal" type="submit">搜索</button>-->
-                <button class="pear-btn pear-btn-primary pear-btn-sm" onclick="createRegisterCode()" type="button"><i class="layui-icon layui-icon-addition"></i>新增注册码</button>
+                <button class="pear-btn pear-btn-primary pear-btn-sm" onclick="createRegisterCode()" type="button"><i class="layui-icon layui-icon-addition"></i>{%trans "新增注册码" %}</button>
             </div>
             </form>
         </div>
@@ -35,14 +35,14 @@
                 </colgroup>
         <thead>
             <tr>
-                <th>注册码</th>
-                <th>最大使用次数</th>
-                <th>已使用次数</th>
-                <th>状态</th>
-                <th>使用的用户</th>
-                <th>创建时间</th>
-                <th>创建用户</th>
-                <th>操作</th>
+                <th>{%trans "注册码" %}</th>
+                <th>{%trans "最大使用次数" %}</th>
+                <th>{%trans "已使用次数" %}</th>
+                <th>{%trans "状态" %}</th>
+                <th>{%trans "使用的用户" %}</th>
+                <th>{%trans "创建时间" %}</th>
+                <th>{%trans "创建用户" %}</th>
+                <th>{%trans "操作" %}</th>
             </tr>
         </thead>
         <tbody>
@@ -53,14 +53,14 @@
             <td>{{ code.used_cnt }}</td>
             <td>
                 {% if code.status == 1 %}
-                <i class="layui-icon layui-icon-ok-circle" style="color:#1E9FFF;"></i> 有效
+                <i class="layui-icon layui-icon-ok-circle" style="color:#1E9FFF;"></i> {%trans "有效"%}
                 {% elif code.status == 0 %}
-                <i class="layui-icon layui-icon-close-fill" style="color: #FF5722;"></i> 失效
+                <i class="layui-icon layui-icon-close-fill" style="color: #FF5722;"></i> {%trans "失效" %}
                 {% endif %}
             </td>
             <td>
                 {% if code.user_list is None %}
-                暂无注册用户使用
+                {%trans "暂无注册用户使用" %}
                 {% else %}
                 {{ code.user_list }}
                 {% endif %}
@@ -69,7 +69,7 @@
             <td>{{ code.create_user }}</td>
             <td>
                 <a href="javascript:void(0);" onclick="delRegisterCode('{{code.id}}')" class="pear-btn pear-btn-danger pear-btn-xs">
-                    <i class="layui-icon layui-icon-delete"></i>删除
+                    <i class="layui-icon layui-icon-delete"></i>{%trans "删除" %}
                 </a>
             </td>
             </tr>
@@ -82,13 +82,13 @@
             <div class="pagination">
                 <span class="step-links">
                     {% if codes.has_previous %}
-                        <a href="?page={{ codes.previous_page_number }}&kw={{codes.kw}}" class="layui-btn layui-btn-normal layui-btn-xs">上一页</a>
+                        <a href="?page={{ codes.previous_page_number }}&kw={{codes.kw}}" class="layui-btn layui-btn-normal layui-btn-xs">{%trans "上一页"%}</a>
                     {% endif %}
                     <span class="current">
-                        当前页： {{ codes.number }} 共 {{ codes.paginator.num_pages }} 页
+                        {%trans "当前页"%}： {{ codes.number }} {%trans "共" %} {{ codes.paginator.num_pages }} {%trans "页" %}
                     </span>
                     {% if codes.has_next %}
-                        <a href="?page={{ projects.next_page_number }}&kw={{projects.kw}}" class="layui-btn layui-btn-xs">下一页</a>
+                        <a href="?page={{ projects.next_page_number }}&kw={{projects.kw}}" class="layui-btn layui-btn-xs">{%trans "下一页" %}</a>
                     {% endif %}
                 </span>
             </div>
@@ -112,11 +112,11 @@
         createRegisterCode = function(){
             layer.open({
                 type:1,
-                title:'新增注册码',
+                title:{%trans '新增注册码' %},
                 area:'300px;',
                 id:'createRegCode',//配置ID
-                content:'<div style="margin:10px;"><input class="layui-input" id="regCodeCnt" type="number" value=1 placeholder="输入注册码最大使用次数"/></div>',
-                btn:['确定','取消'], //添加按钮
+                content:'<div style="margin:10px;"><input class="layui-input" id="regCodeCnt" type="number" value=1 placeholder={%trans "输入注册码最大使用次数"%}/></div>',
+                btn:['{%trans "确定"%}','{%trans "取消"%}'], //添加按钮
                 btnAlign:'c', //按钮居中
                 yes:function (index,layero) {
                     layer.load(1);
@@ -143,11 +143,11 @@
         delRegisterCode = function(code_id){
             layer.open({
                 type:1,
-                title:'删除文档',
+                title:{%trans "删除文档" %},
                 area:'300px;',
                 id:'delRegCode',//配置ID
-                content:'<div style="margin-left:10px;">警告：此操作将删除此注册码！</div>',
-                btn:['确定','取消'], //添加按钮
+                content:'<div style="margin-left:10px;">{%trans "警告：此操作将删除此注册码！"%}</div>',
+                btn:['{%trans "确定"%}','{%trans "取消" %}'], //添加按钮
                 btnAlign:'c', //按钮居中
                 yes:function (index,layero) {
                     data = {

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-20 01:50+0100\n"
+"POT-Creation-Date: 2021-06-20 23:38+0100\n"
 "PO-Revision-Date: 2021-03-21 13:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -49,10 +49,8 @@ msgid "用户名或密码错误！"
 msgstr "Wrong username or password!"
 
 #: app_admin/views.py:80
-#, fuzzy
-#| msgid "用户名或密码错误！"
 msgid "用户名或密码未输入！"
-msgstr "Wrong username or password!"
+msgstr "Username or password has not been entered!"
 
 #: app_admin/views.py:84 app_admin/views.py:577 app_api/views_app.py:543
 #: app_api/views_app.py:585 app_api/views_app.py:624 app_api/views_app.py:668
@@ -256,11 +254,15 @@ msgid "修改出错"
 msgstr "Modify Error"
 
 #: app_admin/views.py:1063 app_doc/views_user.py:44
+#: template/app_admin/admin_center.html:106
+#: template/app_admin/admin_overview.html:4
 #: template/app_doc/manage/manage_overview.html:4
 msgid "仪表盘"
 msgstr "Dashboard"
 
 #: app_admin/views.py:1070 app_doc/views_user.py:58
+#: template/app_admin/admin_project.html:4
+#: template/app_admin/admin_project_role.html:13
 #: template/app_doc/manage/manage_project.html:4
 #: template/app_doc/manage/manage_project_collaborator.html:10
 #: template/app_doc/manage/manage_project_doc_sort.html:13
@@ -270,25 +272,31 @@ msgid "文集管理"
 msgstr "Project Management"
 
 #: app_admin/views.py:1077 app_doc/views_user.py:91
+#: template/app_admin/admin_doc.html:4
 #: template/app_doc/manage/manage_doc.html:4
 #: template/app_doc/manage/manage_doc_history.html:10
 msgid "文档管理"
 msgstr "Document Management"
 
-#: app_admin/views.py:1084 template/app_doc/manage/manage_doctemp.html:4
+#: app_admin/views.py:1084 template/app_admin/admin_doctemp.html:4
+#: template/app_admin/admin_doctemp.html:10
+#: template/app_doc/manage/manage_doctemp.html:4
 #: template/app_doc/manage/manage_doctemp.html:10
 msgid "文档模板管理"
 msgstr "Document Template Management"
 
-#: app_admin/views.py:1091
+#: app_admin/views.py:1091 template/app_admin/admin_register_code.html:4
 msgid "注册码管理"
 msgstr "Register Code Management"
 
-#: app_admin/views.py:1098
+#: app_admin/views.py:1098 template/app_admin/admin_user.html:4
+#: template/app_admin/admin_user.html:10
+#: template/app_admin/admin_user_profile.html:9
 msgid "用户管理"
 msgstr "User Management"
 
-#: app_admin/views.py:1105
+#: app_admin/views.py:1105 template/app_admin/admin_setting.html:4
+#: template/app_admin/admin_setting.html:13
 msgid "站点设置"
 msgstr "Site Configure"
 
@@ -590,7 +598,7 @@ msgstr "[collaboration]"
 
 #: app_doc/templatetags/doc_filter.py:40
 msgid "无上级文档"
-msgstr "No superior document"
+msgstr "No parent document"
 
 #: app_doc/templatetags/project_filter.py:20
 msgid "它还没有文档……"
@@ -708,7 +716,8 @@ msgstr "Collection browsing error"
 msgid "新建表格"
 msgstr "Create table"
 
-#: app_doc/views.py:977 template/app_doc/head_base.html:39
+#: app_doc/views.py:977 template/app_doc/editor/modify_doc.html:28
+#: template/app_doc/head_base.html:39 template/app_doc/head_base.html:79
 #: template/app_doc/head_base.html:81
 msgid "新建文档"
 msgstr "New document"
@@ -734,6 +743,7 @@ msgid "方法不允许"
 msgstr "Method not allowed"
 
 #: app_doc/views.py:1061 template/app_doc/doc.html:138
+#: template/app_doc/editor/modify_doc.html:4
 #: template/app_doc/share/share_doc.html:142
 #: template/app_doc/tag_doc_single.html:118
 msgid "修改文档"
@@ -849,7 +859,8 @@ msgstr "Publishing failed"
 msgid "分享码错误"
 msgstr "Sharing code error"
 
-#: app_doc/views.py:1773
+#: app_doc/views.py:1773 template/app_admin/admin_doctemp.html:21
+#: template/app_doc/editor/create_doctemp.html:4
 msgid "新建文档模板"
 msgstr "New document template"
 
@@ -857,7 +868,7 @@ msgstr "New document template"
 msgid "创建文档模板出错"
 msgstr "Error creating document template"
 
-#: app_doc/views.py:1806
+#: app_doc/views.py:1806 template/app_doc/editor/modify_doctemp.html:4
 msgid "修改文档模板"
 msgstr "Modify document template"
 
@@ -886,10 +897,8 @@ msgid "导出文集MD文件出错"
 msgstr "Error exporting document set MD file"
 
 #: app_doc/views.py:2038
-#, fuzzy
-#| msgid "导出文集"
 msgid "导出文集异常"
-msgstr "Export project"
+msgstr "Export project abormal"
 
 #: app_doc/views.py:2045
 msgid "无权限"
@@ -1059,13 +1068,15 @@ msgstr "Import Project"
 msgid "我的文档"
 msgstr "My documents"
 
-#: app_doc/views_user.py:99
+#: app_doc/views_user.py:99 template/app_doc/editor/create_doc.html:32
+#: template/app_doc/editor/modify_doc.html:47
 msgid "文档模板"
 msgstr "Document template"
 
-#: app_doc/views_user.py:107
+#: app_doc/views_user.py:107 template/app_doc/editor/create_doc.html:14
+#: template/app_doc/editor/modify_doc.html:31
 msgid "文档标签"
-msgstr "document label"
+msgstr "Document label"
 
 #: app_doc/views_user.py:115
 msgid "我的分享"
@@ -1111,11 +1122,13 @@ msgstr "User manual"
 msgid "拒绝访问"
 msgstr "access denied"
 
-#: template/403.html:7 template/404.html:7 template/app_api/api404.html:8
-#: template/app_doc/diff_doc.html:15 template/app_doc/user/user_center.html:9
-#: template/forget_pwd.html:6 template/forget_pwd.html:43
-#: template/login.html:12 template/login.html:66 template/register.html:6
-#: template/register.html:60
+#: template/403.html:7 template/404.html:7
+#: template/app_admin/admin_center.html:9
+#: template/app_admin/admin_overview.html:93 template/app_api/api404.html:8
+#: template/app_api/single_doc_detail.html:16 template/app_doc/diff_doc.html:15
+#: template/app_doc/user/user_center.html:9 template/forget_pwd.html:6
+#: template/forget_pwd.html:43 template/login.html:12 template/login.html:66
+#: template/register.html:6 template/register.html:60
 msgid "觅道文档"
 msgstr "Find a document"
 
@@ -1123,7 +1136,8 @@ msgstr "Find a document"
 msgid "你无权访问当前页面……"
 msgstr "You don't have access to the current page"
 
-#: template/403.html:22 template/404.html:19 template/app_api/api404.html:22
+#: template/403.html:22 template/404.html:19
+#: template/app_admin/admin_center.html:43 template/app_api/api404.html:22
 #: template/app_doc/search.html:43 template/app_doc/search_result.html:61
 #: template/app_doc/user/user_center.html:42 template/login.html:106
 #: template/register.html:103 template/search/search.html:59
@@ -1146,17 +1160,184 @@ msgstr "New version update"
 msgid "觅道文档已发布新版本，请及时更新"
 msgstr "A new version is available. Please update when possible."
 
-#: template/app_admin/admin_project.html:252
-#: template/app_admin/admin_project.html:304
-#: template/app_doc/manage/manage_project.html:214
-#: template/app_doc/manage/manage_project.html:266
-#: template/app_doc/manage/manage_project_options.html:202
-#: template/app_doc/manage/manage_project_options.html:205
-msgid "删除文集"
-msgstr "Delete Project"
+#: template/app_admin/admin_center.html:9
+#: template/app_doc/user/user_center.html:40
+msgid "后台管理"
+msgstr "back-stage management"
 
+#: template/app_admin/admin_center.html:41
+#: template/app_doc/editor/create_doc.html:63
+#: template/app_doc/editor/modify_doc.html:77
+#: template/app_doc/head_base.html:85 template/app_doc/head_base.html:87
+#: template/app_doc/search_result.html:73
+#: template/app_doc/user/user_center.html:9
+#: template/app_doc/user/user_center.html:89 template/search/search.html:70
+msgid "个人中心"
+msgstr "Personal Center"
+
+#: template/app_admin/admin_center.html:44 template/app_doc/head_base.html:97
+#: template/app_doc/head_base.html:99 template/app_doc/search_result.html:85
+#: template/app_doc/user/user_center.html:43 template/search/search.html:76
+msgid "退出登录"
+msgstr "Log out"
+
+#: template/app_admin/admin_center.html:90
+msgid "站点管理"
+msgstr "Site management"
+
+#: template/app_admin/admin_center.html:135
+#: template/app_doc/user/user_center.html:134
+msgid "官方网站"
+msgstr "Official website"
+
+#: template/app_admin/admin_center.html:140
+#: template/app_doc/user/user_center.html:139
+msgid "说明文档"
+msgstr "Documentation"
+
+#: template/app_admin/admin_center.html:145
+#: template/app_doc/user/user_center.html:144
+msgid "开源地址"
+msgstr "Open source address"
+
+#: template/app_admin/admin_center.html:155
+msgid "当前版本：{{mrdoc_version}}"
+msgstr "Current version: {{mrdoc_version}}"
+
+#: template/app_admin/admin_doc.html:7
+#: template/app_doc/manage/manage_collect.html:7
+#: template/app_doc/manage/manage_doc.html:7
+msgid "高级筛选"
+msgstr "Advanced screening"
+
+#: template/app_admin/admin_doc.html:11
+#: template/app_admin/admin_setting.html:46
+#: template/app_doc/manage/manage_collect.html:11
+#: template/app_doc/manage/manage_doc.html:11
+msgid "关键词"
+msgstr "key word"
+
+#: template/app_admin/admin_doc.html:13
+#: template/app_doc/manage/manage_doc.html:13
+msgid "请输入标题"
+msgstr "Please enter a title"
+
+#: template/app_admin/admin_doc.html:15
+#: template/app_admin/admin_doctemp.html:20
+#: template/app_admin/admin_project.html:18
+#: template/app_admin/admin_user.html:19
+#: template/app_doc/manage/manage_attachment.html:14
+#: template/app_doc/manage/manage_collect.html:15
+#: template/app_doc/manage/manage_doc.html:15
+#: template/app_doc/manage/manage_doctemp.html:20
+#: template/app_doc/manage/manage_project.html:18
+#: template/app_doc/project_doc_search.html:7
+#: template/app_doc/project_doc_search.html:18
+msgid "搜索"
+msgstr "search"
+
+#: template/app_admin/admin_doc.html:18 template/app_admin/admin_doc.html:151
+#: template/app_admin/admin_overview.html:151
+#: template/app_doc/manage/manage_collect.html:21
+#: template/app_doc/manage/manage_doc.html:18
+#: template/app_doc/manage/manage_doc.html:164
+#: template/app_doc/manage/manage_overview.html:114
+#: template/app_doc/search_result.html:144 template/search/search.html:140
+msgid "文集"
+msgstr "Project"
+
+#: template/app_admin/admin_doc.html:21
+#: template/app_doc/manage/manage_doc.html:21
+msgid "按文集筛选"
+msgstr "Select by project"
+
+#: template/app_admin/admin_doc.html:24
+#: template/app_admin/admin_overview.html:159
+#: template/app_admin/admin_project_role.html:49 template/app_doc/doc.html:207
+#: template/app_doc/doc.html:210 template/app_doc/editor/create_doc.html:88
+#: template/app_doc/editor/create_doc.html:201
+#: template/app_doc/editor/tpl_editor_div_doc.html:46
+#: template/app_doc/editor/tpl_editor_div_doc.html:102
+#: template/app_doc/manage/manage_doc.html:26
+#: template/app_doc/manage/manage_overview.html:122
+#: template/app_doc/manage/manage_project_import.html:259
+#: template/app_doc/manage/manage_project_options.html:91
+#: template/app_doc/pro_list.html:256 template/app_doc/tag_doc_single.html:187
+#: template/app_doc/tag_doc_single.html:190
+msgid "私密"
+msgstr "private"
+
+#: template/app_admin/admin_doc.html:26
+#: template/app_admin/admin_overview.html:161
+#: template/app_doc/editor/create_doc.html:90
+#: template/app_doc/editor/tpl_editor_div_doc.html:104
+#: template/app_doc/manage/manage_doc.html:28
+#: template/app_doc/manage/manage_overview.html:124
+msgid "指定用户"
+msgstr "Designated user"
+
+#: template/app_admin/admin_doc.html:28
+#: template/app_admin/admin_project_role.html:56
+#: template/app_doc/editor/create_doc.html:92
+#: template/app_doc/editor/tpl_editor_div_doc.html:106
+#: template/app_doc/manage/manage_doc.html:30
+#: template/app_doc/manage/manage_project_options.html:98
+msgid "访问码"
+msgstr "Access code"
+
+#: template/app_admin/admin_doc.html:30
+#: template/app_admin/admin_overview.html:157
+#: template/app_admin/admin_project_role.html:48 template/app_doc/doc.html:206
+#: template/app_doc/doc.html:209 template/app_doc/editor/create_doc.html:94
+#: template/app_doc/editor/create_doc.html:201
+#: template/app_doc/editor/tpl_editor_div_doc.html:45
+#: template/app_doc/editor/tpl_editor_div_doc.html:108
+#: template/app_doc/manage/manage_doc.html:32
+#: template/app_doc/manage/manage_overview.html:120
+#: template/app_doc/manage/manage_project_import.html:260
+#: template/app_doc/manage/manage_project_options.html:90
+#: template/app_doc/pro_list.html:255 template/app_doc/tag_doc_single.html:186
+#: template/app_doc/tag_doc_single.html:189
+msgid "公开"
+msgstr "open"
+
+#: template/app_admin/admin_doc.html:37
+#: template/app_doc/manage/manage_doc.html:48
+msgid "文档状态"
+msgstr "Document status"
+
+#: template/app_admin/admin_doc.html:39
+#: template/app_doc/manage/manage_collect.html:20
+#: template/app_doc/manage/manage_doc.html:50
+msgid "全部"
+msgstr "All"
+
+#: template/app_admin/admin_doc.html:40
+#: template/app_doc/editor/modify_doc.html:96
+#: template/app_doc/manage/manage_doc.html:51
+msgid "草稿"
+msgstr "draft"
+
+#: template/app_admin/admin_doc.html:41
+#: template/app_doc/editor/modify_doc.html:98
+#: template/app_doc/manage/manage_doc.html:52
+msgid "已发布"
+msgstr "Published"
+
+#: template/app_admin/admin_doc.html:57
+#: template/app_admin/admin_project.html:21
+#: template/app_doc/manage/manage_doc.html:68
+#: template/app_doc/manage/manage_project.html:21
+msgid "新增"
+msgstr "newly added"
+
+#: template/app_admin/admin_doc.html:60
+#: template/app_admin/admin_doctemp.html:51
+#: template/app_admin/admin_project.html:24
 #: template/app_admin/admin_project.html:256
+#: template/app_admin/admin_register_code.html:72
 #: template/app_doc/manage/manage_attachment.html:48
+#: template/app_doc/manage/manage_doc.html:71
 #: template/app_doc/manage/manage_doc_history.html:48
 #: template/app_doc/manage/manage_doc_recycle.html:46
 #: template/app_doc/manage/manage_doc_share.html:17
@@ -1170,19 +1351,517 @@ msgstr "Delete Project"
 msgid "删除"
 msgstr "delete"
 
+#: template/app_admin/admin_doc.html:148
+#: template/app_doc/manage/manage_doc.html:161
+#: template/app_doc/manage/manage_doc_recycle.html:22
+#: template/app_doc/manage/manage_doc_share.html:97
+#: template/app_doc/manage/manage_project_collaborator.html:94
+msgid "文档名称"
+msgstr "Document name"
+
+#: template/app_admin/admin_doc.html:149
+#: template/app_admin/admin_register_code.html:41
+#: template/app_admin/admin_user.html:99
+#: template/app_doc/manage/manage_doc.html:162
+#: template/app_doc/manage/manage_doc_share.html:101
+msgid "状态"
+msgstr "Mode"
+
+#: template/app_admin/admin_doc.html:150
+#: template/app_doc/manage/manage_doc.html:163
+msgid "上级"
+msgstr "Parent"
+
+#: template/app_admin/admin_doc.html:152
+#: template/app_doc/manage/manage_doc.html:165
+msgid "编辑模式"
+msgstr "Edit mode"
+
+#: template/app_admin/admin_doc.html:153
+#: template/app_doc/manage/manage_doc.html:166
+msgid "展开下级"
+msgstr "Expand children"
+
+#: template/app_admin/admin_doc.html:154
+msgid "文档作者"
+msgstr "Document author"
+
+#: template/app_admin/admin_doc.html:155
+#: template/app_doc/manage/manage_doc.html:167
+msgid "最后编辑"
+msgstr "Finalize edit"
+
+#: template/app_admin/admin_doc.html:156
+#: template/app_admin/admin_doctemp.html:37
+#: template/app_admin/admin_project.html:113
+#: template/app_admin/admin_register_code.html:45
+#: template/app_admin/admin_user.html:100 template/app_api/manage_token.html:20
+#: template/app_doc/editor/create_base.html:128
+#: template/app_doc/editor/tpl_editor_div_doc.html:18
+#: template/app_doc/editor/tpl_editor_div_doc.html:62
+#: template/app_doc/manage/manage_attachment.html:37
+#: template/app_doc/manage/manage_collect.html:88
+#: template/app_doc/manage/manage_doc.html:168
+#: template/app_doc/manage/manage_doc_history.html:35
+#: template/app_doc/manage/manage_doc_recycle.html:27
+#: template/app_doc/manage/manage_doc_share.html:102
+#: template/app_doc/manage/manage_doc_tag.html:31
+#: template/app_doc/manage/manage_doctemp.html:37
+#: template/app_doc/manage/manage_image_group.html:29
+#: template/app_doc/manage/manage_project.html:106
+#: template/app_doc/manage/manage_project_collaborator.html:60
+#: template/app_doc/manage/manage_project_collaborator.html:97
+#: template/app_doc/manage/manage_project_self_colla.html:23
+msgid "操作"
+msgstr "operation"
+
+#: template/app_admin/admin_doc.html:176
+#: template/app_admin/admin_doctemp.html:98
+#: template/app_admin/admin_register_code.html:146
+#: template/app_doc/editor/modify_doc.html:37
+#: template/app_doc/editor/modify_doc.html:427
+#: template/app_doc/manage/manage_doc.html:188
+#: template/app_doc/manage/manage_doc_recycle.html:93
+#: template/app_doc/manage/manage_doc_share.html:68
+#: template/app_doc/manage/manage_doctemp.html:96
+#: template/app_doc/manage/manage_project_collaborator.html:238
+msgid "删除文档"
+msgstr "Delete document"
+
+#: template/app_admin/admin_doc.html:179
+#: template/app_doc/editor/modify_doc.html:430
+#: template/app_doc/manage/manage_doc.html:191
+#: template/app_doc/manage/manage_project_collaborator.html:241
+msgid "警告：此操作将删除此文档！"
+msgstr "Warning: This action will delete this document!"
+
+#: template/app_admin/admin_doc.html:180
+#: template/app_admin/admin_doctemp.html:102
+#: template/app_admin/admin_project.html:193
+#: template/app_admin/admin_project.html:224
+#: template/app_admin/admin_register_code.html:119
+#: template/app_admin/admin_register_code.html:150
+#: template/app_admin/admin_user.html:112
+#: template/app_admin/admin_user.html:143
+#: template/app_admin/admin_user.html:219 template/app_api/manage_token.html:54
+#: template/app_doc/editor/create_doc.html:191
+#: template/app_doc/editor/tpl_editor_editormd.html:138
+#: template/app_doc/manage/manage_attachment.html:123
+#: template/app_doc/manage/manage_collect.html:112
+#: template/app_doc/manage/manage_doc.html:192
+#: template/app_doc/manage/manage_doc_history.html:99
+#: template/app_doc/manage/manage_doc_recycle.html:97
+#: template/app_doc/manage/manage_doc_recycle.html:128
+#: template/app_doc/manage/manage_doc_recycle.html:159
+#: template/app_doc/manage/manage_doc_recycle.html:189
+#: template/app_doc/manage/manage_doc_share.html:72
+#: template/app_doc/manage/manage_doc_tag.html:73
+#: template/app_doc/manage/manage_doctemp.html:100
+#: template/app_doc/manage/manage_image.html:106
+#: template/app_doc/manage/manage_image.html:143
+#: template/app_doc/manage/manage_image.html:194
+#: template/app_doc/manage/manage_image.html:338
+#: template/app_doc/manage/manage_image_group.html:72
+#: template/app_doc/manage/manage_image_group.html:102
+#: template/app_doc/manage/manage_project.html:155
+#: template/app_doc/manage/manage_project.html:186
+#: template/app_doc/manage/manage_project.html:326
+#: template/app_doc/manage/manage_project_collaborator.html:145
+#: template/app_doc/manage/manage_project_collaborator.html:180
+#: template/app_doc/manage/manage_project_collaborator.html:209
+#: template/app_doc/manage/manage_project_collaborator.html:242
+#: template/app_doc/manage/manage_project_options.html:366
+#: template/app_doc/manage/manage_project_options.html:401
+#: template/app_doc/pro_list.html:349 template/app_doc/pro_list.html:420
+msgid "确定"
+msgstr "Accept"
+
+#: template/app_admin/admin_doc.html:180
+#: template/app_admin/admin_doctemp.html:102
+#: template/app_admin/admin_project.html:193
+#: template/app_admin/admin_project.html:224
 #: template/app_admin/admin_project.html:256
 #: template/app_admin/admin_project.html:308
+#: template/app_admin/admin_register_code.html:119
+#: template/app_admin/admin_register_code.html:150
+#: template/app_admin/admin_user.html:112
+#: template/app_admin/admin_user.html:143
+#: template/app_admin/admin_user.html:175
+#: template/app_admin/admin_user.html:219
+#: template/app_admin/admin_user_profile.html:122
+#: template/app_api/manage_token.html:54
+#: template/app_doc/editor/create_doc.html:168
+#: template/app_doc/editor/create_doc.html:191
 #: template/app_doc/editor/tpl_editor_editormd.html:138
+#: template/app_doc/manage/manage_attachment.html:123
+#: template/app_doc/manage/manage_collect.html:112
+#: template/app_doc/manage/manage_doc.html:192
+#: template/app_doc/manage/manage_doc_history.html:99
+#: template/app_doc/manage/manage_doc_recycle.html:97
+#: template/app_doc/manage/manage_doc_recycle.html:128
+#: template/app_doc/manage/manage_doc_recycle.html:159
+#: template/app_doc/manage/manage_doc_recycle.html:189
+#: template/app_doc/manage/manage_doc_share.html:72
+#: template/app_doc/manage/manage_doc_tag.html:73
+#: template/app_doc/manage/manage_doctemp.html:100
+#: template/app_doc/manage/manage_image.html:106
+#: template/app_doc/manage/manage_image.html:143
+#: template/app_doc/manage/manage_image.html:194
+#: template/app_doc/manage/manage_image.html:279
+#: template/app_doc/manage/manage_image.html:338
+#: template/app_doc/manage/manage_image_group.html:72
+#: template/app_doc/manage/manage_image_group.html:102
 #: template/app_doc/manage/manage_project.html:155
 #: template/app_doc/manage/manage_project.html:186
 #: template/app_doc/manage/manage_project.html:218
 #: template/app_doc/manage/manage_project.html:270
+#: template/app_doc/manage/manage_project.html:326
+#: template/app_doc/manage/manage_project_collaborator.html:145
+#: template/app_doc/manage/manage_project_collaborator.html:180
+#: template/app_doc/manage/manage_project_collaborator.html:209
+#: template/app_doc/manage/manage_project_collaborator.html:242
 #: template/app_doc/manage/manage_project_options.html:366
+#: template/app_doc/manage/manage_project_options.html:401
 #: template/app_doc/manage/manage_self.html:70
 #: template/app_doc/pro_list.html:349 template/app_doc/pro_list.html:420
-#: template/app_doc/pro_list.html:451
+#: template/app_doc/pro_list.html:451 template/app_doc/search_result.html:364
 msgid "取消"
 msgstr "cancel"
+
+#: template/app_admin/admin_doc.html:237
+#: template/app_doc/manage/manage_collect.html:160
+#: template/app_doc/manage/manage_doc.html:249
+#: template/app_doc/manage/manage_doc_share.html:149
+#: template/app_doc/manage/manage_doc_share.html:200
+msgid "提示"
+msgstr "Prompt"
+
+#: template/app_admin/admin_doctemp.html:18
+#: template/app_doc/manage/manage_doctemp.html:18
+msgid "输入文档模板内容"
+msgstr "Enter the content of the document template"
+
+#: template/app_admin/admin_doctemp.html:34
+#: template/app_doc/editor/tpl_editor_div_doc.html:16
+#: template/app_doc/manage/manage_doctemp.html:35
+msgid "模板名称"
+msgstr "Template name"
+
+#: template/app_admin/admin_doctemp.html:35
+#: template/app_doc/manage/manage_doc_history.html:34
+msgid "创建人"
+msgstr "Founder"
+
+#: template/app_admin/admin_doctemp.html:36
+#: template/app_admin/admin_project.html:112
+#: template/app_admin/admin_register_code.html:43
+#: template/app_doc/diff_doc.html:46
+#: template/app_doc/editor/tpl_editor_div_doc.html:59
+#: template/app_doc/manage/manage_doc_history.html:33
+#: template/app_doc/manage/manage_doc_recycle.html:25
+#: template/app_doc/manage/manage_doctemp.html:36
+#: template/app_doc/manage/manage_project.html:105
+#: template/app_doc/manage/manage_project_collaborator.html:96
+msgid "创建时间"
+msgstr "Creation time"
+
+#: template/app_admin/admin_doctemp.html:48 template/app_doc/doc.html:18
+#: template/app_doc/doc.html:30 template/app_doc/manage/manage_doc_tag.html:42
+#: template/app_doc/manage/manage_doctemp.html:47
+#: template/app_doc/manage/manage_image_group.html:40
+#: template/app_doc/manage/manage_project_collaborator.html:76
+#: template/app_doc/manage/manage_project_collaborator.html:108
+#: template/app_doc/manage/manage_project_collaborator.html:205
+#: template/app_doc/tag_doc_single.html:15
+#: template/app_doc/tag_doc_single.html:27
+msgid "修改"
+msgstr "modify"
+
+#: template/app_admin/admin_doctemp.html:64
+#: template/app_admin/admin_doctemp.html:66
+#: template/app_admin/admin_register_code.html:85
+#: template/app_doc/manage/manage_attachment.html:61
+#: template/app_doc/manage/manage_attachment.html:63
+#: template/app_doc/manage/manage_doc_history.html:61
+#: template/app_doc/manage/manage_doc_history.html:63
+#: template/app_doc/manage/manage_doc_recycle.html:59
+#: template/app_doc/manage/manage_doc_recycle.html:61
+#: template/app_doc/manage/manage_doctemp.html:63
+#: template/app_doc/manage/manage_doctemp.html:65
+#: template/app_doc/manage/manage_image.html:63
+#: template/app_doc/manage/manage_image.html:65
+#: template/app_doc/pro_list.html:201 template/app_doc/pro_list.html:203
+#: template/app_doc/search_result.html:246
+#: template/app_doc/search_result.html:248 template/search/search.html:213
+#: template/search/search.html:215
+msgid "上一页"
+msgstr "previous page"
+
+#: template/app_admin/admin_doctemp.html:75
+#: template/app_admin/admin_doctemp.html:77
+#: template/app_admin/admin_register_code.html:91
+#: template/app_doc/manage/manage_attachment.html:72
+#: template/app_doc/manage/manage_attachment.html:74
+#: template/app_doc/manage/manage_doc_history.html:72
+#: template/app_doc/manage/manage_doc_history.html:74
+#: template/app_doc/manage/manage_doc_recycle.html:70
+#: template/app_doc/manage/manage_doc_recycle.html:72
+#: template/app_doc/manage/manage_doctemp.html:74
+#: template/app_doc/manage/manage_doctemp.html:76
+#: template/app_doc/manage/manage_image.html:74
+#: template/app_doc/manage/manage_image.html:76
+#: template/app_doc/pro_list.html:212 template/app_doc/pro_list.html:214
+#: template/app_doc/search_result.html:257
+#: template/app_doc/search_result.html:259 template/search/search.html:224
+#: template/search/search.html:226
+msgid "下一页"
+msgstr "next page"
+
+#: template/app_admin/admin_doctemp.html:101
+#: template/app_doc/manage/manage_doc_share.html:71
+#: template/app_doc/manage/manage_doctemp.html:99
+msgid "警告：此操作将删除此文档模板！"
+msgstr "Warning: This action will delete this document template!"
+
+#: template/app_admin/admin_overview.html:16
+msgid "用户总数"
+msgstr "Total number of users"
+
+#: template/app_admin/admin_overview.html:30
+#: template/app_doc/manage/manage_overview.html:15
+msgid "文集总数"
+msgstr "Total number of projects"
+
+#: template/app_admin/admin_overview.html:45
+msgid "文档总数"
+msgstr "Total number of documents"
+
+#: template/app_admin/admin_overview.html:60
+msgid "图片总数"
+msgstr "Total number of pictures"
+
+#: template/app_admin/admin_overview.html:75
+msgid "附件总数"
+msgstr "Total number of attachments"
+
+#: template/app_admin/admin_overview.html:96
+#: template/app_admin/admin_overview.html:99
+msgid "访问"
+msgstr "Access"
+
+#: template/app_admin/admin_overview.html:102
+msgid "加入 QQ群"
+msgstr "Join QQ group"
+
+#: template/app_admin/admin_overview.html:105
+msgid "检查版本更新"
+msgstr "Check for version updates"
+
+#: template/app_admin/admin_overview.html:114
+#: template/app_doc/manage/manage_overview.html:77
+msgid "动态"
+msgstr "dynamic"
+
+#: template/app_admin/admin_overview.html:123
+msgid "发布了文档"
+msgstr "Published the document"
+
+#: template/app_admin/admin_overview.html:125
+#: template/app_doc/manage/manage_overview.html:88
+msgid "保存了文档"
+msgstr "Saved the document"
+
+#: template/app_admin/admin_overview.html:127
+#: template/app_doc/manage/manage_overview.html:90
+msgid "删除了文档"
+msgstr "Deleted document"
+
+#: template/app_admin/admin_overview.html:139
+#: template/app_doc/manage/manage_overview.html:102
+msgid "快速草稿"
+msgstr "Quick draft"
+
+#: template/app_admin/admin_overview.html:145
+#: template/app_doc/manage/manage_overview.html:108
+msgid "标题"
+msgstr "Title"
+
+#: template/app_admin/admin_overview.html:147
+#: template/app_doc/editor/modify_doc.html:136
+#: template/app_doc/manage/manage_overview.html:110
+msgid "请输入文档标题"
+msgstr "Please enter the document title"
+
+#: template/app_admin/admin_overview.html:163
+#: template/app_admin/admin_setting.html:209 template/app_doc/doc.html:217
+#: template/app_doc/manage/manage_overview.html:126
+#: template/app_doc/tag_doc_single.html:197
+msgid "密码"
+msgstr "password"
+
+#: template/app_admin/admin_overview.html:170
+#: template/app_doc/manage/manage_overview.html:133
+msgid "文本域"
+msgstr "Text field"
+
+#: template/app_admin/admin_overview.html:172
+#: template/app_doc/manage/manage_overview.html:135
+msgid "在想些什么呢？"
+msgstr "What are you thinking about?"
+
+#: template/app_admin/admin_overview.html:177
+#: template/app_doc/manage/manage_overview.html:140
+msgid "保存草稿"
+msgstr "Save Draft"
+
+#: template/app_admin/admin_overview.html:178
+#: template/app_doc/manage/manage_overview.html:141
+msgid "重置"
+msgstr "Reset"
+
+#: template/app_admin/admin_overview.html:185
+msgid "捐赠 - 请作者喝杯奶茶吧"
+msgstr "Donation - Buy the author a cup of tea"
+
+#: template/app_admin/admin_overview.html:223
+#: template/app_doc/manage/manage_overview.html:199
+msgid "请输入文档标题！"
+msgstr "Please enter the document title!"
+
+#: template/app_admin/admin_overview.html:228
+#: template/app_doc/manage/manage_overview.html:204
+msgid "请选择文集！"
+msgstr "Please select a project!"
+
+#: template/app_admin/admin_overview.html:239
+#: template/app_doc/manage/manage_overview.html:215
+msgid "保存草稿成功"
+msgstr "The draft was saved successfully"
+
+#: template/app_admin/admin_overview.html:245
+#: template/app_doc/manage/manage_overview.html:221
+msgid "保存草稿失败"
+msgstr "Failed to save Draft"
+
+#: template/app_admin/admin_project.html:105
+#: template/app_admin/admin_project_role.html:38
+#: template/app_doc/manage/manage_project.html:100
+#: template/app_doc/manage/manage_project_collaborator.html:26
+#: template/app_doc/manage/manage_project_options.html:39
+#: template/app_doc/manage/manage_project_self_colla.html:20
+msgid "文集名称"
+msgstr "Collection name"
+
+#: template/app_admin/admin_project.html:108
+#: template/app_doc/manage/manage_project.html:103
+msgid "文档数"
+msgstr "Number of documents"
+
+#: template/app_admin/admin_project.html:109
+msgid "协作人数"
+msgstr "Number of collaborations:"
+
+#: template/app_admin/admin_project.html:110
+#: template/app_api/single_doc_detail.html:161
+#: template/app_doc/manage/manage_project_self_colla.html:21
+msgid "作者"
+msgstr "author"
+
+#: template/app_admin/admin_project.html:111
+msgid "置顶"
+msgstr "Top"
+
+#: template/app_admin/admin_project.html:189
+#: template/app_doc/editor/create_doc.html:83
+#: template/app_doc/editor/create_doc.html:187
+#: template/app_doc/head_base.html:52
+#: template/app_doc/manage/manage_project.html:151
+#: template/app_doc/pro_list.html:345
+msgid "新建文集"
+msgstr "New project"
+
+#: template/app_admin/admin_project.html:192
+#: template/app_admin/admin_project.html:223
+#: template/app_doc/editor/tpl_editor_div_doc.html:38
+#: template/app_doc/manage/manage_project.html:154
+#: template/app_doc/manage/manage_project.html:185
+#: template/app_doc/manage/manage_project_options.html:54
+#: template/app_doc/pro_list.html:243 template/app_doc/pro_list.html:419
+msgid "输入文集名"
+msgstr "Enter the project name"
+
+#: template/app_admin/admin_project.html:192
+#: template/app_admin/admin_project.html:223
+#: template/app_doc/editor/tpl_editor_div_doc.html:39
+#: template/app_doc/manage/manage_project.html:154
+#: template/app_doc/manage/manage_project.html:185
+#: template/app_doc/pro_list.html:419
+msgid "输入文集简介"
+msgstr "Enter an introduction to the project"
+
+#: template/app_admin/admin_project.html:220
+#: template/app_doc/manage/manage_project.html:182
+#: template/app_doc/pro_list.html:416
+msgid "修改文集"
+msgstr "Revision of Project"
+
+#: template/app_admin/admin_project.html:252
+#: template/app_admin/admin_project.html:304
+#: template/app_doc/manage/manage_project.html:214
+#: template/app_doc/manage/manage_project.html:266
+#: template/app_doc/manage/manage_project_options.html:202
+#: template/app_doc/manage/manage_project_options.html:205
+#: template/app_doc/manage/manage_project_options.html:362
+msgid "删除文集"
+msgstr "Delete Project"
+
+#: template/app_admin/admin_project.html:255
+msgid "你正在删除"
+msgstr "You are deleting"
+
+#: template/app_admin/admin_project.html:255
+#: template/app_admin/admin_project.html:307
+#: template/app_doc/manage/manage_image.html:278
+#: template/app_doc/manage/manage_project.html:217
+#: template/app_doc/manage/manage_project.html:269
+msgid "警告！此操作将"
+msgstr "Attention! This action will"
+
+#: template/app_admin/admin_project.html:255
+#: template/app_doc/manage/manage_project.html:217
+msgid "删除此文集及文集下所有文档！"
+msgstr "Delete this project and all child documents"
+
+#: template/app_admin/admin_project.html:255
+#: template/app_admin/admin_project.html:307
+#: template/app_doc/manage/manage_image.html:278
+#: template/app_doc/manage/manage_project.html:217
+#: template/app_doc/manage/manage_project.html:269
+msgid "并且"
+msgstr "And"
+
+#: template/app_admin/admin_project.html:255
+#: template/app_doc/manage/manage_image.html:278
+#: template/app_doc/manage/manage_project.html:217
+#: template/app_doc/manage/manage_project.html:269
+msgid "不可恢复！"
+msgstr "Unrecoverable"
+
+#: template/app_admin/admin_project.html:255
+#: template/app_admin/admin_project.html:307
+#: template/app_doc/manage/manage_image.html:278
+#: template/app_doc/manage/manage_project.html:217
+#: template/app_doc/manage/manage_project.html:269
+msgid "请输入"
+msgstr "Please enter"
+
+#: template/app_admin/admin_project.html:255
+#: template/app_admin/admin_project.html:307
+#: template/app_doc/manage/manage_image.html:278
+#: template/app_doc/manage/manage_project.html:217
+#: template/app_doc/manage/manage_project.html:269
+msgid "以再次确认删除。"
+msgstr "To confirm the deletion again."
 
 #: template/app_admin/admin_project.html:290
 #: template/app_doc/manage/manage_project.html:252
@@ -1190,53 +1869,543 @@ msgstr "cancel"
 msgid "未选中任何文集"
 msgstr "No anthology selected"
 
+#: template/app_admin/admin_project.html:307
+#: template/app_doc/manage/manage_project.html:269
+msgid "你正在批量删除文集！"
+msgstr "You are deleting multiple projects!"
+
+#: template/app_admin/admin_project.html:307
+#: template/app_doc/manage/manage_project.html:269
+msgid "删除所选文集及文集下所有文档！"
+msgstr "Delete the selected project and all child documents in the project"
+
 #: template/app_admin/admin_project.html:308
+#: template/app_doc/manage/manage_image.html:22
 #: template/app_doc/manage/manage_project.html:270
 msgid "批量删除"
 msgstr "Batch delete"
 
-#: template/app_admin/admin_user.html:111
-#, fuzzy
-#| msgid "请输入电子邮箱地址"
-msgid "输入电子邮箱"
-msgstr "Please enter your email address"
+#: template/app_admin/admin_project_role.html:4
+msgid "文集权限管理"
+msgstr "Project authority management"
 
-#: template/app_admin/admin_user.html:111
-#: template/app_admin/admin_user.html:142
-#, fuzzy
-#| msgid "请输入用户名，不少于5位"
-msgid "输入密码，长度不少于6位"
-msgstr "Please enter a username, minimum 6 characters"
+#: template/app_admin/admin_project_role.html:14
+msgid "权限管理"
+msgstr "Authority management"
 
-#: template/app_admin/admin_user_profile.html:4
-msgid "用户资料设置"
-msgstr "User profile settings"
+#: template/app_admin/admin_project_role.html:23
+msgid "修改文集权限"
+msgstr "Edit project permissions"
 
+#: template/app_admin/admin_project_role.html:46
+msgid "权限选择"
+msgstr "Permission selection"
+
+#: template/app_admin/admin_project_role.html:50
+#: template/app_doc/manage/manage_project_options.html:92
+msgid "指定用户可见"
+msgstr "Specified user visible"
+
+#: template/app_admin/admin_project_role.html:51
+#: template/app_doc/manage/manage_project_options.html:93
+msgid "访问码可见"
+msgstr "Access code visible"
+
+#: template/app_admin/admin_project_role.html:58
+#: template/app_doc/check_viewcode.html:14
+#: template/app_doc/check_viewcode.html:65
+#: template/app_doc/manage/manage_project_options.html:100
+msgid "请输入访问码"
+msgstr "Please enter the access code"
+
+#: template/app_admin/admin_project_role.html:60
+#: template/app_doc/manage/manage_project_options.html:102
+msgid "不少于4位数"
+msgstr "Not less than 4 digits"
+
+#: template/app_admin/admin_project_role.html:64
+#: template/app_doc/manage/manage_project_options.html:106
+msgid "允许用户"
+msgstr "Allow users"
+
+#: template/app_admin/admin_project_role.html:67
+#: template/app_doc/manage/manage_project_options.html:109
+msgid "请输入用户名，回车输入多个用户"
+msgstr "Please enter user name, enter multiple users"
+
+#: template/app_admin/admin_project_role.html:75
+#: template/app_doc/manage/manage_project_options.html:79
+msgid "立即修改"
+msgstr "Modify now"
+
+#: template/app_admin/admin_register_code.html:10
+msgid "注册邀请码管理"
+msgstr "Registration invitation code management"
+
+#: template/app_admin/admin_register_code.html:21
+#: template/app_admin/admin_register_code.html:115
+msgid "新增注册码"
+msgstr "Add registration code"
+
+#: template/app_admin/admin_register_code.html:38
+msgid "注册码"
+msgstr "Registration code"
+
+#: template/app_admin/admin_register_code.html:39
+msgid "最大使用次数"
+msgstr "Maximum number of uses"
+
+#: template/app_admin/admin_register_code.html:40
+msgid "已使用次数"
+msgstr "Used times"
+
+#: template/app_admin/admin_register_code.html:42
+msgid "使用的用户"
+msgstr "User used"
+
+#: template/app_admin/admin_register_code.html:44
+#: template/app_doc/manage/manage_project_collaborator.html:95
+msgid "创建用户"
+msgstr "Create user"
+
+#: template/app_admin/admin_register_code.html:56
+msgid "有效"
+msgstr "Valid"
+
+#: template/app_admin/admin_register_code.html:58
+msgid "失效"
+msgstr "Invalid"
+
+#: template/app_admin/admin_register_code.html:63
+msgid "暂无注册用户使用"
+msgstr "No registered users to use"
+
+#: template/app_admin/admin_register_code.html:88
+msgid "当前页"
+msgstr "Current pages"
+
+#: template/app_admin/admin_register_code.html:88
+msgid "共"
+msgstr "Total"
+
+#: template/app_admin/admin_register_code.html:88
+msgid "页"
+msgstr "page"
+
+#: template/app_admin/admin_register_code.html:118
+msgid "输入注册码最大使用次数"
+msgstr "Enter the maximum number of uses for the registration code"
+
+#: template/app_admin/admin_register_code.html:149
+msgid "警告：此操作将删除此注册码！"
+msgstr "Warning: This action will delete this registration code!"
+
+#: template/app_admin/admin_setting.html:20
+msgid "基础设置"
+msgstr "Basic settings"
+
+#: template/app_admin/admin_setting.html:21
+msgid "邮箱设置"
+msgstr "Mailbox settings"
+
+#: template/app_admin/admin_setting.html:22
+msgid "文档设置"
+msgstr "Document settings"
+
+#: template/app_admin/admin_setting.html:32
+msgid "站点名称"
+msgstr "Site name"
+
+#: template/app_admin/admin_setting.html:34
+msgid "请输入站点标题"
+msgstr "Please enter the site title"
+
+#: template/app_admin/admin_setting.html:39
+msgid "子标题"
+msgstr "Subtitle"
+
+#: template/app_admin/admin_setting.html:41
+msgid "请输入站点的子标题"
+msgstr "Please enter the sub-title of the site"
+
+#: template/app_admin/admin_setting.html:48
+msgid "多个关键词请使用使用英文逗号,进行分隔"
+msgstr "Use commas to separate multiple keywords"
+
+#: template/app_admin/admin_setting.html:53
+msgid "站点描述"
+msgstr "Site description"
+
+#: template/app_admin/admin_setting.html:55
+msgid "请用简短的文字描述你的觅道文档站点"
+msgstr "Please briefly describe your search documentation website."
+
+#: template/app_admin/admin_setting.html:60
+msgid "备案号"
+msgstr "Record number"
+
+#: template/app_admin/admin_setting.html:62
+msgid "请输入网站的备案号"
+msgstr "Please enter the registration number of the website"
+
+#: template/app_admin/admin_setting.html:68
+msgid "首页排序"
+msgstr "Home sort"
+
+#: template/app_admin/admin_setting.html:71
+#: template/app_admin/admin_setting.html:74
+msgid "升序"
+msgstr "Oldest"
+
+#: template/app_admin/admin_setting.html:72
+#: template/app_admin/admin_setting.html:75
+msgid "降序"
+msgstr "Most recent"
+
+#: template/app_admin/admin_setting.html:78
+msgid "首页文集列表的排序方式"
+msgstr "How to sort the project list on the homepage"
+
+#: template/app_admin/admin_setting.html:82
+msgid "禁止注册"
+msgstr "Registration prohibited"
+
+#: template/app_admin/admin_setting.html:84
+#: template/app_admin/admin_setting.html:92
+#: template/app_admin/admin_setting.html:100
+#: template/app_admin/admin_setting.html:108
+#: template/app_admin/admin_setting.html:117
+#: template/app_admin/admin_setting.html:125
+#: template/app_admin/admin_setting.html:133
+#: template/app_admin/admin_setting.html:218 template/app_doc/doc.html:187
+#: template/app_doc/manage/manage_project_options.html:60
+#: template/app_doc/tag_doc_single.html:167
+msgid "开启|关闭"
+msgstr "On | off"
+
+#: template/app_admin/admin_setting.html:86
+msgid "开启此选项将禁止新用户注册"
+msgstr "Enabling this option will disable new user registration"
+
+#: template/app_admin/admin_setting.html:90
+msgid "全站登录"
+msgstr "Sitewide login"
+
+#: template/app_admin/admin_setting.html:94
+msgid "开启此选项，除注册、登录页面外的所有页面的访问都需要登录"
+msgstr ""
+"Enable this option to set all pages, except the registration and login "
+"pages, to require the user to be logged in"
+
+#: template/app_admin/admin_setting.html:98
+msgid "启用注册码"
+msgstr "Enable registration code"
+
+#: template/app_admin/admin_setting.html:102
+msgid "开启此选项，新用户注册将需要填写注册码"
+msgstr ""
+"Turning this option on, a new user will need to fill in the registration "
+"code."
+
+#: template/app_admin/admin_setting.html:106
+msgid "登录验证码"
+msgstr "Login verification code"
+
+#: template/app_admin/admin_setting.html:110
+msgid "开启此选项，登录将需要填写验证码"
+msgstr ""
+"Turning on this option, you will need to fill in a verification code to log "
+"in."
+
+#: template/app_admin/admin_setting.html:115 template/app_doc/project.html:40
+msgid "文集下载"
+msgstr "Collection Download"
+
+#: template/app_admin/admin_setting.html:119
+msgid ""
+"开启此选项，文集允许导出为EPUB和DOCX等格式文件以供下载，文集拥有者可进行进一"
+"步控制特定文集是否开放导出"
+msgstr ""
+"Enabling this option allows the project to be exported to ePUB and .docx "
+"format files for downloading. The project owner can control whether a "
+"specific project is allowed to be exported"
+
+#: template/app_admin/admin_setting.html:123
+msgid "启用邮箱"
+msgstr "Enable mailbox"
+
+#: template/app_admin/admin_setting.html:127
+msgid "开启此选项后还需进行邮箱信息配置"
+msgstr "After enabling this option, you need to configure the email settings"
+
+#: template/app_admin/admin_setting.html:131
+msgid "图片缩略"
+msgstr "Picture thumbnail"
+
+#: template/app_admin/admin_setting.html:135
+msgid "开启后文档中的图片将显示为最大宽度350px的缩略图"
+msgstr ""
+"After opening, the image in the document will be displayed as a thumbnail "
+"with a maximum width of 350px"
+
+#: template/app_admin/admin_setting.html:140
+msgid "统计代码"
+msgstr "Telemetry code"
+
+#: template/app_admin/admin_setting.html:142
+msgid ""
+"如果需要调用第三方的统计功能，请将第三方统计工具代码输入至此，可以包含"
+"<script>标签"
+msgstr ""
+"If you need to call a third party telemetry function, which can include the "
+"<script> tag"
+
+#: template/app_admin/admin_setting.html:147
+msgid "广告位1"
+msgstr "Ad slot 1"
+
+#: template/app_admin/admin_setting.html:149
+msgid ""
+"如果需要在文档正文上方添加广告，请将广告相关代码输入至此，可以包含<script>标"
+"签"
+msgstr ""
+"If you need to add an ad above the body of the document, please enter the ad-"
+"related code here, which can include the <script> tag sign"
+
+#: template/app_admin/admin_setting.html:153
+msgid "广告位2"
+msgstr "Ad slot 2"
+
+#: template/app_admin/admin_setting.html:155
+msgid "此广告位位于文档下方、分享按钮上方，可以包含<script>标签"
+msgstr ""
+"This ad slot is located below the document, above the share button, and can "
+"contain the <script> tag"
+
+#: template/app_admin/admin_setting.html:160
+msgid "广告位3"
+msgstr "Advertising space 3"
+
+#: template/app_admin/admin_setting.html:162
+msgid "此广告位位于文档左侧目录栏下方，可以包含<script>标签"
+msgstr ""
+"This ad slot is located under the directory bar on the left side of the "
+"document and can contain the <script> tag"
+
+#: template/app_admin/admin_setting.html:168
+#: template/app_doc/editor/modify_doc.html:81
+#: template/app_doc/editor/modify_doc.html:84
+msgid "保存"
+msgstr "Save"
+
+#: template/app_admin/admin_setting.html:181
+msgid "发件邮箱"
+msgstr "Sending mailbox"
+
+#: template/app_admin/admin_setting.html:188
+msgid "主机"
+msgstr "Host"
+
+#: template/app_admin/admin_setting.html:195
+msgid "端口"
+msgstr "Port"
+
+#: template/app_admin/admin_setting.html:202
+#: template/app_admin/admin_user.html:93
 #: template/app_admin/admin_user_profile.html:16
 #: template/app_doc/manage/manage_project_collaborator.html:58
 #: template/app_doc/manage/manage_self.html:10
 msgid "用户名"
 msgstr "user name"
 
-#: template/app_admin/admin_user_profile.html:20
-#: template/app_doc/manage/manage_self.html:14
-msgid "不可修改"
-msgstr "Not modifiable"
+#: template/app_admin/admin_setting.html:216
+msgid "使用SSL"
+msgstr "Use SSL"
 
+#: template/app_admin/admin_setting.html:224
+msgid "保存邮箱设置"
+msgstr "Save email settings"
+
+#: template/app_admin/admin_setting.html:237
+msgid "白名单"
+msgstr "Whitelist"
+
+#: template/app_admin/admin_setting.html:240
+msgid "请输入域名"
+msgstr "Please enter the domain name"
+
+#: template/app_admin/admin_setting.html:243
+msgid ""
+"默认支持YouTube、优酷、QQ视频、Facebook、哔哩哔哩、TED网站，仅用于EditorMD编"
+"辑器模式"
+msgstr ""
+"By default, it supports YouTube, Youku, QQ video, Facebook, Bilibili, and "
+"TED websites, only for EditorMD editing in editor mode"
+
+#: template/app_admin/admin_setting.html:247
+msgid "图片大小"
+msgstr "Image size"
+
+#: template/app_admin/admin_setting.html:253
+msgid "默认限制图片大小10MB，单位MB"
+msgstr "The default limit of the picture size is 10 MB, unit (MB)"
+
+#: template/app_admin/admin_setting.html:257
+msgid "附件格式"
+msgstr "Attachment format"
+
+#: template/app_admin/admin_setting.html:260
+msgid "不带.号的格式后缀"
+msgstr "Format suffix without"
+
+#: template/app_admin/admin_setting.html:263
+msgid "默认支持.zip文件格式"
+msgstr "Supports .ZIP format by default"
+
+#: template/app_admin/admin_setting.html:267
+#: template/app_doc/editor/create_base.html:126
+msgid "附件大小"
+msgstr "Attachment size"
+
+#: template/app_admin/admin_setting.html:273
+msgid "默认限制附件文件大小50MB，单位MB"
+msgstr "The default limit of the attachment file size is 50MB, unit (MB)"
+
+#: template/app_admin/admin_setting.html:278
+msgid "保存文档配置"
+msgstr "Save document configuration"
+
+#: template/app_admin/admin_user.html:17
+msgid "输入用户名"
+msgstr "Enter your username"
+
+#: template/app_admin/admin_user.html:20
+msgid "新增用户"
+msgstr "New users"
+
+#: template/app_admin/admin_user.html:21
+msgid "添加管理员"
+msgstr "Add manager"
+
+#: template/app_admin/admin_user.html:94
 #: template/app_admin/admin_user_profile.html:23
 #: template/app_doc/manage/manage_self.html:17
 msgid "昵称"
 msgstr "Nickname"
 
-#: template/app_admin/admin_user_profile.html:25
-#: template/app_doc/manage/manage_self.html:19
-msgid "请输入昵称"
-msgstr "Please enter a nickname"
-
+#: template/app_admin/admin_user.html:95
 #: template/app_admin/admin_user_profile.html:29
 #: template/app_doc/manage/manage_self.html:23
 msgid "电子邮箱"
 msgstr "E-mail"
+
+#: template/app_admin/admin_user.html:96
+#: template/app_admin/admin_user_profile.html:41
+msgid "用户角色"
+msgstr "User role"
+
+#: template/app_admin/admin_user.html:97
+msgid "注册时间"
+msgstr "Registration time"
+
+#: template/app_admin/admin_user.html:98
+msgid "最后登录时间"
+msgstr "last login time"
+
+#: template/app_admin/admin_user.html:108
+msgid "新建用户"
+msgstr "New user"
+
+#: template/app_admin/admin_user.html:111
+#: template/app_admin/admin_user.html:142
+msgid "输入用户名，长度不少于5位"
+msgstr "Please enter a username, minimum 5 characters"
+
+#: template/app_admin/admin_user.html:111
+#: template/app_admin/admin_user.html:142
+msgid "输入电子邮箱"
+msgstr "Please enter your email address"
+
+#: template/app_admin/admin_user.html:111
+#: template/app_admin/admin_user.html:142
+msgid "输入密码，长度不少于6位"
+msgstr "Please enter the password, minimum 6 characters"
+
+#: template/app_admin/admin_user.html:139
+msgid "新增管理员"
+msgstr "Add manager"
+
+#: template/app_admin/admin_user.html:171
+#: template/app_admin/admin_user_profile.html:118
+#: template/app_doc/head_base.html:93
+#: template/app_doc/manage/manage_self.html:66
+#: template/app_doc/pro_list.html:447 template/app_doc/search_result.html:79
+#: template/app_doc/search_result.html:360 template/forget_pwd.html:62
+msgid "修改密码"
+msgstr "Change Password"
+
+#: template/app_admin/admin_user.html:174 template/app_doc/pro_list.html:450
+#: template/app_doc/search_result.html:363
+msgid "修改用户"
+msgstr "Modify user"
+
+#: template/app_admin/admin_user.html:174 template/app_doc/pro_list.html:450
+#: template/app_doc/search_result.html:363
+msgid "的密码"
+msgstr "password"
+
+#: template/app_admin/admin_user.html:174
+#: template/app_admin/admin_user_profile.html:121
+#: template/app_doc/manage/manage_self.html:69
+#: template/app_doc/pro_list.html:450 template/app_doc/search_result.html:363
+msgid "输入新密码"
+msgstr "Enter a new password"
+
+#: template/app_admin/admin_user.html:174
+#: template/app_admin/admin_user_profile.html:121
+#: template/app_doc/manage/manage_self.html:69
+#: template/app_doc/pro_list.html:450 template/app_doc/search_result.html:363
+msgid "再次确认新密码"
+msgstr "Confirm the new password"
+
+#: template/app_admin/admin_user.html:175
+#: template/app_admin/admin_user_profile.html:122
+#: template/app_doc/manage/manage_self.html:70
+#: template/app_doc/pro_list.html:451 template/app_doc/search_result.html:364
+msgid "确认修改"
+msgstr "Confirm modification"
+
+#: template/app_admin/admin_user.html:215
+msgid "删除用户"
+msgstr "Delete users"
+
+#: template/app_admin/admin_user.html:218
+msgid "警告：此操作将删除用户"
+msgstr "Warning: This action will delete the user!"
+
+#: template/app_admin/admin_user.html:218
+msgid "及其文集文档！协作文档将转移给文集所有者"
+msgstr ""
+"And its project documentation! Collaboration documents will be transfered to "
+"the collection owner"
+
+#: template/app_admin/admin_user_profile.html:4
+msgid "用户资料设置"
+msgstr "User profile settings"
+
+#: template/app_admin/admin_user_profile.html:10
+msgid "用户资料编辑"
+msgstr "User profile editing"
+
+#: template/app_admin/admin_user_profile.html:20
+#: template/app_doc/manage/manage_self.html:14
+msgid "不可修改"
+msgstr "Not modifiable"
+
+#: template/app_admin/admin_user_profile.html:25
+#: template/app_doc/manage/manage_self.html:19
+msgid "请输入昵称"
+msgstr "Please enter a nickname"
 
 #: template/app_admin/admin_user_profile.html:31
 #: template/app_doc/manage/manage_self.html:25 template/register.html:77
@@ -1247,9 +2416,17 @@ msgstr "Please enter your email address"
 msgid "用户状态"
 msgstr "User status"
 
-#: template/app_admin/admin_user_profile.html:41
-msgid "用户角色"
-msgstr "User role"
+#: template/app_admin/admin_user_profile.html:37
+msgid "启用|停用"
+msgstr "Enable|Disable"
+
+#: template/app_admin/admin_user_profile.html:45
+msgid "普通用户"
+msgstr "General user"
+
+#: template/app_admin/admin_user_profile.html:46
+msgid "超级管理员"
+msgstr "Super user"
 
 #: template/app_admin/admin_user_profile.html:51
 #: template/app_doc/manage/manage_self.html:29
@@ -1265,11 +2442,121 @@ msgstr "Click to change the password"
 msgid "更新用户资料"
 msgstr "Update user profile"
 
-#: template/app_doc/check_viewcode.html:14
-#: template/app_doc/check_viewcode.html:65
-#: template/app_doc/manage/manage_project_options.html:100
-msgid "请输入访问码"
-msgstr "Please enter the access code"
+#: template/app_admin/admin_user_profile.html:121
+msgid "修改用户的密码"
+msgstr "Modify the users password"
+
+#: template/app_api/manage_token.html:4
+msgid "用户Token管理"
+msgstr "User token management"
+
+#: template/app_api/manage_token.html:9
+msgid ""
+"借助Token，你可以无需打开觅道文档网站，直接通过更加自动化的方式进行文档编写；"
+"配合觅道文档浏览器剪藏扩展，还能将觅道文档化身为便捷的网页内容摘录工具；"
+msgstr ""
+"With the help of a token, you can directly write documents using the API; "
+"With the browser extension, it can also turn into a convenient web content "
+"extraction tool;"
+
+#: template/app_api/manage_token.html:14
+msgid "Token值"
+msgstr "Token value"
+
+#: template/app_api/manage_token.html:21
+#: template/app_doc/editor/tpl_editor_div_doc.html:88
+msgid "复制"
+msgstr "Copy"
+
+#: template/app_api/manage_token.html:22
+msgid "重新生成Token"
+msgstr "Regenerate token"
+
+#: template/app_api/manage_token.html:50
+msgid "重置Token"
+msgstr "Reset token"
+
+#: template/app_api/manage_token.html:53
+msgid "警告：此操作将重新为你的账户生成Token，旧Token将失效！"
+msgstr ""
+"Warning: This operation will regenerate the token for your account and the "
+"old token will be invalidated.!"
+
+#: template/app_api/single_doc_detail.html:133
+#: template/app_doc/docs_base.html:189 template/app_doc/share/share_doc.html:69
+#: template/app_doc/tag_doc_base.html:114
+msgid "缩小字体"
+msgstr "Reduce font size"
+
+#: template/app_api/single_doc_detail.html:136
+#: template/app_doc/docs_base.html:192 template/app_doc/share/share_doc.html:72
+#: template/app_doc/tag_doc_base.html:117
+msgid "放大字体"
+msgstr "Enlarge font"
+
+#: template/app_api/single_doc_detail.html:139
+#: template/app_doc/docs_base.html:195 template/app_doc/share/share_doc.html:75
+#: template/app_doc/tag_doc_base.html:120
+msgid "切换字体类型"
+msgstr "Switch font types"
+
+#: template/app_api/single_doc_detail.html:147
+#: template/app_doc/diff_doc.html:76 template/app_doc/docs_base.html:202
+#: template/app_doc/editor/create_doc.html:62
+#: template/app_doc/editor/modify_doc.html:76
+#: template/app_doc/tag_doc_base.html:128
+#: template/app_doc/user/user_center.html:105 template/search/search.html:90
+msgid "首页"
+msgstr "Home page"
+
+#: template/app_api/single_doc_detail.html:162
+msgid "最后修改于"
+msgstr "Last modified on"
+
+#: template/app_api/single_doc_detail.html:489
+#: template/app_doc/docs_base.html:277
+#: template/app_doc/share/share_doc.html:159
+#: template/app_doc/tag_doc_base.html:202
+msgid "手机扫一扫进行分享"
+msgstr "Scan your mobile phone to share"
+
+#: template/app_api/single_doc_detail.html:494
+#: template/app_doc/docs_base.html:273 template/app_doc/docs_base.html:282
+#: template/app_doc/share/share_doc.html:155
+#: template/app_doc/share/share_doc.html:164
+#: template/app_doc/tag_doc_base.html:198
+#: template/app_doc/tag_doc_base.html:207
+msgid "复制链接"
+msgstr "Copy link"
+
+#: template/app_api/single_doc_detail.html:504
+#: template/app_doc/tag_doc_base.html:217
+msgid "微信"
+msgstr "WeChat"
+
+#: template/app_api/single_doc_detail.html:505
+#: template/app_doc/docs_base.html:303 template/app_doc/tag_doc_base.html:218
+msgid "支付宝"
+msgstr "Alipay"
+
+#: template/app_api/single_doc_detail.html:506
+msgid "QQ支付"
+msgstr "QQ payment"
+
+#: template/app_api/single_doc_detail.html:508
+#: template/app_doc/tag_doc_base.html:221
+msgid "项目源码"
+msgstr "Project source code"
+
+#: template/app_api/single_doc_detail.html:532
+#: template/app_doc/tag_doc_base.html:245
+msgid "码云"
+msgstr "Code cloud"
+
+#: template/app_api/single_doc_detail.html:534
+#: template/app_doc/tag_doc_base.html:247
+msgid "作者博客"
+msgstr "Authors blog"
 
 #: template/app_doc/check_viewcode.html:14 template/app_doc/docs_base.html:23
 #: template/app_doc/editor/create_base.html:14
@@ -1301,16 +2588,8 @@ msgstr "Mrdoc document editor"
 msgid "你正在：对比文档历史版本"
 msgstr "You are: comparing historical versions of documents"
 
-#: template/app_doc/diff_doc.html:46
-#: template/app_doc/manage/manage_doc_history.html:33
-#: template/app_doc/manage/manage_doc_recycle.html:25
-#: template/app_doc/manage/manage_doctemp.html:36
-#: template/app_doc/manage/manage_project.html:105
-#: template/app_doc/manage/manage_project_collaborator.html:96
-msgid "创建时间"
-msgstr "Creation time"
-
 #: template/app_doc/diff_doc.html:47
+#: template/app_doc/editor/tpl_editor_div_doc.html:60
 msgid "用户"
 msgstr "user"
 
@@ -1320,19 +2599,19 @@ msgid "查看"
 msgstr "View"
 
 #: template/app_doc/diff_doc.html:57
+#: template/app_doc/editor/tpl_editor_div_doc.html:61
 #: template/app_doc/manage/manage_doc_history.html:45
 msgid "对比"
 msgstr "Contrast"
 
 #: template/app_doc/diff_doc.html:71 template/app_doc/docs_base.html:186
+#: template/app_doc/editor/create_doc.html:8
+#: template/app_doc/editor/create_doctemp.html:7
+#: template/app_doc/editor/modify_doc.html:22
+#: template/app_doc/editor/modify_doctemp.html:7
+#: template/app_doc/tag_doc_base.html:111
 msgid "切换侧边栏"
 msgstr "Toggle sidebar"
-
-#: template/app_doc/diff_doc.html:76 template/app_doc/docs_base.html:202
-#: template/app_doc/tag_doc_base.html:128
-#: template/app_doc/user/user_center.html:105 template/search/search.html:90
-msgid "首页"
-msgstr "home page"
 
 #: template/app_doc/diff_doc.html:91
 msgid "当前版本"
@@ -1342,17 +2621,6 @@ msgstr "current version"
 msgid "历史版本:"
 msgstr "Historical version:"
 
-#: template/app_doc/doc.html:18 template/app_doc/doc.html:30
-#: template/app_doc/manage/manage_doc_tag.html:42
-#: template/app_doc/manage/manage_doctemp.html:47
-#: template/app_doc/manage/manage_image_group.html:40
-#: template/app_doc/manage/manage_project_collaborator.html:76
-#: template/app_doc/manage/manage_project_collaborator.html:108
-#: template/app_doc/tag_doc_single.html:15
-#: template/app_doc/tag_doc_single.html:27
-msgid "修改"
-msgstr "modify"
-
 #: template/app_doc/doc.html:21 template/app_doc/doc.html:34
 #: template/app_doc/manage/manage_project_collaborator.html:39
 #: template/app_doc/project.html:17 template/app_doc/tag_doc_single.html:18
@@ -1360,7 +2628,8 @@ msgstr "modify"
 msgid "添加"
 msgstr "add to"
 
-#: template/app_doc/doc.html:24 template/app_doc/project.html:22
+#: template/app_doc/doc.html:24 template/app_doc/editor/create_doc.html:60
+#: template/app_doc/editor/modify_doc.html:74 template/app_doc/project.html:22
 #: template/app_doc/tag_doc_single.html:21
 msgid "管理"
 msgstr "Administration"
@@ -1369,7 +2638,8 @@ msgstr "Administration"
 msgid "更新于:"
 msgstr "Updated on:"
 
-#: template/app_doc/doc.html:89
+#: template/app_doc/doc.html:89 template/app_doc/project.html:144
+#: template/app_doc/tag_doc_single.html:80
 msgid "分享本文档"
 msgstr "Share this document"
 
@@ -1409,10 +2679,6 @@ msgstr "Download markdown file"
 msgid "分享"
 msgstr "share"
 
-#: template/app_doc/doc.html:187 template/app_doc/tag_doc_single.html:167
-msgid "开启|关闭"
-msgstr "On | off"
-
 #: template/app_doc/doc.html:195
 #: template/app_doc/manage/manage_overview.html:149
 #: template/app_doc/tag_doc_single.html:175
@@ -1422,28 +2688,6 @@ msgstr "link"
 #: template/app_doc/doc.html:203 template/app_doc/tag_doc_single.html:183
 msgid "类型"
 msgstr "type"
-
-#: template/app_doc/doc.html:206 template/app_doc/doc.html:209
-#: template/app_doc/manage/manage_overview.html:120
-#: template/app_doc/manage/manage_project_options.html:90
-#: template/app_doc/pro_list.html:255 template/app_doc/tag_doc_single.html:186
-#: template/app_doc/tag_doc_single.html:189
-msgid "公开"
-msgstr "open"
-
-#: template/app_doc/doc.html:207 template/app_doc/doc.html:210
-#: template/app_doc/manage/manage_overview.html:122
-#: template/app_doc/manage/manage_project_options.html:91
-#: template/app_doc/pro_list.html:256 template/app_doc/tag_doc_single.html:187
-#: template/app_doc/tag_doc_single.html:190
-msgid "私密"
-msgstr "private"
-
-#: template/app_doc/doc.html:217
-#: template/app_doc/manage/manage_overview.html:126
-#: template/app_doc/tag_doc_single.html:197
-msgid "密码"
-msgstr "password"
 
 #: template/app_doc/doc.html:222 template/app_doc/tag_doc_single.html:202
 msgid "更新密码"
@@ -1457,19 +2701,30 @@ msgstr "Set successfully"
 msgid "设置出错"
 msgstr "Error setting"
 
-#: template/app_doc/doc.html:370 template/app_doc/tag_doc_single.html:347
+#: template/app_doc/doc.html:369 template/app_doc/doc.html:370
+#: template/app_doc/tag_doc_single.html:347
 msgid "关闭分享"
 msgstr "Turn off sharing"
 
 #: template/app_doc/docs_base.html:71
-#, fuzzy
-#| msgid "搜索文档"
 msgid "在文集内搜索文档"
-msgstr "Search for documents"
+msgstr "Search for documents in the project"
 
-#: template/app_doc/docs_base.html:81
+#: template/app_doc/docs_base.html:81 template/app_doc/tag_doc_base.html:72
 msgid "私密文档"
 msgstr "Private documents"
+
+#: template/app_doc/docs_base.html:86
+msgid "已收藏文集，点击取消"
+msgstr "Collected essays, click to cancel"
+
+#: template/app_doc/docs_base.html:88
+msgid "收藏文集"
+msgstr "Collections"
+
+#: template/app_doc/docs_base.html:91
+msgid "请登录后收藏"
+msgstr "Please log in to bookmark"
 
 #: template/app_doc/docs_base.html:95
 msgid "* 此为协作文集"
@@ -1480,48 +2735,26 @@ msgid "文集大纲加载中……"
 msgstr "The outline of the project is loading"
 
 #: template/app_doc/docs_base.html:168 template/app_doc/tag_doc_base.html:91
-#, fuzzy
-#| msgid "本文档使用MrDoc发布"
 msgid "本文档使用 MrDoc 发布"
-msgstr "This document is published in mrdoc"
-
-#: template/app_doc/docs_base.html:189 template/app_doc/share/share_doc.html:69
-msgid "缩小字体"
-msgstr "Reduce font size"
-
-#: template/app_doc/docs_base.html:192 template/app_doc/share/share_doc.html:72
-msgid "放大字体"
-msgstr "Enlarge font"
-
-#: template/app_doc/docs_base.html:195 template/app_doc/share/share_doc.html:75
-msgid "切换字体类型"
-msgstr "Switch font types"
+msgstr "This document is published using MrDoc"
 
 #: template/app_doc/docs_base.html:272
 #: template/app_doc/share/share_doc.html:154
+#: template/app_doc/tag_doc_base.html:197
 msgid "微信扫一扫"
 msgstr "Scan wechat"
-
-#: template/app_doc/docs_base.html:273 template/app_doc/docs_base.html:282
-#: template/app_doc/share/share_doc.html:155
-#: template/app_doc/share/share_doc.html:164
-msgid "复制链接"
-msgstr "Copy link"
-
-#: template/app_doc/docs_base.html:277
-#: template/app_doc/share/share_doc.html:159
-msgid "手机扫一扫进行分享"
-msgstr "Scan your mobile phone to share"
 
 #: template/app_doc/docs_base.html:292
 msgid "关于"
 msgstr "About"
 
 #: template/app_doc/docs_base.html:293
-#, fuzzy
-#| msgid "觅道文档"
 msgid "觅道文档MrDoc"
-msgstr "Find a document"
+msgstr "Midao Document MrDoc"
+
+#: template/app_doc/docs_base.html:293 template/app_doc/search.html:47
+msgid "州的先生"
+msgstr "Mr state"
 
 #: template/app_doc/docs_base.html:293
 msgid ""
@@ -1539,79 +2772,461 @@ msgstr ""
 "If the MiDao document software has been useful for you or your team -We "
 "welcome donations to help continue developing this software."
 
+#: template/app_doc/docs_base.html:294
+msgid "捐助鸣谢列表"
+msgstr "Donation acknowledgement list"
+
 #: template/app_doc/editor/create_base.html:48
-#, fuzzy
-#| msgid "你正在访问："
 msgid "你正在"
-msgstr "You are visiting:"
+msgstr "You are"
+
+#: template/app_doc/editor/create_base.html:96
+#: template/app_doc/manage/manage_image.html:17
+msgid "上传图片"
+msgstr "Upload pictures"
+
+#: template/app_doc/editor/create_base.html:99
+msgid "或 插入外链图片链接"
+msgstr "Or insert a link to an external URL"
+
+#: template/app_doc/editor/create_base.html:103
+msgid "插入图片链接"
+msgstr "Insert image link"
+
+#: template/app_doc/editor/create_base.html:118
+msgid "格式文件，文件大小不超过"
+msgstr "Format file, the file size does not exceed"
+
+#: template/app_doc/editor/create_base.html:120
+#: template/app_doc/manage/manage_attachment.html:16
+msgid "上传附件"
+msgstr "Upload attachment"
+
+#: template/app_doc/editor/create_base.html:121
+msgid "管理附件"
+msgstr "Manage attachments"
+
+#: template/app_doc/editor/create_base.html:125
+#: template/app_doc/manage/manage_attachment.html:34
+msgid "附件名称"
+msgstr "Name of attachment"
+
+#: template/app_doc/editor/create_base.html:127
+#: template/app_doc/manage/manage_attachment.html:36
+msgid "上传时间"
+msgstr "Upload time"
+
+#: template/app_doc/editor/create_base.html:140
+#: template/app_doc/editor/create_base.html:156
+msgid "生成表格"
+msgstr "Generate table"
+
+#: template/app_doc/editor/create_base.html:141
+msgid "粘贴表格"
+msgstr "Paste form"
+
+#: template/app_doc/editor/create_base.html:165
+msgid "粘贴Excel或在线电子表格的内容"
+msgstr "Paste the contents of an Excel on online spreadsheet"
+
+#: template/app_doc/editor/create_base.html:175
+msgid "插入音频链接"
+msgstr "Insert audio link"
+
+#: template/app_doc/editor/create_base.html:177
+msgid "填入音频文件链接，支持文件后缀格式为"
+msgstr "Insert audio link, the supported file format is"
+
+#: template/app_doc/editor/create_base.html:178
+msgid "插入音频"
+msgstr "Insert audio"
+
+#: template/app_doc/editor/create_base.html:184
+msgid "插入视频链接"
+msgstr "Insert video link"
+
+#: template/app_doc/editor/create_base.html:186
+msgid "填入视频文件链接，支持文件后缀格式为"
+msgstr "Insert the video link, the supported file format is"
+
+#: template/app_doc/editor/create_base.html:187
+msgid "插入视频"
+msgstr "Insert video"
+
+#: template/app_doc/editor/create_base.html:193
+msgid "插入视频网站链接"
+msgstr "Insert video from website URL"
+
+#: template/app_doc/editor/create_base.html:195
+msgid ""
+"填入视频网站视频播放页链接，支持 YouTube、优酷、QQ视频、Facebook、哔哩哔哩、"
+"TED网站"
+msgstr ""
+"Insert video from URL, supports Youtube, Yoku, QQ Video, Facebook, BiliBili, "
+"TED"
+
+#: template/app_doc/editor/create_base.html:196
+msgid "插入视频网站视频"
+msgstr "Insert video from URL"
+
+#: template/app_doc/editor/create_doc.html:12
+#: template/app_doc/editor/modify_doc.html:26
+#: template/app_doc/manage/manage_collect.html:22
+#: template/app_doc/search_result.html:143 template/search/search.html:139
+msgid "文档"
+msgstr "File"
+
+#: template/app_doc/editor/create_doc.html:16
+#: template/app_doc/editor/modify_doc.html:33
+msgid "展开下级目录"
+msgstr "View document"
+
+#: template/app_doc/editor/create_doc.html:17
+#: template/app_doc/editor/modify_doc.html:34
+msgid "显示下级文档"
+msgstr "Display child documents"
+
+#: template/app_doc/editor/create_doc.html:22
+#: template/app_doc/editor/modify_doc.html:43
+msgid "导入"
+msgstr "Import Project"
+
+#: template/app_doc/editor/create_doc.html:37
+#: template/app_doc/editor/modify_doc.html:52
+msgid "文本文件"
+msgstr "Text file"
+
+#: template/app_doc/editor/create_doc.html:40
+#: template/app_doc/editor/modify_doc.html:55
+msgid "文档缓存"
+msgstr "Document cache"
+
+#: template/app_doc/editor/create_doc.html:43
+#: template/app_doc/editor/modify_doc.html:58
+msgid "Word文档(.docx)"
+msgstr "Word document (.docx)"
+
+#: template/app_doc/editor/create_doc.html:49
+#: template/app_doc/editor/modify_doc.html:64
+#: template/app_doc/manage/manage_self.html:34
+msgid "编辑器"
+msgstr "Editor"
+
+#: template/app_doc/editor/create_doc.html:53
+#: template/app_doc/editor/modify_doc.html:68
+msgid "富文本"
+msgstr "Rich text"
+
+#: template/app_doc/editor/create_doc.html:54
+msgid "在线表格"
+msgstr "Online form"
+
+#: template/app_doc/editor/create_doc.html:67
+#: template/app_doc/editor/modify_doc.html:82
+msgid "保存文档为发布状态"
+msgstr "Save the document as published"
+
+#: template/app_doc/editor/create_doc.html:67
+msgid "发布"
+msgstr "Publish"
+
+#: template/app_doc/editor/create_doc.html:68
+#: template/app_doc/editor/modify_doc.html:85
+msgid "保存文档为草稿状态"
+msgstr "Save the document as a draft"
+
+#: template/app_doc/editor/create_doc.html:68
+msgid "存为草稿"
+msgstr "Save as a draft"
+
+#: template/app_doc/editor/create_doc.html:82
+#: template/app_doc/editor/tpl_editor_div_doc.html:97
+msgid "请选择一个文集（必选）"
+msgstr "Please select a project (required)"
+
+#: template/app_doc/editor/create_doc.html:85
+#: template/app_doc/editor/tpl_editor_div_doc.html:99
+#: template/app_doc/manage/manage_doc.html:23
+msgid "自有文集"
+msgstr "Own project"
+
+#: template/app_doc/editor/create_doc.html:100
+#: template/app_doc/editor/tpl_editor_div_doc.html:114
+#: template/app_doc/manage/manage_doc.html:38
+#: template/app_doc/pro_list.html:104
+msgid "协作文集"
+msgstr "Collaborative project"
+
+#: template/app_doc/editor/create_doc.html:102
+#: template/app_doc/editor/tpl_editor_div_doc.html:116
+#: template/app_doc/manage/manage_doc.html:40
+msgid "协作"
+msgstr "cooperation"
+
+#: template/app_doc/editor/create_doc.html:113
+#: template/app_doc/editor/modify_doc.html:112
+msgid "点击文档树选择上级（可选）或"
+msgstr "Click on the document tree to select the parent(optional) or"
+
+#: template/app_doc/editor/create_doc.html:114
+#: template/app_doc/editor/modify_doc.html:113
+msgid "取消上级"
+msgstr "Cancel parent"
+
+#: template/app_doc/editor/create_doc.html:118
+#: template/app_doc/editor/modify_doc.html:117
+msgid "输入文档排序值，默认99"
+msgstr "Enter the document sort value, default is 99"
 
 #: template/app_doc/editor/create_doc.html:135
-#, fuzzy
-#| msgid "请输入文档分享码"
 msgid "请输入文档标题……"
-msgstr "Please enter the document sharing code"
+msgstr "Please enter the document title"
+
+#: template/app_doc/editor/create_doc.html:164
+#: template/app_doc/editor/modify_doc.html:170
+msgid "切换编辑器"
+msgstr "Switch editor"
+
+#: template/app_doc/editor/create_doc.html:167
+msgid "为确保格式兼容，切换编辑器将导致未保存内容丢失！"
+msgstr ""
+"To ensure format compatibility, switching editors will result in the loss of "
+"unsaved content!"
+
+#: template/app_doc/editor/create_doc.html:168
+#: template/app_doc/editor/modify_doc.html:174
+msgid "确定切换"
+msgstr "OK to switch"
+
+#: template/app_doc/editor/create_doc.html:224
+#: template/app_doc/editor/modify_doc.html:478
+msgid "未命名"
+msgstr "Unnamed"
+
+#: template/app_doc/editor/create_doc.html:225
+#: template/app_doc/editor/modify_doc.html:479
+msgid "文集暂无文档"
+msgstr "No documents in the project"
+
+#: template/app_doc/editor/create_doctemp.html:11
+#: template/app_doc/editor/modify_doctemp.html:11
+#: template/app_doc/editor/tpl_editor_div_doc.html:5
+msgid "新建模板"
+msgstr "New template"
+
+#: template/app_doc/editor/create_doctemp.html:14
+#: template/app_doc/editor/modify_doctemp.html:14
+#: template/app_doc/editor/tpl_editor_div_doc.html:6
+msgid "管理模板"
+msgstr "Management template"
+
+#: template/app_doc/editor/create_doctemp.html:17
+#: template/app_doc/manage/manage_project_collaborator.html:17
+msgid "管理文集"
+msgstr "Management Project"
+
+#: template/app_doc/editor/create_doctemp.html:27
+#: template/app_doc/editor/modify_doctemp.html:27
+msgid "保存模板"
+msgstr "Save the template"
+
+#: template/app_doc/editor/create_doctemp.html:35
+#: template/app_doc/editor/modify_doctemp.html:35
+msgid "本地缓存"
+msgstr "Local cache"
+
+#: template/app_doc/editor/create_doctemp.html:42
+#: template/app_doc/editor/modify_doctemp.html:42
+msgid "现有模板"
+msgstr "Existing template"
+
+#: template/app_doc/editor/create_doctemp.html:45
+#: template/app_doc/editor/modify_doctemp.html:45
+msgid "点击查看修改《{{temp.name}}》的内容"
+msgstr "Click to view and modify the content of《{{temp.name}}》"
+
+#: template/app_doc/editor/create_doctemp.html:58
+msgid "请输入模板标题"
+msgstr "Please enter the template title"
+
+#: template/app_doc/editor/modify_doc.html:29
+msgid "查看文档"
+msgstr "View document"
+
+#: template/app_doc/editor/modify_doc.html:30
+msgid "文档历史"
+msgstr "Document history"
+
+#: template/app_doc/editor/modify_doc.html:36
+msgid "复制或移动此文档到其他文集"
+msgstr "Copy or mvoe this document to another collection"
+
+#: template/app_doc/editor/modify_doc.html:36
+msgid "复制/移动文档"
+msgstr "Copy/Move documents"
+
+#: template/app_doc/editor/modify_doc.html:37
+msgid "删除此文档"
+msgstr "Delete this document"
+
+#: template/app_doc/editor/modify_doc.html:81
+#: template/app_doc/editor/modify_doc.html:84
+#: template/app_doc/manage/manage_project_import.html:109
+msgid "保存文档"
+msgstr "Save the document"
+
+#: template/app_doc/editor/modify_doc.html:82
+msgid "转为发布"
+msgstr "Publish from draft"
+
+#: template/app_doc/editor/modify_doc.html:85
+msgid "转为草稿"
+msgstr "Convert to draft"
+
+#: template/app_doc/editor/modify_doc.html:96
+#: template/app_doc/editor/modify_doc.html:98
+msgid "*当前文档状态："
+msgstr "* Current document status"
+
+#: template/app_doc/editor/modify_doc.html:173
+msgid "页面将重载，未提交的修改将丢失！"
+msgstr "The page will be reloaded and any uncomitted changes will be lost!"
+
+#: template/app_doc/editor/modify_doc.html:174
+msgid "取消返回"
+msgstr "Cancel return"
+
+#: template/app_doc/editor/modify_doc.html:394
+msgid "查看当前文档的历史版本"
+msgstr "View the historical version of the current document"
+
+#: template/app_doc/editor/modify_doc.html:459
+msgid "复制或移动此文档到指定文集"
+msgstr "Copy or move this document to the specified project"
+
+#: template/app_doc/editor/modify_doctemp.html:57
+msgid "请输入模板名称"
+msgstr "Please enter the template name"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:27
+msgid "选择模板"
+msgstr "Choose a template"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:41
+msgid "文集权限"
+msgstr "Project permissions"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:50
+#: template/app_doc/pro_list.html:259
+msgid "*在可个人中心对文集权限进行进一步控制"
+msgstr ""
+"* Further control of the project permissions is available in the personal "
+"center"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:71
+msgid "查看版本差异"
+msgstr "View version differences"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:74
+msgid "恢复此版本"
+msgstr "Restore this version"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:89
+msgid "移动"
+msgstr "Move"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:90
+msgid "移动（含下级文档）"
+msgstr "Move(including child documents)"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:127
+msgid "确认操作"
+msgstr "Confirm operation"
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:130
+msgid ""
+"警告：MrDoc仅支持3级目录显示，若移动的下级文档层级在目标文集中超过3层将不会显"
+"示在文集目录中"
+msgstr ""
+"Warning: MrDoc only supports 3 levels of directory depth. If the child "
+"document level exeeds 3 levels in the target project, it will not be "
+"displayed in the anthology directory."
+
+#: template/app_doc/editor/tpl_editor_div_doc.html:137
+msgid "输入标签名"
+msgstr "Enter label name"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:34
+#: template/app_doc/editor/tpl_editor_vditor.html:200
+#: template/app_doc/manage/manage_project_options.html:466
 msgid "道友，开始吧……"
 msgstr "Lets get started..."
 
 #: template/app_doc/editor/tpl_editor_editormd.html:40
+#: template/app_doc/manage/manage_project_options.html:472
 msgid "楷"
 msgstr "Model"
 
-#: template/app_doc/editor/tpl_editor_editormd.html:64
-msgid "楷体"
-msgstr "Italics"
-
 #: template/app_doc/editor/tpl_editor_editormd.html:79
+#: template/app_doc/editor/tpl_editor_vditor.html:120
 msgid "添加图片"
 msgstr "Add pictures"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:92
 #: template/app_doc/editor/tpl_editor_editormd.html:200
+#: template/app_doc/editor/tpl_editor_vditor.html:140
+#: template/app_doc/manage/manage_project_options.html:524
 msgid "添加附件"
 msgstr "Add attachments"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:111
+#: template/app_doc/editor/tpl_editor_vditor.html:66
+#: template/app_doc/editor/tpl_editor_vditor.html:159
 msgid "选择"
 msgstr "Select"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:135
 #: template/app_doc/editor/tpl_editor_editormd.html:201
+#: template/app_doc/manage/manage_project_options.html:525
 msgid "添加表格"
 msgstr "Add table"
-
-#: template/app_doc/editor/tpl_editor_editormd.html:138
-#: template/app_doc/manage/manage_project.html:155
-#: template/app_doc/manage/manage_project.html:186
-#: template/app_doc/manage/manage_project_options.html:401
-#: template/app_doc/pro_list.html:349 template/app_doc/pro_list.html:420
-msgid "确定"
-msgstr "determine"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:188
 msgid "添加音视频外链"
 msgstr "Add audio and video links"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:198
+#: template/app_doc/manage/manage_project_options.html:522
 msgid "添加楷体span标签"
 msgstr "Add italics span"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:199
+#: template/app_doc/manage/manage_project_options.html:523
 msgid "添加图片到文档"
 msgstr "Add picture to document"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:202
+#: template/app_doc/manage/manage_project_options.html:526
 msgid "添加思维导图"
 msgstr "Add a mindmap"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:203
+#: template/app_doc/manage/manage_project_options.html:527
 msgid "添加Echarts图表"
 msgstr "Add a Echarts chart"
 
 #: template/app_doc/editor/tpl_editor_editormd.html:204
+#: template/app_doc/manage/manage_project_options.html:528
 msgid "添加音频、视频"
 msgstr "Add audio, video"
+
+#: template/app_doc/editor/tpl_editor_vditor.html:110
+msgid "图片"
+msgstr "Image"
+
+#: template/app_doc/editor/tpl_editor_vditor.html:130
+msgid "附件"
+msgstr "attachment"
 
 #: template/app_doc/foot_base.html:6
 msgid "网站地图"
@@ -1626,33 +3241,17 @@ msgstr "Search for documents"
 msgid "新建"
 msgstr "New"
 
-#: template/app_doc/head_base.html:52
-#: template/app_doc/manage/manage_project.html:151
-#: template/app_doc/pro_list.html:345
-msgid "新建文集"
-msgstr "New project"
+#: template/app_doc/head_base.html:72
+msgid "进入站点后台管理"
+msgstr "Enter the site backend management"
 
 #: template/app_doc/head_base.html:74
 msgid "进入后台"
-msgstr "Go back"
+msgstr "Enter the site backend"
 
-#: template/app_doc/head_base.html:87 template/app_doc/search_result.html:73
-#: template/app_doc/user/user_center.html:9
-#: template/app_doc/user/user_center.html:89 template/search/search.html:70
-msgid "个人中心"
-msgstr "Personal Center"
-
-#: template/app_doc/head_base.html:93
-#: template/app_doc/manage/manage_self.html:66
-#: template/app_doc/pro_list.html:447 template/app_doc/search_result.html:79
-#: template/forget_pwd.html:62
-msgid "修改密码"
-msgstr "Change Password"
-
-#: template/app_doc/head_base.html:99 template/app_doc/search_result.html:85
-#: template/app_doc/user/user_center.html:43 template/search/search.html:76
-msgid "退出登录"
-msgstr "Log out"
+#: template/app_doc/head_base.html:91
+msgid "修改登录密码"
+msgstr "Modify login password"
 
 #: template/app_doc/head_base.html:107 template/app_doc/search_result.html:93
 #: template/search/search.html:84
@@ -1676,110 +3275,60 @@ msgstr "Register"
 msgid "附件管理"
 msgstr "Attachment management"
 
-#: template/app_doc/manage/manage_attachment.html:14
-#: template/app_doc/manage/manage_collect.html:15
-#: template/app_doc/manage/manage_doc.html:15
-#: template/app_doc/manage/manage_doctemp.html:20
-#: template/app_doc/manage/manage_project.html:18
-#: template/app_doc/project_doc_search.html:7
-#: template/app_doc/project_doc_search.html:18
-msgid "搜索"
-msgstr "search"
+#: template/app_doc/manage/manage_attachment.html:12
+msgid "输入附件名称"
+msgstr "Enter attachment namee"
 
-#: template/app_doc/manage/manage_attachment.html:16
-msgid "上传附件"
-msgstr "Upload attachment"
-
-#: template/app_doc/manage/manage_attachment.html:34
-msgid "附件名称"
-msgstr "Name of attachment"
+#: template/app_doc/manage/manage_attachment.html:15
+msgid "支持Zip格式压缩文件"
+msgstr "Support Zip format compressed files"
 
 #: template/app_doc/manage/manage_attachment.html:35
 msgid "文件大小"
 msgstr "file size"
 
-#: template/app_doc/manage/manage_attachment.html:36
-msgid "上传时间"
-msgstr "Upload time"
+#: template/app_doc/manage/manage_attachment.html:119
+msgid "删除附件"
+msgstr "Delete attachment"
 
-#: template/app_doc/manage/manage_attachment.html:37
-#: template/app_doc/manage/manage_doc_history.html:35
-#: template/app_doc/manage/manage_doc_recycle.html:27
-#: template/app_doc/manage/manage_doc_tag.html:31
-#: template/app_doc/manage/manage_doctemp.html:37
-#: template/app_doc/manage/manage_image_group.html:29
-#: template/app_doc/manage/manage_project.html:106
-#: template/app_doc/manage/manage_project_collaborator.html:60
-#: template/app_doc/manage/manage_project_collaborator.html:97
-#: template/app_doc/manage/manage_project_self_colla.html:23
-msgid "操作"
-msgstr "operation"
-
-#: template/app_doc/manage/manage_attachment.html:61
-#: template/app_doc/manage/manage_attachment.html:63
-#: template/app_doc/manage/manage_doc_history.html:61
-#: template/app_doc/manage/manage_doc_history.html:63
-#: template/app_doc/manage/manage_doc_recycle.html:59
-#: template/app_doc/manage/manage_doc_recycle.html:61
-#: template/app_doc/manage/manage_doctemp.html:63
-#: template/app_doc/manage/manage_doctemp.html:65
-#: template/app_doc/manage/manage_image.html:63
-#: template/app_doc/manage/manage_image.html:65
-#: template/app_doc/pro_list.html:201 template/app_doc/pro_list.html:203
-#: template/app_doc/search_result.html:246
-#: template/app_doc/search_result.html:248 template/search/search.html:213
-#: template/search/search.html:215
-msgid "上一页"
-msgstr "previous page"
-
-#: template/app_doc/manage/manage_attachment.html:72
-#: template/app_doc/manage/manage_attachment.html:74
-#: template/app_doc/manage/manage_doc_history.html:72
-#: template/app_doc/manage/manage_doc_history.html:74
-#: template/app_doc/manage/manage_doc_recycle.html:70
-#: template/app_doc/manage/manage_doc_recycle.html:72
-#: template/app_doc/manage/manage_doctemp.html:74
-#: template/app_doc/manage/manage_doctemp.html:76
-#: template/app_doc/manage/manage_image.html:74
-#: template/app_doc/manage/manage_image.html:76
-#: template/app_doc/pro_list.html:212 template/app_doc/pro_list.html:214
-#: template/app_doc/search_result.html:257
-#: template/app_doc/search_result.html:259 template/search/search.html:224
-#: template/search/search.html:226
-msgid "下一页"
-msgstr "next page"
+#: template/app_doc/manage/manage_attachment.html:122
+msgid "警告：删除附件后，文档中引用的附件将失效！"
+msgstr ""
+"Warning: After deleting the attachment, any references to it in the document "
+"will be invalid!"
 
 #: template/app_doc/manage/manage_collect.html:4
 msgid "收藏管理"
 msgstr "Collection management"
 
-#: template/app_doc/manage/manage_collect.html:7
-#: template/app_doc/manage/manage_doc.html:7
-msgid "高级筛选"
-msgstr "Advanced screening"
-
-#: template/app_doc/manage/manage_collect.html:11
-#: template/app_doc/manage/manage_doc.html:11
-msgid "关键词"
-msgstr "key word"
-
 #: template/app_doc/manage/manage_collect.html:18
 msgid "收藏类型"
 msgstr "Collection type"
 
-#: template/app_doc/manage/manage_doc.html:18
-#: template/app_doc/manage/manage_overview.html:114
-#: template/app_doc/search_result.html:144 template/search/search.html:140
-msgid "文集"
-msgstr "Project"
+#: template/app_doc/manage/manage_collect.html:38
+msgid "取消收藏"
+msgstr "Unfavorite"
 
-#: template/app_doc/manage/manage_doc.html:21
-msgid "按文集筛选"
-msgstr "Select by project"
+#: template/app_doc/manage/manage_collect.html:85
+#: template/app_doc/pro_list.html:241
+msgid "名称"
+msgstr "Name"
 
-#: template/app_doc/manage/manage_doc.html:48
-msgid "文档状态"
-msgstr "Document status"
+#: template/app_doc/manage/manage_collect.html:86
+msgid "归属"
+msgstr "Attribution"
+
+#: template/app_doc/manage/manage_collect.html:87
+msgid "收藏时间"
+msgstr "Collection time"
+
+#: template/app_doc/manage/manage_collect.html:108
+msgid "删除收藏"
+msgstr "Delete favorites"
+
+#: template/app_doc/manage/manage_collect.html:111
+msgid "警告：此操作将删除此收藏！"
+msgstr "Warning: This action will delete this project!"
 
 #: template/app_doc/manage/manage_doc_history.html:4
 msgid "文档历史版本管理"
@@ -1797,9 +3346,15 @@ msgstr "file:"
 msgid "的历史版本管理"
 msgstr "Historical version management for"
 
-#: template/app_doc/manage/manage_doc_history.html:34
-msgid "创建人"
-msgstr "Founder"
+#: template/app_doc/manage/manage_doc_history.html:95
+msgid "删除历史记录"
+msgstr "Delete history"
+
+#: template/app_doc/manage/manage_doc_history.html:98
+msgid "警告：操作将删除此文档历史版本记录！"
+msgstr ""
+"Warning: This action will delete the historical version record of this "
+"document!"
 
 #: template/app_doc/manage/manage_doc_recycle.html:4
 msgid "文档回收站管理"
@@ -1810,19 +3365,16 @@ msgid "还原所有"
 msgstr "Restore all"
 
 #: template/app_doc/manage/manage_doc_recycle.html:12
+#: template/app_doc/manage/manage_doc_recycle.html:155
 msgid "清空回收站"
 msgstr "Empty Trash"
 
-#: template/app_doc/manage/manage_doc_recycle.html:22
-#: template/app_doc/manage/manage_project_collaborator.html:94
-msgid "文档名称"
-msgstr "Document name"
-
 #: template/app_doc/manage/manage_doc_recycle.html:23
 msgid "上级文档"
-msgstr "Superior document"
+msgstr "Parent document"
 
 #: template/app_doc/manage/manage_doc_recycle.html:24
+#: template/app_doc/tag_doc_single.html:72
 msgid "所属文集"
 msgstr "Collected works"
 
@@ -1834,9 +3386,48 @@ msgstr "Delete time"
 msgid "还原"
 msgstr "reduction"
 
+#: template/app_doc/manage/manage_doc_recycle.html:96
+msgid "警告：此操作将彻底删除此文档！"
+msgstr "Warning: This operation will completely delete this document!"
+
+#: template/app_doc/manage/manage_doc_recycle.html:124
+msgid "还原文档"
+msgstr "Restore document"
+
+#: template/app_doc/manage/manage_doc_recycle.html:127
+msgid "提示：文档将还原为草稿状态！"
+msgstr "Tip: The document will be restored to draft status!"
+
+#: template/app_doc/manage/manage_doc_recycle.html:158
+msgid "警告：此操作将彻底删除回收站所有文档！"
+msgstr ""
+"Warning: This action will completely delete all documents in the recycle bin!"
+
+#: template/app_doc/manage/manage_doc_recycle.html:185
+msgid "还原回收站"
+msgstr "Restore Recycle bin"
+
+#: template/app_doc/manage/manage_doc_recycle.html:188
+msgid "警告：此操作将还原回收站所有文档为草稿状态！"
+msgstr ""
+"Warning: This action will restore all the documents in the recycle bin to "
+"draft status!"
+
 #: template/app_doc/manage/manage_doc_share.html:4
 msgid "文档分享管理"
 msgstr "Document sharing management"
+
+#: template/app_doc/manage/manage_doc_share.html:98
+msgid "分享类型"
+msgstr "Sharing type"
+
+#: template/app_doc/manage/manage_doc_share.html:99
+msgid "分享码"
+msgstr "Sharing code"
+
+#: template/app_doc/manage/manage_doc_share.html:100
+msgid "分享时间"
+msgstr "Sharing time"
 
 #: template/app_doc/manage/manage_doc_tag.html:4
 #: template/app_doc/manage/manage_doc_tag.html:10
@@ -1851,17 +3442,27 @@ msgstr "Label name"
 msgid "标签文档数量"
 msgstr "Number of label documents"
 
-#: template/app_doc/manage/manage_doctemp.html:35
-msgid "模板名称"
-msgstr "Template name"
+#: template/app_doc/manage/manage_doc_tag.html:69
+#: template/app_doc/manage/manage_image_group.html:68
+msgid "删除分组"
+msgstr "Deletet group"
+
+#: template/app_doc/manage/manage_doc_tag.html:72
+msgid "警告：操作将删除此标签！"
+msgstr "Warning: This action will delete this label!"
+
+#: template/app_doc/manage/manage_doc_tag.html:99
+#: template/app_doc/manage/manage_image_group.html:98
+msgid "修改分组"
+msgstr "Modify group"
+
+#: template/app_doc/manage/manage_doc_tag.html:102
+msgid "输入标签的新名称"
+msgstr "Enter a new name for the label"
 
 #: template/app_doc/manage/manage_image.html:4
 msgid "图片素材管理"
 msgstr "Image material management"
-
-#: template/app_doc/manage/manage_image.html:17
-msgid "上传图片"
-msgstr "Upload pictures"
 
 #: template/app_doc/manage/manage_image.html:19
 msgid "新建分组"
@@ -1870,6 +3471,64 @@ msgstr "New group"
 #: template/app_doc/manage/manage_image.html:20
 msgid "分组管理"
 msgstr "Group management"
+
+#: template/app_doc/manage/manage_image.html:21
+#: template/app_doc/manage/manage_image.html:245
+#: template/app_doc/manage/manage_image.html:250
+msgid "全选"
+msgstr "Select all"
+
+#: template/app_doc/manage/manage_image.html:23
+msgid "批量移动"
+msgstr "Batch move"
+
+#: template/app_doc/manage/manage_image.html:49
+msgid "移动分组"
+msgstr "Move picture"
+
+#: template/app_doc/manage/manage_image.html:50
+#: template/app_doc/manage/manage_image.html:102
+msgid "删除图片"
+msgstr "Delete picture"
+
+#: template/app_doc/manage/manage_image.html:105
+msgid "删除此图片后，文档中添加的该图片将不再显示！"
+msgstr ""
+"After deleting this picture, the picture in the document will no longer be "
+"displayed!"
+
+#: template/app_doc/manage/manage_image.html:139
+msgid "移动图片分组"
+msgstr "Move picture grouping"
+
+#: template/app_doc/manage/manage_image.html:190
+msgid "新建图片分组"
+msgstr "New picture group"
+
+#: template/app_doc/manage/manage_image.html:247
+msgid "取消全选"
+msgstr "Unselect all"
+
+#: template/app_doc/manage/manage_image.html:275
+msgid "批量删除图片"
+msgstr "Batch delete"
+
+#: template/app_doc/manage/manage_image.html:278
+msgid "你正在批量删除图片！"
+msgstr "You are deleting multiple projects!"
+
+#: template/app_doc/manage/manage_image.html:278
+msgid "删除所选图片，文档中所引用的图片将不再显示"
+msgstr ""
+"Delete the selected picture, it will no longer be displayed in the document"
+
+#: template/app_doc/manage/manage_image.html:279
+msgid "确定删除"
+msgstr "Confirm delete"
+
+#: template/app_doc/manage/manage_image.html:334
+msgid "批量移动图片"
+msgstr "Batch move pictures"
 
 #: template/app_doc/manage/manage_image_group.html:4
 #: template/app_doc/manage/manage_image_group.html:11
@@ -1889,9 +3548,15 @@ msgstr "Group name"
 msgid "图片数量"
 msgstr "Number of pictures"
 
-#: template/app_doc/manage/manage_overview.html:15
-msgid "文集总数"
-msgstr "Total number of projects"
+#: template/app_doc/manage/manage_image_group.html:71
+msgid "警告：操作将删除此图片分组，分组下所属图片将移动到【未分组】！"
+msgstr ""
+"Warning: This operation will delete this group of pictures, and the pictures "
+"under the group will be moved to [Ungrouped]"
+
+#: template/app_doc/manage/manage_image_group.html:101
+msgid "输入图片分组的新名称"
+msgstr "Enter a new name for the image group"
 
 #: template/app_doc/manage/manage_overview.html:30
 msgid "文档数量"
@@ -1901,45 +3566,9 @@ msgstr "Number of documents"
 msgid "附件数量"
 msgstr "Number of attachments"
 
-#: template/app_doc/manage/manage_overview.html:77
-msgid "动态"
-msgstr "dynamic"
-
 #: template/app_doc/manage/manage_overview.html:86
 msgid "修改了文档"
 msgstr "Document modified"
-
-#: template/app_doc/manage/manage_overview.html:88
-msgid "保存了文档"
-msgstr "Saved the document"
-
-#: template/app_doc/manage/manage_overview.html:90
-msgid "删除了文档"
-msgstr "Deleted document"
-
-#: template/app_doc/manage/manage_overview.html:102
-msgid "快速草稿"
-msgstr "Quick draft"
-
-#: template/app_doc/manage/manage_overview.html:108
-msgid "标题"
-msgstr "titlC"
-
-#: template/app_doc/manage/manage_overview.html:124
-msgid "指定用户"
-msgstr "Designated user"
-
-#: template/app_doc/manage/manage_overview.html:133
-msgid "文本域"
-msgstr "Text field"
-
-#: template/app_doc/manage/manage_overview.html:140
-msgid "保存草稿"
-msgstr "Save Draft"
-
-#: template/app_doc/manage/manage_overview.html:141
-msgid "重置"
-msgstr "Reset"
 
 #: template/app_doc/manage/manage_overview.html:153
 msgid "支持项目发展"
@@ -1957,41 +3586,39 @@ msgstr "User manual"
 msgid "源 码 下 载"
 msgstr "Source code download"
 
-#: template/app_doc/manage/manage_project.html:21
-msgid "新增"
-msgstr "newly added"
-
 #: template/app_doc/manage/manage_project.html:27
 msgid "批量导出"
-msgstr "Bacth export"
-
-#: template/app_doc/manage/manage_project.html:100
-#: template/app_doc/manage/manage_project_collaborator.html:26
-#: template/app_doc/manage/manage_project_options.html:39
-#: template/app_doc/manage/manage_project_self_colla.html:20
-msgid "文集名称"
-msgstr "Collection name"
-
-#: template/app_doc/manage/manage_project.html:103
-msgid "文档数"
-msgstr "Number of documents"
+msgstr "Batch export"
 
 #: template/app_doc/manage/manage_project.html:104
+#: template/app_doc/project.html:140
 msgid "文集成员"
 msgstr "Project member"
-
-#: template/app_doc/manage/manage_project.html:182
-#: template/app_doc/pro_list.html:416
-msgid "修改文集"
-msgstr "Revision of Project"
 
 #: template/app_doc/manage/manage_project.html:322
 msgid "打包文集"
 msgstr "Package project"
 
+#: template/app_doc/manage/manage_project.html:325
+msgid "确定打包导出所选的文集？"
+msgstr "Are you sure you want to package and export the selected project?"
+
 #: template/app_doc/manage/manage_project.html:353
+#: template/app_doc/manage/manage_project_options.html:431
 msgid "下载导出文档"
 msgstr "Download exported document"
+
+#: template/app_doc/manage/manage_project.html:356
+#: template/app_doc/manage/manage_project_options.html:434
+#: template/app_doc/project.html:119
+msgid "请尽快下载，避免失效！"
+msgstr "Please download as soon as possible before the file gets invalidated."
+
+#: template/app_doc/manage/manage_project.html:356
+#: template/app_doc/manage/manage_project_options.html:434
+#: template/app_doc/project.html:119
+msgid "点击下载文件"
+msgstr "Click to download the file"
 
 #: template/app_doc/manage/manage_project_collaborator.html:4
 msgid "文集协作管理"
@@ -2002,8 +3629,8 @@ msgid "协作管理"
 msgstr "Collaborative management"
 
 #: template/app_doc/manage/manage_project_collaborator.html:17
-msgid "管理文集"
-msgstr "Management Project"
+msgid "的协作"
+msgstr "Collaboration"
 
 #: template/app_doc/manage/manage_project_collaborator.html:33
 msgid "协作人数："
@@ -2029,9 +3656,42 @@ msgstr "Create a new document, modify or delete the new document"
 msgid "可操作所有文档"
 msgstr "All documents can be operated"
 
-#: template/app_doc/manage/manage_project_collaborator.html:95
-msgid "创建用户"
-msgstr "Create user"
+#: template/app_doc/manage/manage_project_collaborator.html:141
+msgid "添加文集协作者"
+msgstr "Add an essay collaborator"
+
+#: template/app_doc/manage/manage_project_collaborator.html:176
+msgid "删除文集协作者"
+msgstr "Delete an essay collaborator"
+
+#: template/app_doc/manage/manage_project_collaborator.html:179
+msgid "确定将用户"
+msgstr "Locate the user"
+
+#: template/app_doc/manage/manage_project_collaborator.html:179
+msgid "从文集协作者中删除？"
+msgstr "Remove from anthology collaborators?"
+
+#: template/app_doc/manage/manage_project_collaborator.html:205
+msgid "的协作权限"
+msgstr "Collaboration permissions for"
+
+#: template/app_doc/manage/manage_project_collaborator.html:270
+#: template/app_doc/manage/manage_project_transfer.html:29
+msgid "选择用户，可搜索"
+msgstr "Select user to search"
+
+#: template/app_doc/manage/manage_project_collaborator.html:277
+#: template/app_doc/manage/manage_project_collaborator.html:288
+msgid "初级权限 - 可新建文档，修改、删除自己创建的文档"
+msgstr ""
+"Basic - you can create new documents, modify and delete documents created by "
+"yourself"
+
+#: template/app_doc/manage/manage_project_collaborator.html:278
+#: template/app_doc/manage/manage_project_collaborator.html:289
+msgid "高级权限 - 可操作所有文档"
+msgstr "Advanced - All documents can be operated upon"
 
 #: template/app_doc/manage/manage_project_doc_sort.html:4
 #: template/app_doc/manage/manage_project_doc_sort.html:14
@@ -2057,11 +3717,39 @@ msgstr "Import markdown file package"
 
 #: template/app_doc/manage/manage_project_import.html:21
 msgid "导入语雀知识库，功能开发中"
-msgstr "Import the language sparrow knowledge base, function development"
+msgstr "Import the Yuque knowledge base, currently under development"
 
 #: template/app_doc/manage/manage_project_import.html:26
 msgid "语雀知识库"
-msgstr "Wordsparrow knowledge base"
+msgstr "Yuque knowledge base"
+
+#: template/app_doc/manage/manage_project_import.html:30
+msgid "导入GitBook，功能开发中"
+msgstr "Import GitBook, currently under development"
+
+#: template/app_doc/manage/manage_project_import.html:106
+msgid "编辑导入的文集"
+msgstr "Edit the imported project"
+
+#: template/app_doc/manage/manage_project_import.html:109
+msgid "发布文档"
+msgstr "Publish documents"
+
+#: template/app_doc/manage/manage_project_import.html:250
+msgid "请输入文集名称"
+msgstr "Enter the project name"
+
+#: template/app_doc/manage/manage_project_import.html:253
+msgid "请输入文集简介"
+msgstr "Brief introduction to Project"
+
+#: template/app_doc/manage/manage_project_import.html:257
+msgid "文集状态"
+msgstr "Project status"
+
+#: template/app_doc/manage/manage_project_import.html:264
+msgid "文档拖拽排序"
+msgstr "Document drag sort"
 
 #: template/app_doc/manage/manage_project_options.html:4
 #: template/app_doc/manage/manage_project_options.html:16
@@ -2086,46 +3774,21 @@ msgstr "Download configuration"
 msgid "管理控制"
 msgstr "management control"
 
-#: template/app_doc/manage/manage_project_options.html:54
-#: template/app_doc/pro_list.html:243 template/app_doc/pro_list.html:419
-msgid "输入文集名"
-msgstr "Enter the project name"
+#: template/app_doc/manage/manage_project_options.html:58
+msgid "文集水印"
+msgstr "Anthology watermark"
+
+#: template/app_doc/manage/manage_project_options.html:64
+msgid "水印文字"
+msgstr "Watermark text"
 
 #: template/app_doc/manage/manage_project_options.html:70
 msgid "文集简介"
 msgstr "Brief introduction to Project"
 
-#: template/app_doc/manage/manage_project_options.html:79
-msgid "立即修改"
-msgstr "Modify now"
-
 #: template/app_doc/manage/manage_project_options.html:88
 msgid "浏览权限"
 msgstr "Browsing rights"
-
-#: template/app_doc/manage/manage_project_options.html:92
-msgid "指定用户可见"
-msgstr "Specified user visible"
-
-#: template/app_doc/manage/manage_project_options.html:93
-msgid "访问码可见"
-msgstr "Access code visible"
-
-#: template/app_doc/manage/manage_project_options.html:98
-msgid "访问码"
-msgstr "Access code"
-
-#: template/app_doc/manage/manage_project_options.html:102
-msgid "不少于4位数"
-msgstr "Not less than 4 digits"
-
-#: template/app_doc/manage/manage_project_options.html:106
-msgid "允许用户"
-msgstr "Allow users"
-
-#: template/app_doc/manage/manage_project_options.html:109
-msgid "请输入用户名，回车输入多个用户"
-msgstr "Please enter user name, enter multiple users"
 
 #: template/app_doc/manage/manage_project_options.html:116
 msgid "修改权限"
@@ -2180,6 +3843,7 @@ msgstr "Save project export configuration"
 
 #: template/app_doc/manage/manage_project_options.html:186
 #: template/app_doc/manage/manage_project_options.html:189
+#: template/app_doc/manage/manage_project_options.html:397
 msgid "导出文集"
 msgstr "Export project"
 
@@ -2205,6 +3869,15 @@ msgstr ""
 msgid "删除文集及文集下的所有文档"
 msgstr "Delete the project and all documents in the project"
 
+#: template/app_doc/manage/manage_project_options.html:365
+msgid "警告：此操作将删除文集及文集下所有文档！"
+msgstr ""
+"Warning: This operation will delete the project and all child documents"
+
+#: template/app_doc/manage/manage_project_options.html:400
+msgid "将此文集下所有文档导出为MD文件并打包？"
+msgstr "Export all documents in this project as MD files and pack them?"
+
 #: template/app_doc/manage/manage_project_self_colla.html:4
 msgid "我协作的文集"
 msgstr "My project works"
@@ -2212,10 +3885,6 @@ msgstr "My project works"
 #: template/app_doc/manage/manage_project_self_colla.html:11
 msgid "我的协作文集"
 msgstr "My collaboration project"
-
-#: template/app_doc/manage/manage_project_self_colla.html:21
-msgid "作者"
-msgstr "author"
 
 #: template/app_doc/manage/manage_project_self_colla.html:22
 #: template/app_doc/pro_list.html:253
@@ -2247,10 +3916,6 @@ msgstr "You haven't become a collaborator of any anthology"
 msgid "转让文集："
 msgstr "Transferred papers:"
 
-#: template/app_doc/manage/manage_project_transfer.html:29
-msgid "选择用户，可搜索"
-msgstr "Select user to search"
-
 #: template/app_doc/manage/manage_project_transfer.html:37
 msgid "转让文集的管理权限及文档"
 msgstr "Management authority and documents of transferred documents"
@@ -2259,18 +3924,13 @@ msgstr "Management authority and documents of transferred documents"
 msgid "转让成功，即将返回文集列表……"
 msgstr "Successful transfer, about to return to the project list"
 
-#: template/app_doc/manage/manage_self.html:34
-msgid "编辑器"
-msgstr "editor"
-
 #: template/app_doc/manage/manage_self.html:44
 msgid "更新个人资料"
 msgstr "Update personal data"
 
-#: template/app_doc/manage/manage_self.html:70
-#: template/app_doc/pro_list.html:451
-msgid "确认修改"
-msgstr "Confirm modification"
+#: template/app_doc/manage/manage_self.html:69
+msgid "修改用户密码"
+msgstr "Modify user password"
 
 #: template/app_doc/pro_list.html:15
 msgid "又一个MrDoc站点"
@@ -2292,10 +3952,6 @@ msgstr "Open project"
 msgid "私密文集"
 msgstr "Private Project"
 
-#: template/app_doc/pro_list.html:104
-msgid "协作文集"
-msgstr "Collaborative project"
-
 #: template/app_doc/pro_list.html:105 template/app_doc/pro_list.html:108
 msgid "访问码文集"
 msgstr "Access code project"
@@ -2308,6 +3964,10 @@ msgstr "Oldest"
 msgid "时间降序"
 msgstr "Most recent"
 
+#: template/app_doc/pro_list.html:148 template/app_doc/pro_list.html:158
+msgid "新建此文档的下级文档"
+msgstr "Create a new child of this document"
+
 #: template/app_doc/pro_list.html:169
 msgid "此文集没有填写简介"
 msgstr "There is no introduction in this project"
@@ -2315,10 +3975,6 @@ msgstr "There is no introduction in this project"
 #: template/app_doc/pro_list.html:228
 msgid "图标"
 msgstr "Icon"
-
-#: template/app_doc/pro_list.html:241
-msgid "名称"
-msgstr "Name"
 
 #: template/app_doc/pro_list.html:247 template/app_doc/project.html:36
 msgid "简介"
@@ -2330,41 +3986,9 @@ msgstr ""
 "A description of the project, 100 words maximum. Longer entries will be "
 "truncated"
 
-#: template/app_doc/pro_list.html:259
-msgid "*在可个人中心对文集权限进行进一步控制"
-msgstr ""
-"*Further control of the project permissions is available in the personal "
-"center"
-
 #: template/app_doc/pro_list.html:349
 msgid "创建并添加文档"
 msgstr "Create and add documents"
-
-#: template/app_doc/pro_list.html:419
-#, fuzzy
-#| msgid "文集简介"
-msgid "输入文集简介"
-msgstr "Brief introduction to Project"
-
-#: template/app_doc/pro_list.html:450
-#, fuzzy
-#| msgid "修改用户["
-msgid "修改用户"
-msgstr "Modify user"
-
-#: template/app_doc/pro_list.html:450
-#, fuzzy
-#| msgid "密码"
-msgid "的密码"
-msgstr "password"
-
-#: template/app_doc/pro_list.html:450
-msgid "输入新密码"
-msgstr "Enter a new password"
-
-#: template/app_doc/pro_list.html:450
-msgid "再次确认新密码"
-msgstr "Confirm the new password"
 
 #: template/app_doc/project.html:37
 msgid "目录大纲"
@@ -2374,19 +3998,27 @@ msgstr "Table of contents"
 msgid "最新文档"
 msgstr "Latest documents"
 
-#: template/app_doc/project.html:40
-msgid "文集下载"
-msgstr "Collection Download"
-
 #: template/app_doc/project.html:47
 msgid "暂无文集简介"
 msgstr "There is no introduction to anthology"
+
+#: template/app_doc/project.html:78
+msgid "EPUB电子书"
+msgstr "ePUB e-book"
+
+#: template/app_doc/project.html:81
+msgid "PDF电子书"
+msgstr "PDF e-book"
 
 #: template/app_doc/project.html:84 template/app_doc/project.html:87
 msgid "文集作者未开放此文集的任何格式下载！"
 msgstr ""
 "The author of the anthology has not made any format of this anthology "
 "available for download!"
+
+#: template/app_doc/project.html:138
+msgid "文集创建者"
+msgstr "Anthology creator"
 
 #: template/app_doc/project_doc_search.html:7
 msgid "的结果"
@@ -2409,9 +4041,15 @@ msgstr "Results"
 msgid "觅道搜索"
 msgstr "Searching for ways"
 
-#: template/app_doc/search_result.html:143 template/search/search.html:139
-msgid "文档"
-msgstr "file"
+#: template/app_doc/search.html:37
+msgid "请输入搜索内容"
+msgstr "Enter search content"
+
+#: template/app_doc/search_result.html:37
+#: template/app_doc/search_result.html:120 template/search/search.html:37
+#: template/search/search.html:116
+msgid "搜索文集或文档"
+msgstr "Search an anthology or a document"
 
 #: template/app_doc/search_result.html:145 template/search/search.html:141
 msgid "标签"
@@ -2496,25 +4134,33 @@ msgstr "documents sharing"
 msgid "标签："
 msgstr "label:"
 
+#: template/app_doc/tag_doc_base.html:65
+msgid "输入并回车搜索"
+msgstr "Enter and enter search"
+
+#: template/app_doc/tag_doc_single.html:68
+msgid "文档创建人"
+msgstr "Document creator"
+
+#: template/app_doc/tag_doc_single.html:76
+msgid "文档更新时间"
+msgstr "Document update time"
+
+#: template/app_doc/tag_doc_single.html:85
+msgid "下载文档Markdown"
+msgstr "Download markdown document"
+
 #: template/app_doc/tag_doc_single.html:86
 msgid "下载"
-msgstr "download"
+msgstr "Download"
 
-#: template/app_doc/user/user_center.html:40
-msgid "后台管理"
-msgstr "back-stage management"
+#: template/app_doc/tag_doc_single.html:300
+msgid "链接地址已复制"
+msgstr "Link address has been copied"
 
-#: template/app_doc/user/user_center.html:134
-msgid "官方网站"
-msgstr "Official website"
-
-#: template/app_doc/user/user_center.html:139
-msgid "说明文档"
-msgstr "Documentation"
-
-#: template/app_doc/user/user_center.html:144
-msgid "开源地址"
-msgstr "Open source address"
+#: template/app_doc/tag_doc_single.html:302
+msgid "好的"
+msgstr "Okay"
 
 #: template/app_doc/user/user_center.html:149
 msgid "QQ群"
@@ -2529,17 +4175,49 @@ msgstr "Current version:"
 msgid "忘记密码"
 msgstr "Forget the password"
 
+#: template/forget_pwd.html:48
+msgid "请输入注册邮箱"
+msgstr "Please enter the registered email address"
+
 #: template/forget_pwd.html:50
 msgid "发送验证码"
 msgstr "Send verification code"
+
+#: template/forget_pwd.html:53 template/login.html:82 template/register.html:87
+msgid "请输入验证码"
+msgstr "Please enter the verification code"
+
+#: template/forget_pwd.html:56
+msgid "请输入新密码"
+msgstr "Please enter a new password"
+
+#: template/forget_pwd.html:59
+msgid "请确认新密码"
+msgstr "Please confirm new password"
 
 #: template/forget_pwd.html:64 template/register.html:102
 msgid "返回登录"
 msgstr "Back to login"
 
+#: template/forget_pwd.html:112
+msgid "获取验证码"
+msgstr "Get verification code"
+
+#: template/forget_pwd.html:124
+msgid "重新发送("
+msgstr "Resend("
+
 #: template/login.html:12
 msgid "用户登录"
 msgstr "User login"
+
+#: template/login.html:71
+msgid "请输入用户名"
+msgstr "Please enter a username"
+
+#: template/login.html:76
+msgid "请输入密码"
+msgstr "Please enter the password"
 
 #: template/login.html:99
 msgid "本站暂不开放注册"
@@ -2548,6 +4226,10 @@ msgstr "This site is not open for registration"
 #: template/login.html:101
 msgid "注册账号"
 msgstr "Registered account number"
+
+#: template/login.html:108 template/register.html:105
+msgid "觅道文档 - 私有云知识库部署方案"
+msgstr "MiDao Document - Private cloud knowledge base"
 
 #: template/register.html:6
 msgid "用户注册"
@@ -2565,50 +4247,10 @@ msgstr "Please enter a username, minimum 5 characters"
 msgid "请输入密码，不少于6位"
 msgstr "Please enter a username, minimum 6 characters"
 
-#: template/register.html:87
-msgid "请输入验证码"
-msgstr "Please enter the verification code"
-
 #: template/register.html:99
 msgid "注册并登录"
 msgstr "Register and log-in."
 
-#: template/register.html:105
-msgid "觅道文档 - 私有云知识库部署方案"
-msgstr "MiDao Document - Private cloud knowledge base"
-
 #: template/search/search.html:199
 msgid "没有搜索结果。"
 msgstr "There are no search results."
-
-#, fuzzy
-#~| msgid "请输入电子邮箱地址"
-#~ msgid "请输入电子邮箱"
-#~ msgstr "Please enter your email address"
-
-#~ msgid "检测到新版本发布，请及时更新！下载地址："
-#~ msgstr "New version is detected, please update in time! Download address:"
-
-#~ msgid "输入并回车搜索"
-#~ msgstr "Enter and enter search"
-
-#~ msgid "微信"
-#~ msgstr "WeChat"
-
-#~ msgid "支付宝"
-#~ msgstr "Alipay"
-
-#~ msgid "QQ支付"
-#~ msgstr "QQ payment"
-
-#~ msgid "PayPal"
-#~ msgstr "PayPal"
-
-#~ msgid "项目源码"
-#~ msgstr "Project source code"
-
-#~ msgid "站点首页"
-#~ msgstr "Home page"
-
-#~ msgid "注销登录"
-#~ msgstr "Log out"
